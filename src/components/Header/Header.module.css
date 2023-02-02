@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  z-index: 10000;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 40px;
+  }
+}
