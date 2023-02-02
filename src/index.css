@@ -3,6 +3,8 @@
   --color-white: white;
   --color-black: #333;
   --color-radioBorder: skyblue;
+  --color-bg: #ebf5fc;
+  --color-btn: #03a9f4;
 }
 
 code {
@@ -23,5 +25,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--color-bg-dark);
+  background: var(--color-bg);
 }

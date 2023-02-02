@@ -1,0 +1,92 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.card:hover {
+  scale: 1.15;
+}
+
+.box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: var(--color-bg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input {
+  padding: 12px 24px;
+  border: none;
+  text-align: center;
+  outline: none;
+  background-color: inherit;
+  font-size: 1.3em;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 75px;
+  margin: 10px 0;
+  background-color: inherit;
+  border: none;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--color-black);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-white);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: url(/public/assets/images/btn-bg.png);
+  background-size: cover;
+  transform-origin: left;
+  transition: 0.5s;
+}
+
+.button:hover:before {
+  width: 100%;
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+}

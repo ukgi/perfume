@@ -1,8 +1,9 @@
 import React from "react";
-import ParticlesBackground from "../ParticlesBackground";
+import { useNavigate } from "react-router-dom";
 import styles from "./Slider.module.css";
 
 export default function Slider() {
+  const navigate = useNavigate();
   return (
     <div className={styles.slider}>
       <input type='radio' name='slider' defaultChecked />
@@ -71,6 +72,12 @@ export default function Slider() {
             doloribus, repudiandae tenetur veritatis laboriosam inventore
             dolorem impedit ratione quod mollitia ipsam nostrum.
           </p>
+          <button
+            className={styles.button}
+            onClick={() => navigate("/userName")}
+          >
+            <span>시작하기</span>
+          </button>
         </div>
       </div>
     </div>
