@@ -28,7 +28,6 @@ const item = {
 
 export default function Question01() {
   const { userName } = useParams();
-
   return (
     <motion.div
       className={styles.container}

@@ -47,7 +47,7 @@ export default function UserName() {
               className={styles.button}
               onClick={() => {
                 userName
-                  ? navigate(`/${userName}/question01`)
+                  ? navigate(`/${userName}/services`)
                   : alert("이름을 입력해주세요!");
               }}
             >

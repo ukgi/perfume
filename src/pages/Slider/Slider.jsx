@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Slider.module.css";
+import { motion } from "framer-motion";
 
 export default function Slider() {
   const navigate = useNavigate();
@@ -17,8 +18,20 @@ export default function Slider() {
         ></video>
         <img src='/assets/images/mask.jpg' alt='' className={styles.mask} />
         <div className={styles.content}>
-          <h2>PersonalFume</h2>
-          <p>당신의 향기를 찾아드립니다.</p>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.8 } }}
+            exit={{ opacity: 0, transition: { duration: 0 } }}
+          >
+            PersonalFume
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1.8 } }}
+            exit={{ opacity: 0, transition: { duration: 0 } }}
+          >
+            당신의 향기를 찾아드립니다.
+          </motion.p>
         </div>
       </div>
       <input type='radio' name='slider' />
