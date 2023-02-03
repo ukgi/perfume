@@ -1,7 +1,7 @@
 :root {
   --color-bg-dark: #111;
   --color-white: white;
-  --color-black: #333;
+  --color-black: rgb(0, 0, 0);
   --color-radioBorder: skyblue;
   --color-bg: #ebf5fc;
   --color-btn: #03a9f4;

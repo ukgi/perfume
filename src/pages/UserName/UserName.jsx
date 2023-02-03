@@ -1,41 +1,37 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function UserName() {
+  const navigate = useNavigate();
   const nameInput = useRef();
-
   useEffect(() => {
     return nameInput.current.focus();
   }, []);
+
+  const [userName, setUserName] = useState("");
+  const handleUserName = (e) => setUserName(e.target.value);
   return (
     <div className={styles.container}>
       <motion.div
         className={styles.card}
-        animate={{
-          scale: [0.2, 1.2, 1.2, 0.5, 1],
-          rotate: [0, 0, 180, 180, 0],
-          borderRadius: ["0%", "0%", "50%", "50%", "5%"],
-        }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{
-          duration: 2,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-          repeatDelay: 1,
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
         }}
       >
         <motion.div
           className={styles.box}
-          animate={{
-            scale: [0.1, 1, 1, 0.5, 1],
-            rotate: [0, 0, 180, 180, 0],
-            borderRadius: ["0%", "0%", "50%", "50%", "5%"],
-          }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 2,
-            ease: "easeInOut",
-            times: [0, 0.2, 0.5, 0.8, 1],
-            repeatDelay: 1,
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
           }}
         >
           <div className={styles.content}>
@@ -44,8 +40,17 @@ export default function UserName() {
               ref={nameInput}
               type='text'
               placeholder='이름을 입력하세요'
+              value={userName}
+              onChange={handleUserName}
             ></input>
-            <button className={styles.button}>
+            <button
+              className={styles.button}
+              onClick={() => {
+                userName
+                  ? navigate(`/${userName}/question01`)
+                  : alert("이름을 입력해주세요!");
+              }}
+            >
               <span>완료</span>
             </button>
           </div>

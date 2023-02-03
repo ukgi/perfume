@@ -23,7 +23,6 @@ export default function Slider() {
       </div>
       <input type='radio' name='slider' />
       <div className={styles.imgBx}>
-        {/* <ParticlesBackground /> */}
         <img src='/assets/images/2.jpg' alt='' />
         <div className={styles.content}>
           <h2>Slide two</h2>
