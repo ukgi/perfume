@@ -25,14 +25,14 @@ export default function Slider() {
         <div className={styles.content}>
           <motion.h2
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 3.5 } }}
+            animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
           >
             PersonalFume
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 4 } }}
+            animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
           >
             당신의 향기를 찾아드립니다.

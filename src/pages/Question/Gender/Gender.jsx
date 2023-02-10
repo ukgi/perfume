@@ -1,32 +1,28 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import styles from "./Question01.module.css";
+import styles from "./Gender.module.css";
 import { motion } from "framer-motion";
 import Card from "./Card";
 
 const container = {
-  hidden: { opacity: 1, scale: 0 },
+  hidden: {
+    opacity: 0,
+  },
   visible: {
     opacity: 1,
-    scale: 1,
     transition: {
-      duration: 0.3,
-      delay: 0.6,
-      delayChildren: 1.2,
-      staggerChildren: 0.4,
+      when: "beforeChildren",
+      staggerChildren: 0.2,
     },
   },
 };
 
 const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
 };
 
-export default function Question01() {
+export default function Gender() {
   const { userName } = useParams();
   return (
     <motion.div
@@ -35,7 +31,9 @@ export default function Question01() {
       initial='hidden'
       animate='visible'
     >
-      <h2 className={styles.title}>{userName} 님의 성별을 고르세요</h2>
+      <motion.h2 className={styles.title} variants={item}>
+        {userName} 님의 성별을 고르세요
+      </motion.h2>
       <div className={styles.cardSection}>
         {["남성", "여성"].map((gender, index) => (
           <motion.div key={index} variants={item}>

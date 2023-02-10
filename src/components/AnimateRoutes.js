@@ -3,8 +3,11 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import UserName from "../pages/UserName/UserName";
 import Slider from "../pages/Slider/Slider";
 import { AnimatePresence } from "framer-motion";
-import Question01 from "../pages/Question/Question01/Question01";
+import Gender from "../pages/Question/Gender/Gender";
 import Services from "../pages/Services/Services";
+import Perfums from "../pages/Question/Perfums/Perfums";
+import Season from "../pages/Question/Season/Season";
+import Mood from "../pages/Question/Mood/Mood";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -14,7 +17,10 @@ export default function AnimateRoutes() {
         <Route path='/' exact element={<Slider />} />
         <Route path='/services' element={<Services />} />
         <Route path='/userName' element={<UserName />} />
-        <Route path='/:userName/question01' element={<Question01 />} />
+        <Route path='/:userName/question01' element={<Gender />} />
+        <Route path='/perfums' element={<Perfums />} />
+        <Route path='/mood' element={<Mood />} />
+        <Route path='/season' element={<Season />} />
       </Routes>
     </AnimatePresence>
   );

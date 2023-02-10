@@ -1,6 +1,7 @@
 import React from "react";
 import { FcBusinessman, FcBusinesswoman } from "react-icons/fc";
-import styles from "./Question01.module.css";
+import { useNavigate } from "react-router-dom";
+import styles from "./Gender.module.css";
 
 const manCircle = {
   backgroundColor: "#0077ff",
@@ -10,8 +11,9 @@ const womanCircle = {
 };
 
 export default function Card({ gender }) {
+  const navigate = useNavigate();
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={() => navigate("/perfums")}>
       <div
         className={styles.circle}
         style={gender === "남성" ? manCircle : womanCircle}
