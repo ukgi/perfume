@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background: #000;
 }
 
 .slider .imgBx {
@@ -22,6 +21,23 @@
   transition-delay: 0s;
   z-index: 1;
   clip-path: circle(0px at center);
+}
+
+#slideTwo {
+  filter: blur(1.3rem);
+}
+
+#perfumeBottle {
+  position: relative;
+  top: 50px;
+  left: -150px;
+  z-index: 10;
+}
+
+#slideTwoContent {
+  position: relative;
+  right: 180px;
+  width: 1000px;
 }
 
 .slider input[type="radio"]:checked + .imgBx {
@@ -110,6 +126,13 @@
     font-size: 1em;
     color: #fff;
     margin-top: 10px;
+  }
+  #perfumeBottle {
+    display: none;
+  }
+  #slideTwoContent {
+    position: relative;
+    right: 0;
   }
 }
 

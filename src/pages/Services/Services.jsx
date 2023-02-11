@@ -2,16 +2,21 @@ import React from "react";
 import styles from "./Services.module.css";
 import { motion } from "framer-motion";
 import Card from "./Card";
-// ⬇️ Import Swiper styles
-// import SwiperCore, { Navigation, Pagination, EffectCoverflow } from "swiper";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/scss";
-// import "swiper/scss/navigation";
-// import "swiper/scss/pagination";
-// import "swiper/scss/effect-coverflow";
-// SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
 export default function Services() {
+  const container = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   const servicesInfo = [
     {
       title: "맞춤 향수 추천",
@@ -32,12 +37,9 @@ export default function Services() {
   return (
     <motion.div
       className={styles.container}
-      initial={{ width: 0 }}
-      animate={{
-        width: "100%",
-        transition: { duration: 1.2 },
-      }}
-      exit={{ x: window.innerWidth, transition: { duration: 0 } }}
+      variants={container}
+      initial='hidden'
+      animate='visible'
     >
       {servicesInfo.map((info, index) => (
         <Card key={index} info={info} />

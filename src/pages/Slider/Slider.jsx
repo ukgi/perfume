@@ -5,6 +5,24 @@ import { motion } from "framer-motion";
 
 export default function Slider() {
   const navigate = useNavigate();
+
+  const variants = {
+    hidden: {
+      opacity: 0.2,
+      y: 15,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.2,
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    },
+  };
+
   return (
     <motion.div
       className={styles.slider}
@@ -41,14 +59,22 @@ export default function Slider() {
       </div>
       <input type='radio' name='slider' />
       <div className={styles.imgBx}>
-        <img src='/assets/images/2.jpg' alt='' />
-        <div className={styles.content}>
+        <img src='/assets/images/2.jpg' alt='' id={styles.slideTwo} />
+        <motion.img
+          initial='hidden'
+          animate='visible'
+          variants={variants}
+          src='/assets/images/향수병.png'
+          alt=''
+          id={styles.perfumeBottle}
+        />
+        <div className={styles.content} id={styles.slideTwoContent}>
           <h2>Story</h2>
           <p>
             인류 최초의 화장품이 향수인 것을 알고 있나요?
             <br />
-            당신이 향수를 찾는 이유는 본능입니다. 그 본능에 꼭 맞는 향수를
-            우리가 추천해드릴게요
+            당신이 향수를 찾는 이유는 본능입니다.
+            <br /> 그 본능에 꼭 맞는 향수를 우리가 추천해드릴게요
           </p>
         </div>
       </div>
@@ -67,22 +93,9 @@ export default function Slider() {
       </div>
       <input type='radio' name='slider' />
       <div className={styles.imgBx}>
-        <img src='/assets/images/4.jpg' alt='' />
-        <div className={styles.content}>
-          <h2>Slide Four</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-            expedita vero consequuntur asperiores cupiditate ipsum aut et
-            doloribus, repudiandae tenetur veritatis laboriosam inventore
-            dolorem impedit ratione quod mollitia ipsam nostrum.
-          </p>
-        </div>
-      </div>
-      <input type='radio' name='slider' />
-      <div className={styles.imgBx}>
         <img src='/assets/images/5.jpg' alt='' />
         <div className={styles.content}>
-          <h2>Slide Five</h2>
+          <h2>Slide Four</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
             expedita vero consequuntur asperiores cupiditate ipsum aut et

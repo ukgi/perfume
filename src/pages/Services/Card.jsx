@@ -4,6 +4,23 @@ import styles from "./Services.module.css";
 import { motion } from "framer-motion";
 
 export default function Card({ info }) {
+  const item = {
+    hidden: {
+      opacity: 1,
+      y: 15,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.2,
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    },
+  };
+
   const [isHover, setIsHover] = useState(false);
   const handleMouseEnter = () => setIsHover(true);
   const handleMouseLeave = () => setIsHover(false);
@@ -13,12 +30,7 @@ export default function Card({ info }) {
   return (
     <motion.div
       className={styles.card}
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { duration: 1.5 },
-      }}
-      exit={{ opacity: 0, transition: { duration: 0 } }}
+      variants={item}
       whileHover={{
         transition: { duration: 1.2 },
       }}

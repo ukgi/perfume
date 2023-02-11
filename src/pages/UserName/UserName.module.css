@@ -37,6 +37,7 @@
 }
 
 .input {
+  margin-bottom: 20px;
   padding: 12px 24px;
   border: none;
   text-align: center;
@@ -50,11 +51,12 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 75px;
+  width: 250px;
   margin: 10px 0;
+  padding: 12px;
   background-color: inherit;
   border: none;
+  border-radius: 20px;
   font-size: 1.3em;
   font-weight: 600;
   color: var(--color-black);
@@ -64,23 +66,8 @@
 
 .button:hover {
   color: var(--color-white);
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: url(/public/assets/images/btn-bg.png);
-  background-size: cover;
-  transform-origin: left;
-  transition: 0.5s;
-}
-
-.button:hover:before {
-  width: 100%;
+  background-color: skyblue;
+  border: none;
 }
 
 .button span {
@@ -92,5 +79,10 @@
   .card {
     width: 350px;
     height: 350px;
+  }
+  .button {
+    width: 150px;
+    font-size: 1em;
+    font-weight: 600;
   }
 }

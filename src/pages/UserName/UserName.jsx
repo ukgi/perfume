@@ -1,14 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function UserName() {
   const navigate = useNavigate();
-  const nameInput = useRef();
-  useEffect(() => {
-    return nameInput.current.focus();
-  }, []);
 
   const [userName, setUserName] = useState("");
   const handleUserName = (e) => setUserName(e.target.value);
@@ -37,9 +33,8 @@ export default function UserName() {
           <div className={styles.content}>
             <input
               className={styles.input}
-              ref={nameInput}
               type='text'
-              placeholder='이름을 입력하세요'
+              placeholder='Your Name'
               value={userName}
               onChange={handleUserName}
             ></input>
@@ -51,7 +46,7 @@ export default function UserName() {
                   : alert("이름을 입력해주세요!");
               }}
             >
-              <span>완료</span>
+              <span>Let's start</span>
             </button>
           </div>
         </motion.div>
