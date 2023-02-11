@@ -16,7 +16,7 @@ export default function Mood() {
   useEffect(() => {
     handleMood(title, setMood);
     setBgColor(alt);
-  }, [title]);
+  }, [title, alt]);
 
   return (
     <motion.div
