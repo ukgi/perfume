@@ -3,15 +3,8 @@ import styles from "./Perfums.module.css";
 import Card from "./Card";
 import { motion } from "framer-motion";
 import { container, item } from "../../../Animation/Variants";
-import { useEffect } from "react";
-import { useUserContext } from "../../../context/UserContextApi";
 
 export default function Fashion() {
-  const { user, setUser } = useUserContext();
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
-
   return (
     <motion.div
       className={styles.container}

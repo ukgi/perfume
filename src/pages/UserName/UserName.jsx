@@ -3,12 +3,22 @@ import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContextApi";
+import { useEffect } from "react";
+import { useCallback } from "react";
 
 export default function UserName() {
   const navigate = useNavigate();
-  const { user, setUser } = useUserContext();
   const handleUserName = (e) =>
     setUser((prev) => ({ ...prev, name: `${e.target.value}` }));
+
+  // ⬇️ 커스텀 훅 만들어보기
+  const { user, setUser } = useUserContext();
+  const storeUserAnswer = useCallback(async () => {
+    window.localStorage.setItem("userAnswer", JSON.stringify(user));
+  }, [user]);
+  useEffect(() => {
+    storeUserAnswer();
+  }, [storeUserAnswer]);
 
   return (
     <div className={styles.container}>

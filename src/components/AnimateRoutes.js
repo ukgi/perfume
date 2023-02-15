@@ -10,6 +10,7 @@ import Season from "../pages/Question/Season/Season";
 import Mood from "../pages/Question/Mood/Mood";
 import Styles from "../pages/Question/Styles/Styles";
 import { UserContextApiProvider } from "../context/UserContextApi";
+import Result from "../pages/Result/Result";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -25,6 +26,7 @@ export default function AnimateRoutes() {
           <Route path='/mood' element={<Mood />} />
           <Route path='/season' element={<Season />} />
           <Route path='/styles' element={<Styles />} />
+          <Route path='/result' element={<Result />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

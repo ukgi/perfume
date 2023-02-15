@@ -8,19 +8,16 @@ import { container, item } from "../../../Animation/Variants";
 
 export default function Mood() {
   const { state } = useLocation();
-  const { title, alt } = state;
+  const { title } = state;
   const [mood, setMood] = useState([]);
-  const [bgColor, setBgColor] = useState(alt);
 
   useEffect(() => {
     handleMood(title, setMood);
-    setBgColor(alt);
-  }, [title, alt]);
+  }, [title]);
 
   return (
     <motion.div
       className={styles.container}
-      style={{ backgroundColor: bgColor }}
       variants={container}
       initial='hidden'
       animate='visible'

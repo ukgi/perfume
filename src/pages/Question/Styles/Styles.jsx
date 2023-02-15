@@ -3,12 +3,36 @@ import Card from "./Card";
 import styles from "./Styles.module.css";
 import { motion } from "framer-motion";
 import { container, item } from "../../../Animation/Variants";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Styles() {
+  const [gender, setGender] = useState(
+    () => JSON.parse(localStorage.getItem("userAnswer")).genderAnswer
+  );
   const stylesCategory = [
-    { title: "캐주얼", img: "/assets/images/styles/캐주얼.png" },
-    { title: "포멀", img: "/assets/images/styles/포멀.png" },
+    {
+      title: "캐쥬얼",
+      img:
+        gender === "남자"
+          ? "/assets/images/styles/남자캐쥬얼.png"
+          : "/assets/images/styles/여자캐쥬얼.png",
+    },
+    {
+      title: "포멀",
+      img:
+        gender === "남자"
+          ? "/assets/images/styles/남자포멀.png"
+          : "/assets/images/styles/여자포멀.png",
+    },
   ];
+
+  useEffect(() => {
+    setGender(
+      () => JSON.parse(localStorage.getItem("userAnswer")).genderAnswer
+    );
+  }, [gender]);
+
   return (
     <motion.div
       className={styles.body}

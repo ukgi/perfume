@@ -1,16 +1,25 @@
 import React, { createContext, useContext, useState } from "react";
+import { useEffect } from "react";
 
 export const UserContext = createContext();
 
 export function UserContextApiProvider({ children }) {
-  const [user, setUser] = useState({
-    name: "",
-    genderAnswer: "",
-    moodAnswer: "",
-    scentAnswer: "",
-    seasonAnswer: "",
-    styleAnswer: "",
-  });
+  const [user, setUser] = useState(
+    () =>
+      JSON.parse(window.localStorage.getItem("userAnswer")) || {
+        name: "",
+        genderAnswer: "",
+        moodAnswer: "",
+        scentAnswer: "",
+        seasonAnswer: "",
+        styleAnswer: "",
+      }
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem("userAnswer", JSON.stringify(user));
+  }, [user]);
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}

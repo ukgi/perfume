@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useCallback } from "react";
 import { FcBusinessman, FcBusinesswoman } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../../context/UserContextApi";
@@ -13,13 +14,22 @@ const womanCircle = {
 
 export default function Card({ gender }) {
   const navigate = useNavigate();
-  const { setUser } = useUserContext();
+
+  const { user, setUser } = useUserContext();
+  const storeUserAnswer = useCallback(async () => {
+    window.localStorage.setItem("userAnswer", JSON.stringify(user));
+  }, [user]);
+  useEffect(() => {
+    storeUserAnswer();
+  }, [storeUserAnswer]);
+  const handleGender = () =>
+    setUser((prev) => ({ ...prev, genderAnswer: gender }));
 
   return (
     <div
       className={styles.card}
       onClick={() => {
-        setUser((prev) => ({ ...prev, genderAnswer: gender }));
+        handleGender();
         navigate("/perfums");
       }}
     >
