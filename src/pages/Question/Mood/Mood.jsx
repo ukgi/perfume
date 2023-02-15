@@ -4,12 +4,11 @@ import Card from "./Card";
 import styles from "./Mood.module.css";
 import { motion } from "framer-motion";
 import { handleMood } from "./HandleMood";
-import { container } from "../../../Animation/Variants";
+import { container, item } from "../../../Animation/Variants";
 
 export default function Mood() {
   const { state } = useLocation();
   const { title, alt } = state;
-  console.log("state", state);
   const [mood, setMood] = useState([]);
   const [bgColor, setBgColor] = useState(alt);
 
@@ -27,10 +26,14 @@ export default function Mood() {
       animate='visible'
     >
       <motion.h2 className={styles.title} variants={container}>
-        선택하신 향기와 어울리는 분위기를 골라주세요
+        {title}와 어울리는 분위기를 골라주세요
       </motion.h2>
-      {mood.map((item, index) => {
-        return <Card key={index} info={item} />;
+      {mood.map((moodInfo, index) => {
+        return (
+          <motion.div key={index} variants={item}>
+            <Card info={moodInfo} />
+          </motion.div>
+        );
       })}
     </motion.div>
   );

@@ -33,7 +33,7 @@ export default function Slider() {
       <input type='radio' name='slider' defaultChecked />
       <div className={styles.imgBx}>
         <video
-          src='/assets/videos/videos01.mp4'
+          src='/assets/videos/videos04.mp4'
           autoPlay
           loop
           muted
@@ -46,7 +46,7 @@ export default function Slider() {
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
           >
-            PersonalFume
+            인:향
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -59,7 +59,39 @@ export default function Slider() {
       </div>
       <input type='radio' name='slider' />
       <div className={styles.imgBx}>
-        <img src='/assets/images/2.jpg' alt='' id={styles.slideTwo} />
+        <video
+          src='/assets/videos/videos07.mp4'
+          autoPlay
+          loop
+          muted
+          typeof='mp4'
+        ></video>
+        <div className={styles.content}>
+          <h2>취향</h2>
+          <p>
+            인류 최초의 화장품이 향수인 것을 알고 있나요?
+            <br />
+            당신이 향수를 찾는 이유는 본능입니다.
+            <br /> 당신의 취향에 꼭 맞는 향수를 우리가 추천해드릴게요
+          </p>
+        </div>
+      </div>
+      <input type='radio' name='slider' />
+      <div className={styles.imgBx}>
+        <img src='/assets/images/8.jpg' alt='' />
+        <div className={styles.content}>
+          <h2>지향</h2>
+          <p>
+            특정 향을 맡았을때 누군가가 떠오른 적 있으신가요?
+            <br /> 향은 당신의 이미지를 나타냅니다. <br /> 저희 서비스는 당신의
+            이미지와 가장 잘 어울리는 향을 추천해드리는 것이 <br /> 궁극적인
+            목표입니다.
+          </p>
+        </div>
+      </div>
+      <input type='radio' name='slider' />
+      <div className={styles.imgBx}>
+        <img src='/assets/images/9.jpg' alt='' id={styles.slideTwo} />
         <motion.img
           initial='hidden'
           animate='visible'
@@ -69,39 +101,7 @@ export default function Slider() {
           id={styles.perfumeBottle}
         />
         <div className={styles.content} id={styles.slideTwoContent}>
-          <h2>Story</h2>
-          <p>
-            인류 최초의 화장품이 향수인 것을 알고 있나요?
-            <br />
-            당신이 향수를 찾는 이유는 본능입니다.
-            <br /> 그 본능에 꼭 맞는 향수를 우리가 추천해드릴게요
-          </p>
-        </div>
-      </div>
-      <input type='radio' name='slider' />
-      <div className={styles.imgBx}>
-        <img src='/assets/images/3.jpg' alt='' />
-        <div className={styles.content}>
-          <h2>Slide Three</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-            expedita vero consequuntur asperiores cupiditate ipsum aut et
-            doloribus, repudiandae tenetur veritatis laboriosam inventore
-            dolorem impedit ratione quod mollitia ipsam nostrum.
-          </p>
-        </div>
-      </div>
-      <input type='radio' name='slider' />
-      <div className={styles.imgBx}>
-        <img src='/assets/images/5.jpg' alt='' />
-        <div className={styles.content}>
-          <h2>Slide Four</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-            expedita vero consequuntur asperiores cupiditate ipsum aut et
-            doloribus, repudiandae tenetur veritatis laboriosam inventore
-            dolorem impedit ratione quod mollitia ipsam nostrum.
-          </p>
+          <h3 className={styles.h3}>인:향에서 당신의 향기를 찾아드릴게요</h3>
           <button
             className={styles.button}
             onClick={() => navigate("/services")}

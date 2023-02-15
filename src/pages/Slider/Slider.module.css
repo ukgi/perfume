@@ -24,13 +24,13 @@
 }
 
 #slideTwo {
-  filter: blur(1.3rem);
+  filter: blur(0.3rem);
 }
 
 #perfumeBottle {
   position: relative;
   top: 50px;
-  left: -150px;
+  left: -180px;
   z-index: 10;
 }
 
@@ -75,13 +75,19 @@
 }
 
 .slider .imgBx .content h2 {
-  font-size: 6em;
+  font-size: 8em;
   line-height: 1.5em;
   color: #fff;
 }
 
 .slider .imgBx .content p {
-  font-size: 1.1em;
+  font-size: 1.7em;
+  color: #fff;
+}
+
+.slider .imgBx .content h3 {
+  font-size: 2.5em;
+  line-height: 1.5em;
   color: #fff;
 }
 
@@ -94,7 +100,7 @@
   cursor: pointer;
   vertical-align: middle;
   appearance: none;
-  border: max(2px, 0.1em) solid gray;
+  border: max(2px, 0.1em) solid var(--color-black);
   border-radius: 50%;
   width: 1.25em;
   height: 1.25em;

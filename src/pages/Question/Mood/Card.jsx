@@ -1,16 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Mood.module.css";
-import { motion } from "framer-motion";
-import { item } from "../../../Animation/Variants";
 
 export default function Card({ info }) {
   const { img, desc } = info;
+  const navigate = useNavigate();
   return (
-    <motion.div className={styles.card} variants={item}>
+    <div className={styles.card} onClick={() => navigate("/season")}>
       <img className={styles.faceFront} id={styles.front} src={img} alt='' />
       <div className={styles.faceBack} id={styles.back}>
+        <div className={styles.backMoodDescContainer}></div>
         <p className={styles.moodDesc}>{desc}</p>
       </div>
-    </motion.div>
+    </div>
   );
 }

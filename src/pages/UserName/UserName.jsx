@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../context/UserContextApi";
 
 export default function UserName() {
   const navigate = useNavigate();
+  const { user, setUser } = useUserContext();
+  const handleUserName = (e) =>
+    setUser((prev) => ({ ...prev, name: `${e.target.value}` }));
 
-  const [userName, setUserName] = useState("");
-  const handleUserName = (e) => setUserName(e.target.value);
   return (
     <div className={styles.container}>
       <motion.div
@@ -35,15 +37,13 @@ export default function UserName() {
               className={styles.input}
               type='text'
               placeholder='Your Name'
-              value={userName}
+              value={user.name}
               onChange={handleUserName}
             ></input>
             <button
               className={styles.button}
               onClick={() => {
-                userName
-                  ? navigate(`/${userName}/question01`)
-                  : alert("이름을 입력해주세요!");
+                user ? navigate(`/gender`) : alert("이름을 입력해주세요!");
               }}
             >
               <span>Let's start</span>
