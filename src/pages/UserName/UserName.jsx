@@ -2,23 +2,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { useCallback } from "react";
-import { useState } from "react";
+// import { useEffect } from "react";
+// import { useCallback } from "react";
+// import { useState } from "react";
+import { useUserContext } from "../../context/UserContextApi";
 
 export default function UserName() {
   const navigate = useNavigate();
 
-  // ⬇️ 커스텀 훅 만들어보기
-  const [userName, setUserName] = useState(
-    () => JSON.parse(window.sessionStorage.getItem("userName")) || ""
-  );
-  const storeUserName = useCallback(async () => {
-    window.sessionStorage.setItem("userName", JSON.stringify(userName));
-  }, [userName]);
-  useEffect(() => {
-    storeUserName();
-  }, [storeUserName]);
+  // const [userName, setUserName] = useState(
+  //   () => JSON.parse(window.sessionStorage.getItem("userName")) || ""
+  // );
+  // const storeUserName = useCallback(async () => {
+  //   window.sessionStorage.setItem("userName", JSON.stringify(userName));
+  // }, [userName]);
+  // useEffect(() => {
+  //   storeUserName();
+  // }, [storeUserName]);
+
+  const { userName, setUserName } = useUserContext();
   const handleUserName = (e) => setUserName(e.target.value);
 
   return (

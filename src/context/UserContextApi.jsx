@@ -15,12 +15,17 @@ export function UserContextApiProvider({ children }) {
       }
   );
 
+  const [userName, setUserName] = useState(
+    () => JSON.parse(window.sessionStorage.getItem("userName")) || ""
+  );
+
   useEffect(() => {
     window.sessionStorage.setItem("userAnswer", JSON.stringify(user));
-  }, [user]);
+    window.sessionStorage.setItem("userName", JSON.stringify(userName));
+  }, [user, userName]);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, userName, setUserName }}>
       {children}
     </UserContext.Provider>
   );

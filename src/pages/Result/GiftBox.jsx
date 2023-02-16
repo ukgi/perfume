@@ -1,12 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Result.module.css";
+import { motion } from "framer-motion";
+
 export default function GiftBox({ data }) {
   const navigate = useNavigate();
   return (
-    <div
+    <motion.div
       className={styles.gift}
       onClick={() => navigate("/resultDetail", { state: data })}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+      whileHover={{ scale: 1.2 }}
     >
       <div className={styles.giftBow}>
         <div className={styles.giftBowLeft}></div>
@@ -22,6 +28,6 @@ export default function GiftBox({ data }) {
       <div className={styles.giftStar} id={styles.giftStar03}></div>
       <div className={styles.giftStar} id={styles.giftStar04}></div>
       <div className={styles.giftStar} id={styles.giftStar05}></div>
-    </div>
+    </motion.div>
   );
 }

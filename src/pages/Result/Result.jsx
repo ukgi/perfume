@@ -10,7 +10,7 @@ import { useCallback } from "react";
 export default function Result() {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const { user } = useUserContext();
+  const { user, userName } = useUserContext();
 
   const submitUserAnswer = useCallback(async () => {
     await fetch("http://43.200.94.119:8080/survey/show-perfume-by-survey", {
@@ -38,11 +38,18 @@ export default function Result() {
     await fetch("/data/survey.json", {
       method: "GET",
     })
-      .then((reponse) => reponse.json())
+      .then((response) => {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      })
       .then((data) => {
         console.log("서버로부터 받은 데이터", data);
         setData(data);
         console.log("data 상태", data);
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/error");
       });
   };
 
@@ -54,7 +61,7 @@ export default function Result() {
 
   return (
     <div className={styles.body}>
-      <h2>당신에게 꼭 맞는 향수가 도착했습니다</h2>
+      <h2>{userName}님에게 꼭 맞는 향수가 도착했습니다</h2>
       <GiftBox data={data} />
     </div>
   );
