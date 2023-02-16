@@ -6,8 +6,7 @@ export const UserContext = createContext();
 export function UserContextApiProvider({ children }) {
   const [user, setUser] = useState(
     () =>
-      JSON.parse(window.localStorage.getItem("userAnswer")) || {
-        name: "",
+      JSON.parse(window.sessionStorage.getItem("userAnswer")) || {
         genderAnswer: "",
         moodAnswer: "",
         scentAnswer: "",
@@ -17,7 +16,7 @@ export function UserContextApiProvider({ children }) {
   );
 
   useEffect(() => {
-    window.localStorage.setItem("userAnswer", JSON.stringify(user));
+    window.sessionStorage.setItem("userAnswer", JSON.stringify(user));
   }, [user]);
 
   return (

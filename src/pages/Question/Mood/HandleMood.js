@@ -7,9 +7,9 @@ export const handleMood = (state, setMood) => {
         desc: "코 끝을 스치는 달콤함",
       },
       {
-        mood: "사랑스러운",
-        img: "/assets/images/mood/사랑스러운.jpg",
-        desc: "눈에 꿀이 떨어질 거 같은 사랑스러움",
+        mood: "관능적인",
+        img: "/assets/images/mood/관능적인.jpg",
+        desc: "나도 모르게 스며들 것 같은 관능적임",
       },
       {
         mood: "싱그러운",
@@ -127,9 +127,9 @@ export const handleMood = (state, setMood) => {
         desc: "찌르면 피 한 방울 나올 것 같지 않는 시크함",
       },
       {
-        mood: "어른스러운",
-        img: "/assets/images/mood/어른스러운.jpg",
-        desc: "타인의 어리광을 모두 받아줄 수 있을 거 같은 어른스러움",
+        mood: "관능적인",
+        img: "/assets/images/mood/관능적인.jpg",
+        desc: "나도 모르게 스며들 것 같은 관능적임",
       },
       {
         mood: "따뜻한",

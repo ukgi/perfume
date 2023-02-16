@@ -4,17 +4,11 @@ import { motion } from "framer-motion";
 import Card from "./Card";
 import { useUserContext } from "../../../context/UserContextApi";
 import { container, item } from "../../../Animation/Variants";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Gender() {
   const { setUser } = useUserContext();
-  const [userName, setUserName] = useState();
-
-  useEffect(() => {
-    const userName = JSON.parse(localStorage.getItem("userAnswer")).name;
-    setUserName(userName);
-  }, []);
+  const { state } = useLocation();
 
   return (
     <motion.div
@@ -24,7 +18,7 @@ export default function Gender() {
       animate='visible'
     >
       <motion.h2 className={styles.title} variants={item}>
-        {userName} 님의 성별을 고르세요
+        {state} 님의 성별을 고르세요
       </motion.h2>
       <div className={styles.cardSection}>
         {["남자", "여자"].map((gender, index) => (

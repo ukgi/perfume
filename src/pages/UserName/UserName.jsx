@@ -2,23 +2,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../../context/UserContextApi";
 import { useEffect } from "react";
 import { useCallback } from "react";
+import { useState } from "react";
 
 export default function UserName() {
   const navigate = useNavigate();
-  const handleUserName = (e) =>
-    setUser((prev) => ({ ...prev, name: `${e.target.value}` }));
 
   // ⬇️ 커스텀 훅 만들어보기
-  const { user, setUser } = useUserContext();
-  const storeUserAnswer = useCallback(async () => {
-    window.localStorage.setItem("userAnswer", JSON.stringify(user));
-  }, [user]);
+  const [userName, setUserName] = useState(
+    () => JSON.parse(window.sessionStorage.getItem("userName")) || ""
+  );
+  const storeUserName = useCallback(async () => {
+    window.sessionStorage.setItem("userName", JSON.stringify(userName));
+  }, [userName]);
   useEffect(() => {
-    storeUserAnswer();
-  }, [storeUserAnswer]);
+    storeUserName();
+  }, [storeUserName]);
+  const handleUserName = (e) => setUserName(e.target.value);
 
   return (
     <div className={styles.container}>
@@ -47,13 +48,15 @@ export default function UserName() {
               className={styles.input}
               type='text'
               placeholder='Your Name'
-              value={user.name}
+              value={userName}
               onChange={handleUserName}
             ></input>
             <button
               className={styles.button}
               onClick={() => {
-                user ? navigate(`/gender`) : alert("이름을 입력해주세요!");
+                userName
+                  ? navigate(`/gender`, { state: userName })
+                  : alert("이름을 입력해주세요!");
               }}
             >
               <span>Let's start</span>

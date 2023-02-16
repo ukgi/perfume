@@ -9,7 +9,7 @@ export default function Card({ style }) {
 
   const { user, setUser } = useUserContext();
   const storeUserAnswer = useCallback(async () => {
-    window.localStorage.setItem("userAnswer", JSON.stringify(user));
+    window.sessionStorage.setItem("userAnswer", JSON.stringify(user));
   }, [user]);
   useEffect(() => {
     storeUserAnswer();

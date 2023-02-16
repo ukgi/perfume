@@ -37,7 +37,9 @@ export default function Services() {
       animate='visible'
     >
       {servicesInfo.map((info, index) => (
-        <Card key={index} info={info} />
+        <div key={index}>
+          <Card info={info} />
+        </div>
       ))}
     </motion.div>
   );

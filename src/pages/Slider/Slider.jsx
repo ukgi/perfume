@@ -2,26 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Slider.module.css";
 import { motion } from "framer-motion";
+import { variants } from "../../Animation/Variants";
 
 export default function Slider() {
   const navigate = useNavigate();
-
-  const variants = {
-    hidden: {
-      opacity: 0.2,
-      y: 15,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.2,
-        duration: 1,
-        repeat: Infinity,
-        repeatType: "reverse",
-      },
-    },
-  };
 
   return (
     <motion.div

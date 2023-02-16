@@ -5,6 +5,12 @@
   --color-radioBorder: skyblue;
   --color-bg: #ebf5fc;
   --color-btn: #03a9f4;
+  --color-red1: hsl(345, 100%, 48%);
+  --color-red2: hsl(345, 100%, 38%);
+  --color-white1: hsl(0, 0%, 100%);
+  --color-white2: hsl(0, 0%, 90%);
+  --color-blue: hsl(215, 100%, 20%);
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
 }
 
 code {

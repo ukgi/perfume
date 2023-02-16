@@ -1,0 +1,182 @@
+[
+  {
+    "id": 26,
+    "genderAnswer": "여자",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "차분한 따뜻한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 26,
+      "perfumeName": "나르시소 로드리게즈 엉브레",
+      "brandName": "나르시소",
+      "perfumeFeature": "부족할 땐 채워주고 넘칠 땐 닦아주는 배려심 깊은 프랑지파니 - 바닐라",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/0ef87cacaea607e92da77da9082eac2c.jpg"
+    }
+  },
+  {
+    "id": 50,
+    "genderAnswer": "여자",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "차분한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 50,
+      "perfumeName": "더디퍼런트컴퍼니 퓨어이브",
+      "brandName": "더디퍼런트컴퍼니",
+      "perfumeFeature": "석양의 온기를 품은 듯한 포근한 파우더리 바닐라향이 두텁게 어울린 아늑함",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/e9fa5e017869dee76e9a463015deb335.jpg"
+    }
+  },
+  {
+    "id": 117,
+    "genderAnswer": "여자",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한",
+    "seasonAnswer": "봄 여름",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 117,
+      "perfumeName": "메모 랄리벨라",
+      "brandName": "메모",
+      "perfumeFeature": "따스한 바람을 타고 와 끝을 스치는 바닐라 향기 속 부드럽게 스며있는 코코넛의 달콤함",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202207/e882430fb9fd4882c92d7afa2ba7d9b6.jpg"
+    }
+  },
+  {
+    "id": 250,
+    "genderAnswer": "여자",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "차분한 따뜻한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 250,
+      "perfumeName": "스테파니 델리스",
+      "brandName": "스테파니",
+      "perfumeFeature": "파리의 돌담길 시나몬과 바닐라빈의 따스함이 천천히 자리를 데우는 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202107/d9e0b360d3e4959615f88cc8402518af.jpg"
+    }
+  },
+  {
+    "id": 19,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 19,
+      "perfumeName": "꼼뜨와 수드 파시피크 바닐라 블랙베리 오드뚜왈렛",
+      "brandName": "꼼뜨와",
+      "perfumeFeature": "치댈수록 곱게 뭉그러지는 바닐라와 애간장이 닳도록 바짝 졸인 블랙베리의 달콤함",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202211/2640748708140cac20b4ea086058f980.jpg"
+    }
+  },
+  {
+    "id": 107,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 107,
+      "perfumeName": "르페르소나 골든잼",
+      "brandName": "르페르소나",
+      "perfumeFeature": "잊을 수 없는 무도회의 한 장면 달콤한 바닐라와 무화과가 깊은 인상을 남기고 유유히 사라지는 순간의 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202208/6bd4a1cc57e2bd0072184a45ca3068b0.jpg"
+    }
+  },
+  {
+    "id": 114,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 114,
+      "perfumeName": "르페르소나 LP04 골든 젬 오 드 퍼퓸",
+      "brandName": "르페르소나",
+      "perfumeFeature": "잊을 수 없는 무도회의 한 장면 달콤한 바닐라와 무화과가 깊은 인상을 남기고 유유히 사라지는 순간의 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/b72109a0b84cb3d1ca29b3a310d1ffa2.jpg"
+    }
+  },
+  {
+    "id": 184,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한 시크한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 184,
+      "perfumeName": "반클리프 앤 아펠 오키데 바니유 오 드 퍼퓸",
+      "brandName": "반클리프",
+      "perfumeFeature": "아스라이 퍼지는 달콤함에 취하는 슈가러쉬 다크 초콜릿과 바닐라의 향연이 온 몸을 저릿하게 만드는 순간",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/64824fbdef35a059295239337faf29bb.jpg"
+    }
+  },
+  {
+    "id": 185,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "따뜻한 차분한",
+    "seasonAnswer": "여름",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 185,
+      "perfumeName": "반클리프 앤 아펠 캘리포니아 레브리 오 드 퍼퓸",
+      "brandName": "반클리프",
+      "perfumeFeature": "늦여름 낙조의 만다린을 따스히 감싸는 화이트 자스민 아늑한 바닐라 향취",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202210/b655316835041b86a8f94f5d325fc065.jpg"
+    }
+  },
+  {
+    "id": 391,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "따뜻한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 391,
+      "perfumeName": "킬리안 롤링인러브",
+      "brandName": "킬리안",
+      "perfumeFeature": "글라스 볼에 올려진 바닐라 아이스크림 한 스쿱과 그 위를 천천히 녹이는 따스한 아몬드 밀크",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202206/027aa511da39f43e88d584990f4559d5.jpg"
+    }
+  },
+  {
+    "id": 397,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한 시크한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 397,
+      "perfumeName": "킬리안 우먼인골드",
+      "brandName": "킬리안",
+      "perfumeFeature": "화려한 장신구에도 묻히지 않는 달콤한 플로럴과 투명하게 빛나는 바닐라 그 매혹의 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202208/581426c394b8c04c76a155b822348823.jpg"
+    }
+  },
+  {
+    "id": 419,
+    "genderAnswer": "젠더리스",
+    "scentAnswer": "바닐라",
+    "moodAnswer": "달콤한 시크한",
+    "seasonAnswer": "무관",
+    "styleAnswer": "디폴트",
+    "perfume": {
+      "id": 419,
+      "perfumeName": "티에리뮈글러 엔젤",
+      "brandName": "티에리뮈글러",
+      "perfumeFeature": "유혹의 정석 대담하게 유혹하는 달콤 아찔 플럼-바닐라",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202301/0624fc4ec1a0aa6e523c8bc757d0192a.jpg"
+    }
+  }
+]

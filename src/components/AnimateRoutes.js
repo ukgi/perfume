@@ -11,6 +11,8 @@ import Mood from "../pages/Question/Mood/Mood";
 import Styles from "../pages/Question/Styles/Styles";
 import { UserContextApiProvider } from "../context/UserContextApi";
 import Result from "../pages/Result/Result";
+import Error from "../pages/Error/Error";
+import ResultDetail from "../pages/ResultDetail/ResultDetail";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -19,6 +21,7 @@ export default function AnimateRoutes() {
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path='/' exact element={<Slider />} />
+          <Route path='/error' exact element={<Error />} />
           <Route path='/services' element={<Services />} />
           <Route path='/userName' element={<UserName />} />
           <Route path='/gender' element={<Gender />} />
@@ -27,6 +30,7 @@ export default function AnimateRoutes() {
           <Route path='/season' element={<Season />} />
           <Route path='/styles' element={<Styles />} />
           <Route path='/result' element={<Result />} />
+          <Route path='/resultDetail' element={<ResultDetail />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Styles() {
   const [gender, setGender] = useState(
-    () => JSON.parse(localStorage.getItem("userAnswer")).genderAnswer
+    () => JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
   );
   const stylesCategory = [
     {
@@ -29,7 +29,7 @@ export default function Styles() {
 
   useEffect(() => {
     setGender(
-      () => JSON.parse(localStorage.getItem("userAnswer")).genderAnswer
+      () => JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
     );
   }, [gender]);
 
