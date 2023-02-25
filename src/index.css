@@ -22,7 +22,7 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "KyoboHandwriting2020A";
+  font-family: "MapoFlowerIsland";
 }
 
 body {
@@ -35,8 +35,8 @@ body {
 
 /* ⬇️ 웹 폰트 (눈누) */
 @font-face {
-  font-family: "KyoboHandwriting2020A";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff")
+  font-family: "MapoFlowerIsland";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
