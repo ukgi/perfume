@@ -75,13 +75,14 @@
 }
 
 .slider .imgBx .content h2 {
-  font-size: 8em;
+  font-size: 6em;
   line-height: 1.5em;
   color: #fff;
 }
 
 .slider .imgBx .content p {
-  font-size: 1.7em;
+  font-size: 1.5em;
+  line-height: 1.3em;
   color: #fff;
 }
 

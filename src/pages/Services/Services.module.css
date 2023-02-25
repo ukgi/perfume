@@ -38,7 +38,7 @@
 
 .card .sliderText .sliderTextTitle {
   color: var(--color-white);
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .card .content .btn {
@@ -52,6 +52,7 @@
   outline: none;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.8em;
   transition: all 0.3s ease-in;
 }
 

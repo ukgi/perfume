@@ -13,6 +13,8 @@ import { UserContextApiProvider } from "../context/UserContextApi";
 import Result from "../pages/Result/Result";
 import Error from "../pages/Error/Error";
 import ResultDetail from "../pages/ResultDetail/ResultDetail";
+import Login from "../pages/Login/Login";
+import OAuth2RedirectHandeler from "../pages/Login/OAuth2RedirectHandeler";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -22,15 +24,21 @@ export default function AnimateRoutes() {
         <Routes location={location} key={location.pathname}>
           <Route path='/' exact element={<Slider />} />
           <Route path='/error' exact element={<Error />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/userName' element={<UserName />} />
-          <Route path='/gender' element={<Gender />} />
-          <Route path='/perfums' element={<Perfums />} />
-          <Route path='/mood' element={<Mood />} />
-          <Route path='/season' element={<Season />} />
-          <Route path='/styles' element={<Styles />} />
-          <Route path='/result' element={<Result />} />
-          <Route path='/resultDetail' element={<ResultDetail />} />
+          <Route path='/services' exact element={<Services />} />
+          <Route path='/userName' exact element={<UserName />} />
+          <Route path='/gender' exact element={<Gender />} />
+          <Route path='/perfums' exact element={<Perfums />} />
+          <Route path='/mood' exact element={<Mood />} />
+          <Route path='/season' exact element={<Season />} />
+          <Route path='/styles' exact element={<Styles />} />
+          <Route path='/result' exact element={<Result />} />
+          <Route path='/resultDetail' exact element={<ResultDetail />} />
+          <Route path='/login' exact element={<Login />} />
+          <Route
+            path='/oauth/kakao/callback'
+            exact
+            element={<OAuth2RedirectHandeler />}
+          />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

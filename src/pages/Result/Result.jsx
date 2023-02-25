@@ -6,6 +6,7 @@ import GiftBox from "./GiftBox";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCallback } from "react";
+import axios from "axios";
 
 export default function Result() {
   const navigate = useNavigate();
@@ -13,51 +14,33 @@ export default function Result() {
   const { user, userName } = useUserContext();
 
   const submitUserAnswer = useCallback(async () => {
-    await fetch("http://43.200.94.119:8080/survey/show-perfume-by-survey", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => {
-        if (!response.ok) throw new Error(response.statusText);
-        return response.json();
-      })
-      .then((data) => {
-        console.log("server data", data);
-        setData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        return navigate("/error");
-      });
+    try {
+      const data = await axios.post(
+        "http://43.200.94.119:8080/survey/show-perfume-by-survey",
+        user
+      );
+      console.log("서버로부터 도착한 데이터🚀", data.data);
+      setData(data.data);
+    } catch (error) {
+      console.error(error);
+      navigate("/error");
+    }
   }, [user, navigate]);
 
-  const getMockData = async () => {
-    await fetch("/data/survey.json", {
-      method: "GET",
-    })
-      .then((response) => {
-        if (!response.ok) throw new Error(response.statusText);
-        return response.json();
-      })
-      .then((data) => {
-        console.log("서버로부터 받은 데이터", data);
-        setData(data);
-        console.log("data 상태", data);
-      })
-      .catch((error) => {
-        console.log(error);
-        navigate("/error");
-      });
-  };
+  const getMockData = useCallback(async () => {
+    try {
+      const data = await axios.get("/data/survey.json");
+      setData(data.data);
+    } catch (error) {
+      console.error(error);
+      navigate("/error");
+    }
+  }, [navigate]);
 
   useEffect(() => {
-    console.log("질문에 대한 답변 context 상태", user);
     // submitUserAnswer();
     getMockData();
-  }, [submitUserAnswer, user]);
+  }, [getMockData, submitUserAnswer]);
 
   return (
     <div className={styles.body}>
