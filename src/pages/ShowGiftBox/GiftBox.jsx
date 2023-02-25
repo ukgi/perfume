@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Result.module.css";
+import styles from "./ShowGiftBox.module.css";
 import { motion } from "framer-motion";
 
 export default function GiftBox({ data }) {
@@ -8,7 +8,7 @@ export default function GiftBox({ data }) {
   return (
     <motion.div
       className={styles.gift}
-      onClick={() => navigate("/resultDetail", { state: data })}
+      onClick={() => navigate("/result", { state: data })}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.2 }}

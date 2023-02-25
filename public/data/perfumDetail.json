@@ -1,0 +1,12 @@
+{
+  "scentRecommend": "당신은 달콤한 과일같은 향기와 잘 어울릴 것 같아요! 이런 향수를 쓰면 지나간 사람들이 한번씩 뒤돌아볼 것 같아요 :)",
+  "moodRecommend": "시크한분위기를 연출해보는 것은 어떠신가요? 분명 당신에게 잘 어울릴 거예요 :)",
+  "seasonRecommend": "어느 계절에 써도 괜찮은 향수에요! 사계절 내내 당신의 매력을 퍼뜨려봐요 :)",
+  "perfume": {
+    "id": 314,
+    "perfumeName": "에트로 라자스탄",
+    "brandName": "에트로",
+    "perfumeFeature": "자유를 찾아 유랑하는 집시보헤미안 스타일의 묵직한 앰버와 미모사 그리고 머스크의 폭닥한 향기",
+    "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202206/989d152fd78e144ce0404c47503e98d6.jpg"
+  }
+}

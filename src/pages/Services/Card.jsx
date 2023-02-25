@@ -52,6 +52,8 @@ export default function Card({ info }) {
           onClick={() => {
             if (title === "맞춤 향수 추천") {
               return navigate("/userName");
+            } else if (title === "타인 향수 추천") {
+              return navigate("/login");
             }
           }}
         >

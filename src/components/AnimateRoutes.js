@@ -10,11 +10,12 @@ import Season from "../pages/Question/Season/Season";
 import Mood from "../pages/Question/Mood/Mood";
 import Styles from "../pages/Question/Styles/Styles";
 import { UserContextApiProvider } from "../context/UserContextApi";
-import Result from "../pages/Result/Result";
 import Error from "../pages/Error/Error";
-import ResultDetail from "../pages/ResultDetail/ResultDetail";
 import Login from "../pages/Login/Login";
 import OAuth2RedirectHandeler from "../pages/Login/OAuth2RedirectHandeler";
+import ShowGiftBox from "../pages/ShowGiftBox/ShowGiftBox";
+import Result from "../pages/Result/Result";
+import ResultDetail from "../pages/ResultDetail/ResultDetail";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -31,8 +32,9 @@ export default function AnimateRoutes() {
           <Route path='/mood' exact element={<Mood />} />
           <Route path='/season' exact element={<Season />} />
           <Route path='/styles' exact element={<Styles />} />
+          <Route path='/showGiftBox' exact element={<ShowGiftBox />} />
           <Route path='/result' exact element={<Result />} />
-          <Route path='/resultDetail' exact element={<ResultDetail />} />
+          <Route path='/result/:perfumeId' exact element={<ResultDetail />} />
           <Route path='/login' exact element={<Login />} />
           <Route
             path='/oauth/kakao/callback'

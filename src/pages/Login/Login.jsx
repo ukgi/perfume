@@ -5,7 +5,9 @@ import styles from "./Login.module.css";
 export default function Login() {
   return (
     <div className={styles.body}>
-      <a href={KAKAO_AUTH_URL}>카카오 로그인</a>
+      <a href={KAKAO_AUTH_URL}>
+        <img src='/assets/images/kakaoLogo/kakaoLoginBtn.png' alt='kakaoLogo' />
+      </a>
     </div>
   );
 }

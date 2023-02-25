@@ -24,7 +24,7 @@ export default function Card({ style }) {
     <div
       className={styles.box}
       onClick={() => {
-        navigate("/result");
+        navigate("/showGiftBox");
         handleStyle();
       }}
     >

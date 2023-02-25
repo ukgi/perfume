@@ -28,6 +28,11 @@ export default function Services() {
       dec: "기존에 사용하던 향수와 유사한, 또 다른 향수 브랜드 제품을 추천해줍니다",
       background: "#e01e63",
     },
+    {
+      title: "타인 향수 추천",
+      dec: "소중한 사람에게 잘 어울릴 거 같은 향수를 지금 바로 만나보세요",
+      background: "#9dff8a",
+    },
   ];
   return (
     <motion.div
