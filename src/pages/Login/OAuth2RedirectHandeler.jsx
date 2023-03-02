@@ -11,15 +11,15 @@ export default function OAuth2RedirectHandeler() {
     const accessToken = res.data.accessToken;
     const refreshToken = res.data.refreshToken;
     const id = res.data.id;
-    localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("refreshToken", refreshToken);
-    localStorage.setItem("id", id);
+    sessionStorage.setItem("accessToken", accessToken);
+    sessionStorage.setItem("refreshToken", refreshToken);
+    sessionStorage.setItem("id", id);
     axios.defaults.headers.common["X-AUTH-TOKEN"] = accessToken;
   };
 
   // const onSilentRefresh = async () => {
   //   axios.defaults.headers.common["X-REFRESH-TOKEN"] =
-  //     localStorage.getItem("refreshToken");
+  //     sessionStorage.getItem("refreshToken");
   //   axios({
   //     url: `${process.env.REACT_APP_SERVER_DOMAIN}/member/regenerate`,
   //     method: "post",
@@ -32,7 +32,12 @@ export default function OAuth2RedirectHandeler() {
     axios
       .post(`${process.env.REACT_APP_SERVER_DOMAIN}/member/response`)
       .then((res) => console.log(res))
-      .catch((err) => console.log(err.response.status));
+      .catch((err) => {
+        console.log("err.response", err.response);
+        if (err.response && err.response.status === 401)
+          console.log("401 error");
+        else console.log(err);
+      });
   };
 
   useEffect(() => {

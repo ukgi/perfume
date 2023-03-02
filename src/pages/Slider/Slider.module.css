@@ -87,9 +87,9 @@
 }
 
 .slider .imgBx .content h3 {
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.5em;
-  min-width: 600px;
+  min-width: 700px;
   color: #fff;
 }
 
@@ -130,11 +130,9 @@
   .slider .imgBx .content h2 {
     font-size: 3em;
   }
-
   .slider .imgBx .content h3 {
     font-size: 1.5em;
   }
-
   .slider .imgBx .content p {
     font-size: 1em;
     color: #fff;

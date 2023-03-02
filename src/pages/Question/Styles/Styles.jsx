@@ -47,7 +47,7 @@ export default function Styles() {
         {stylesCategory.map((style, index) => {
           return (
             <motion.div key={index} variants={item}>
-              <Card style={style} />;
+              <Card style={style} />
             </motion.div>
           );
         })}

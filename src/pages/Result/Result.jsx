@@ -16,6 +16,7 @@ SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 export default function Result() {
   const { state } = useLocation();
   const { userName } = useUserContext();
+  console.log("state", state);
   return (
     <div className={styles.body}>
       <h2 className={styles.title}>{userName} 님을 위한 향수입니다</h2>

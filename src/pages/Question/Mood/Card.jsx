@@ -28,9 +28,8 @@ export default function Card({ info }) {
         navigate("/season");
       }}
     >
-      <img className={styles.faceFront} id={styles.front} src={img} alt='' />
-      <div className={styles.faceBack} id={styles.back}>
-        <div className={styles.backMoodDescContainer}></div>
+      <img className={styles.cardImg} src={img} alt='' />
+      <div className={styles.moodText}>
         <p className={styles.moodDesc}>{desc}</p>
       </div>
     </div>

@@ -31,7 +31,7 @@ const seasons = [
   {
     seasonTitle: "봄",
     color: "#ed9af0",
-    img: "/assets/images/seasons/봄.jpg",
+    img: "/assets/images/seasons/봄2.jpg",
   },
   {
     seasonTitle: "여름",

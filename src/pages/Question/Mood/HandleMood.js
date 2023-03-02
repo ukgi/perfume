@@ -27,7 +27,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "산뜻한",
         img: "/assets/images/mood/산뜻한.jpg",
-        desc: "기분 좋은 섬유 유연제를 사용한 것 같은 산뜻함",
+        desc: "이제 막 세탁한 옷감같은 산뜻함",
       },
       {
         mood: "포근한",
@@ -55,7 +55,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "시크한",
         img: "/assets/images/mood/시크한.jpg",
-        desc: "찌르면 피 한 방울 나올 것 같지 않는 시크함",
+        desc: "찔러도 피 한 방울 나오지 않는 시크함",
       },
       {
         mood: "차분한",
@@ -65,7 +65,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "산뜻한",
         img: "/assets/images/mood/산뜻한.jpg",
-        desc: "기분 좋은 섬유 유연제를 사용한 것 같은 산뜻함",
+        desc: "이제 막 세탁한 옷감같은 산뜻함",
       },
     ]);
   } else if (state === "시트러스") {
@@ -101,7 +101,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "시크한",
         img: "/assets/images/mood/시크한.jpg",
-        desc: "찌르면 피 한 방울 나올 것 같지 않는 시크함",
+        desc: "찔러도 피 한 방울 나오지 않는 시크함",
       },
       {
         mood: "차분한",
@@ -124,7 +124,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "시크한",
         img: "/assets/images/mood/시크한.jpg",
-        desc: "찌르면 피 한 방울 나올 것 같지 않는 시크함",
+        desc: "찔러도 피 한 방울 나오지 않는 시크함",
       },
       {
         mood: "관능적인",

@@ -23,8 +23,8 @@ export default function ShowGiftBox() {
         user
       );
       console.log("서버로부터 도착한 데이터🚀", data.data);
-      if (data.data.length === 0) navigate("/error");
-      else setData(data.data);
+      // if (data.data.length === 0) navigate("/error");
+      setData(data.data);
     } catch (error) {
       console.error(error);
       navigate("/error");
@@ -42,8 +42,8 @@ export default function ShowGiftBox() {
   }, [navigate]);
 
   useEffect(() => {
-    // submitUserAnswer();
-    getMockData();
+    submitUserAnswer();
+    // getMockData();
   }, [getMockData, submitUserAnswer]);
 
   return (

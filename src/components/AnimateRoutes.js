@@ -16,6 +16,8 @@ import OAuth2RedirectHandeler from "../pages/Login/OAuth2RedirectHandeler";
 import ShowGiftBox from "../pages/ShowGiftBox/ShowGiftBox";
 import Result from "../pages/Result/Result";
 import ResultDetail from "../pages/ResultDetail/ResultDetail";
+import BrandName from "../pages/BrandName/BrandName";
+import BrandResult from "../pages/BrandResult/BrandResult";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -41,6 +43,8 @@ export default function AnimateRoutes() {
             exact
             element={<OAuth2RedirectHandeler />}
           />
+          <Route path='/brandName' exact element={<BrandName />} />
+          <Route path='/brandName/:brandName' exact element={<BrandResult />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

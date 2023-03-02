@@ -4,7 +4,7 @@ import styles from "./Season.module.css";
 import { useUserContext } from "../../../context/UserContextApi";
 
 export default function Card({ season }) {
-  const { seasonTitle, color, img } = season;
+  const { seasonTitle, img } = season;
   const navigate = useNavigate();
 
   const { user, setUser } = useUserContext();
@@ -28,11 +28,13 @@ export default function Card({ season }) {
         navigate("/styles");
       }}
     >
-      <div className={styles.circle} style={{ backgroundColor: color }}>
-        <h3>{seasonTitle}</h3>
-      </div>
-      <div className={styles.content}>
-        <img className={styles.img} src={img} alt=''></img>
+      <div className={styles.shape}>
+        <img className={styles.img} src={img} alt='' />
+        <div className={styles.content}>
+          <div>
+            <h2>{seasonTitle}</h2>
+          </div>
+        </div>
       </div>
     </div>
   );

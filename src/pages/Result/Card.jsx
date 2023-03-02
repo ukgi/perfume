@@ -8,12 +8,12 @@ export default function Card({ data }) {
   return (
     <div
       className={styles.swiperSlide}
-      onClick={() => navigate(`/result/${data.perfume.id}`)}
+      onClick={() => navigate(`/result/${data.id}`)}
     >
-      <h2 className={styles.swiperSlidetitle}>{data.perfume.perfumeName}</h2>
+      <h2 className={styles.swiperSlidetitle}>{data.perfumeName}</h2>
       <img
         className={styles.swiperSlideImg}
-        src={data.perfume.perfumeImageUrl}
+        src={data.perfumeImageUrl}
         alt=''
       />
     </div>
