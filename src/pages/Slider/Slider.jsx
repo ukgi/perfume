@@ -4,18 +4,31 @@ import styles from "./Slider.module.css";
 import { motion } from "framer-motion";
 import { variants } from "../../Animation/Variants";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// import required modules
+import SwiperCore, { EffectFade, Navigation, Pagination } from "swiper";
+SwiperCore.use([Navigation, Pagination, EffectFade]);
+
 export default function Slider() {
   const navigate = useNavigate();
 
   return (
-    <motion.div
+    <Swiper
       className={styles.slider}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 3 } }}
-      exit={{ opacity: 0, transition: { duration: 0 } }}
+      effect={"fade"}
+      navigation={true}
+      pagination={{
+        clickable: true,
+        type: "progressbar",
+      }}
+      modules={[EffectFade, Navigation, Pagination]}
     >
-      <input type='radio' name='slider' defaultChecked />
-      <div className={styles.imgBx}>
+      <SwiperSlide className={styles.imgBx}>
         <video
           src='/assets/videos/videos04.mp4'
           autoPlay
@@ -23,26 +36,26 @@ export default function Slider() {
           muted
           typeof='mp4'
         ></video>
-        <img src='/assets/images/mask.jpg' alt='' className={styles.mask} />
+        {/* <img src='/assets/images/mask.jpg' alt='' className={styles.mask} /> */}
         <div className={styles.content}>
           <motion.h2
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.5 } }}
+            animate={{ opacity: 1, transition: { duration: 2 } }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
           >
             인:향
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.5 } }}
+            animate={{ opacity: 1, transition: { duration: 2 } }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
           >
             당신의 향기를 찾아드립니다.
           </motion.p>
         </div>
-      </div>
-      <input type='radio' name='slider' />
-      <div className={styles.imgBx}>
+      </SwiperSlide>
+
+      <SwiperSlide className={styles.imgBx}>
         <video
           src='/assets/videos/videos07.mp4'
           autoPlay
@@ -59,9 +72,9 @@ export default function Slider() {
             <br /> 당신의 취향에 꼭 맞는 향수를 우리가 추천해드릴게요
           </p>
         </div>
-      </div>
-      <input type='radio' name='slider' />
-      <div className={styles.imgBx}>
+      </SwiperSlide>
+
+      <SwiperSlide className={styles.imgBx}>
         <img src='/assets/images/8.jpg' alt='' />
         <div className={styles.content}>
           <h2>지향</h2>
@@ -72,10 +85,10 @@ export default function Slider() {
             목표입니다.
           </p>
         </div>
-      </div>
-      <input type='radio' name='slider' />
-      <div className={styles.imgBx}>
-        <img src='/assets/images/9.jpg' alt='' id={styles.slideTwo} />
+      </SwiperSlide>
+
+      <SwiperSlide className={styles.imgBx}>
+        <img src='/assets/images/9.jpg' alt='' id={styles.lastSlide} />
         <motion.img
           initial='hidden'
           animate='visible'
@@ -84,7 +97,7 @@ export default function Slider() {
           alt=''
           id={styles.perfumeBottle}
         />
-        <div className={styles.content} id={styles.slideTwoContent}>
+        <div className={styles.content} id={styles.lastSlideContent}>
           <h3 className={styles.h3}>인:향에서 당신의 향기를 찾아드릴게요</h3>
           <button
             className={styles.button}
@@ -93,7 +106,7 @@ export default function Slider() {
             <span>시작하기</span>
           </button>
         </div>
-      </div>
-    </motion.div>
+      </SwiperSlide>
+    </Swiper>
   );
 }

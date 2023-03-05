@@ -49,10 +49,12 @@ export default function UserName() {
             <input
               className={styles.input}
               type='text'
-              placeholder='Your Name'
               value={userName}
               onChange={handleUserName}
+              required={true}
             ></input>
+            <div className={styles.underline}></div>
+            <label className={styles.label}>Name</label>
             <button
               className={styles.button}
               onClick={() => {
@@ -61,7 +63,7 @@ export default function UserName() {
                   : alert("이름을 입력해주세요!");
               }}
             >
-              <span>Let's start</span>
+              <span>완료</span>
             </button>
           </div>
         </motion.div>

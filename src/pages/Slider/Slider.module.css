@@ -8,43 +8,13 @@
 }
 
 .slider .imgBx {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  padding: 100px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
-  transition-delay: 0s;
-  z-index: 1;
-  clip-path: circle(0px at center);
 }
 
-#slideTwo {
-  filter: blur(0.3rem);
-}
-
-#perfumeBottle {
-  position: relative;
-  top: 50px;
-  left: -180px;
-  z-index: 10;
-}
-
-#slideTwoContent {
-  position: relative;
-  right: 180px;
-  width: 1000px;
-}
-
-.slider input[type="radio"]:checked + .imgBx {
-  z-index: 10;
-  clip-path: circle(1000px at center);
-  transition-delay: 0.75s;
-}
 .slider .imgBx img {
   position: absolute;
   top: 0;
@@ -93,34 +63,21 @@
   color: #fff;
 }
 
-.slider input[type="radio"] {
+#lastSlide {
+  filter: blur(0.3rem);
+}
+
+#perfumeBottle {
   position: relative;
-  z-index: 1000;
-  margin: 5px;
-  margin-bottom: 40px;
-  outline: none;
-  cursor: pointer;
-  vertical-align: middle;
-  appearance: none;
-  border: max(2px, 0.1em) solid var(--color-black);
-  border-radius: 50%;
-  width: 1.25em;
-  height: 1.25em;
-  transition: border 0.2s ease-in-out;
+  top: 50px;
+  left: -180px;
+  z-index: 10;
 }
 
-.slider input[type="radio"]:checked {
-  border: 0.4em solid var(--color-radioBorder);
-}
-
-.slider input[type="radio"]:hover {
-  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
-  cursor: pointer;
-}
-
-.slider input[type="radio"]:focus-visible {
-  outline-offset: max(2px, 0.1em);
-  outline: max(2px, 0.1em) dotted tomato;
+#lastSlideContent {
+  position: relative;
+  right: 180px;
+  width: 1000px;
 }
 
 @media (max-width: 768px) {
@@ -141,7 +98,7 @@
   #perfumeBottle {
     display: none;
   }
-  #slideTwoContent {
+  #lastSlideContent {
     position: relative;
     right: 0;
   }
