@@ -55,7 +55,9 @@ export default function Card({ info }) {
             } else if (title === "유사 향수 추천") {
               return navigate("/brandName");
             } else {
-              return navigate("/login");
+              sessionStorage.getItem("accessToken")
+                ? navigate("/recommend")
+                : navigate("/login");
             }
           }}
         >

@@ -110,9 +110,15 @@
   border: none;
 }
 
+.button:hover span {
+  color: var(--color-white);
+}
+
 .button span {
   position: relative;
   z-index: 1;
+  color: gray;
+  transition: 0.5s;
 }
 
 @media (max-width: 768px) {

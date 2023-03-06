@@ -1,9 +1,11 @@
 import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 
 export default function OAuth2RedirectHandeler() {
+  const navigate = useNavigate();
   const KAKAO_CODE = new URL(window.location.href).searchParams.get("code");
 
   const onLoginSuccess = (res) => {
@@ -11,9 +13,11 @@ export default function OAuth2RedirectHandeler() {
     const accessToken = res.data.accessToken;
     const refreshToken = res.data.refreshToken;
     const id = res.data.id;
+    const nickname = res.data.nickname;
     sessionStorage.setItem("accessToken", accessToken);
     sessionStorage.setItem("refreshToken", refreshToken);
     sessionStorage.setItem("id", id);
+    sessionStorage.setItem("kakaoNickname", nickname);
     axios.defaults.headers.common["X-AUTH-TOKEN"] = accessToken;
   };
 
@@ -44,16 +48,18 @@ export default function OAuth2RedirectHandeler() {
     if (!KAKAO_CODE) return;
     const getKakaoToken = async () => {
       axios
-        .get(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/oauth/login?code=${KAKAO_CODE}`
-        )
+        .get(`/data/KakaoLoginUser.json`)
+        // ⬇️ Server Domain
+        // ${process.env.REACT_APP_SERVER_DOMAIN}/oauth/login?code=${KAKAO_CODE}
         .then((res) => {
+          console.log(res);
           onLoginSuccess(res);
+          navigate("/recommend", { state: res.data });
         })
         .catch(console.error);
     };
     getKakaoToken();
-  }, [KAKAO_CODE]);
+  }, [KAKAO_CODE, navigate]);
 
   return (
     <div className={styles.body}>

@@ -5,10 +5,28 @@
   width: 100%;
   padding: 12px 20px;
   z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   width: 130px;
+}
+
+.loginSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.loginSection button {
+  border: none;
+  background-color: tomato;
+  padding: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
