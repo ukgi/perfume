@@ -15,7 +15,7 @@ export default function BrandName() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://13.125.178.194:8080/perfume/find-by-brand`,
+        `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/find-by-brand`,
         {
           brandName: brand,
         }

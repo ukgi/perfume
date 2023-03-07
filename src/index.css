@@ -30,7 +30,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--color-bg);
+  background: center / cover no-repeat url("/public/assets/images/bg.png");
 }
 
 /* ⬇️ 웹 폰트 (눈누) */

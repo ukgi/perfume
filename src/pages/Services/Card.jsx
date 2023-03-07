@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Services.module.css";
 import { motion } from "framer-motion";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Card({ info }) {
   const item = {
@@ -61,7 +62,8 @@ export default function Card({ info }) {
             }
           }}
         >
-          시작하기
+          <span>Learn more</span>
+          <AiOutlineArrowRight />
         </button>
       </div>
     </motion.div>

@@ -24,7 +24,7 @@
   align-content: center;
   gap: 20px;
   min-height: 100vh;
-  background: var(--color-bg);
+  background: center / cover no-repeat url("/public/assets/images/bg.png");
 }
 
 .cardImg {

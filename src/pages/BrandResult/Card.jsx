@@ -1,16 +1,12 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./BrandResult.module.css";
+
 export default function Card({ item }) {
-  const readDetail = async () => {
-    try {
-      const response = await axios.get(
-        `http://13.125.178.194:8080/perfume/show-perfume/${item.id}`
-      );
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
+  const navigate = useNavigate();
+  const readDetail = () => {
+    navigate(`/result/${item.id}`);
   };
 
   return (

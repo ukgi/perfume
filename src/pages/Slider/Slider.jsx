@@ -21,12 +21,12 @@ export default function Slider() {
     <Swiper
       className={styles.slider}
       effect={"fade"}
-      navigation={true}
+      slidesPerView={1}
+      navigation
       pagination={{
         clickable: true,
         type: "progressbar",
       }}
-      modules={[EffectFade, Navigation, Pagination]}
     >
       <SwiperSlide className={styles.imgBx}>
         <video
