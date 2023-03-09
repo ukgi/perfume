@@ -8,6 +8,7 @@ export default function Login() {
       <h2 className={styles.title}>
         해당 서비스를 이용하기 위해선 간단한 로그인이 필요합니다
       </h2>
+      <img className={styles.logo} src='/assets/images/Logo/Logo2.png' alt='' />
       <a href={KAKAO_AUTH_URL}>
         <img src='/assets/images/kakaoLogo/kakaoLoginBtn.png' alt='kakaoLogo' />
       </a>

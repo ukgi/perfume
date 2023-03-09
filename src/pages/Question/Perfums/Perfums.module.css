@@ -12,6 +12,7 @@
   left: 50%;
   top: 100px;
   transform: translateX(-50%);
+  color: var(--color-white);
 }
 
 .cardSection {
@@ -97,5 +98,9 @@
   }
   .title {
     top: 140px;
+  }
+  .card {
+    -webkit-box-reflect: below 1px
+      linear-gradient(transparent, transparent, transparent, #0004);
   }
 }

@@ -21,17 +21,26 @@ export default function Services() {
     {
       title: "맞춤 향수 추천",
       dec: "여러 질문을 통해 당신이 원하는 향과 그 향에 맞는 향수를 추천해줍니다",
-      background: "#2196f3",
+      bannerBackground: "rgba(177, 176, 130, 0.7)",
+      contentBackground: "rgba(230, 229, 212, 0.7)",
+      textColor: "#9b7c39",
+      borderBottomColor: "rgba(170, 156, 125, 0.7)",
     },
     {
       title: "유사 향수 추천",
       dec: "기존에 사용하던 향수와 유사한, 또 다른 향수 브랜드 제품을 추천해줍니다",
-      background: "#e01e63",
+      bannerBackground: "rgba(95, 133, 163, 0.7)",
+      contentBackground: "rgba(127, 163, 190, 0.7)",
+      textColor: "#2e486b",
+      borderBottomColor: "rgba(83, 116, 141, 0.7)",
     },
     {
       title: "타인 향수 추천",
       dec: "소중한 사람에게 잘 어울릴 거 같은 향수를 지금 바로 만나보세요",
-      background: "#9dff8a",
+      bannerBackground: "rgba(255, 148, 77, 0.7)",
+      contentBackground: "rgba(250, 191, 152, 0.7)",
+      textColor: "#fa6501",
+      borderBottomColor: "rgba(248, 130, 52, 0.7)",
     },
   ];
   return (

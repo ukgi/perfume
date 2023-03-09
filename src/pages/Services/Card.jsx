@@ -5,47 +5,43 @@ import { motion } from "framer-motion";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Card({ info }) {
-  const item = {
-    hidden: {
-      opacity: 1,
-      y: 15,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.2,
-        duration: 1,
-        repeat: Infinity,
-        repeatType: "reverse",
-      },
-    },
-  };
-
   const [isHover, setIsHover] = useState(false);
   const handleMouseEnter = () => setIsHover(true);
   const handleMouseLeave = () => setIsHover(false);
 
   const navigate = useNavigate();
-  const { title, dec, background } = info;
+  const {
+    title,
+    dec,
+    bannerBackground,
+    contentBackground,
+    textColor,
+    borderBottomColor,
+  } = info;
   return (
     <motion.div
       className={styles.card}
-      variants={item}
       whileHover={{
         transition: { duration: 1.2 },
       }}
+      style={{ backgroundColor: contentBackground }}
     >
-      <div className={styles.sliderText} style={{ background }}>
+      <div
+        className={styles.sliderText}
+        style={{
+          backgroundColor: bannerBackground,
+          borderBottom: `20px solid ${borderBottomColor}`,
+        }}
+      >
         <h3 className={styles.sliderTextTitle}>{title}</h3>
       </div>
       <div className={styles.content}>
-        <p>{dec}</p>
+        <p style={{ color: textColor }}>{dec}</p>
         <button
           style={{
-            backgroundColor: isHover ? `${background}` : "inherit",
-            color: isHover ? "white" : "inherit",
-            borderColor: isHover ? "white" : "inherit",
+            backgroundColor: isHover ? `${bannerBackground}` : "inherit",
+            color: isHover ? "white" : textColor,
+            borderColor: isHover ? "white" : textColor,
           }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}

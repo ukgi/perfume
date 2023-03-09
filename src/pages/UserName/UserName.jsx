@@ -52,6 +52,7 @@ export default function UserName() {
               value={userName}
               onChange={handleUserName}
               required={true}
+              style={{ color: "white" }}
             ></input>
             <div className={styles.underline}></div>
             <label className={styles.label}>Name</label>

@@ -32,3 +32,20 @@ export const variants = {
     },
   },
 };
+
+// const item = {
+//   hidden: {
+//     opacity: 1,
+//     y: 15,
+//   },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       delay: 0.2,
+//       duration: 1,
+//       repeat: Infinity,
+//       repeatType: "reverse",
+//     },
+//   },
+// };

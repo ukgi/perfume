@@ -38,6 +38,7 @@ const perfums = [
     desc: "깨끗하고 순수한 소피",
     img: "/assets/images/perfumeImg/소피.jpg",
     backgroundColor: "#89a5ea",
+    transform: "translateY(30px)",
   },
   {
     title: "우디",
@@ -50,6 +51,7 @@ const perfums = [
     desc: "상큼하지만 우아한 시트러스",
     img: "/assets/images/perfumeImg/시트러스.jpg",
     backgroundColor: "#ff9900",
+    transform: "translateY(30px)",
   },
   {
     title: "바닐라",
@@ -63,5 +65,6 @@ const perfums = [
     img: "/assets/images/perfumeImg/프루티.jpg",
     alt: "#ff3d28",
     backgroundColor: "#ff6251",
+    transform: "translateY(30px)",
   },
 ];

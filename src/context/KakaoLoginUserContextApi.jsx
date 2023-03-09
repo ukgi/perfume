@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 export const KakaoLoginUserContext = createContext();
 
 export function KakaoLoginUserContextApiProvider({ children }) {
-  const [KakaoUser, setKakaoUser] = useState("");
+  const [KakaoUser, setKakaoUser] = useState();
 
   return (
     <KakaoLoginUserContext.Provider value={{ KakaoUser, setKakaoUser }}>

@@ -2,10 +2,66 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .button {
   z-index: 10000;
+}
+
+.userInfo {
+  padding-top: 150px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+
+.userImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.testContainer {
+  margin-top: 20px;
+  text-align: center;
+  width: 30%;
+  height: 200px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+}
+
+.testContainerTitle {
+  border-bottom: 1px solid black;
+  padding: 12px 0;
+}
+
+.testResultBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.testTakers {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.testTakersDesc {
+  color: rgb(53, 53, 53);
+}
+
+.button {
+  width: 20%;
+  padding: 12px 20px;
+  margin-top: 20px;
 }

@@ -78,7 +78,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "산뜻한",
         img: "/assets/images/mood/산뜻한.jpg",
-        desc: "기분 좋은 섬유 유연제를 사용한 것 같은 산뜻함",
+        desc: "이제 막 세탁한 옷감같은 산뜻함",
       },
       {
         mood: "세련된",

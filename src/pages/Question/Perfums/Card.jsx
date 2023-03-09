@@ -4,7 +4,7 @@ import { useUserContext } from "../../../context/UserContextApi";
 import styles from "./Perfums.module.css";
 
 export default function Card({ info }) {
-  const { title, desc, img, backgroundColor } = info;
+  const { title, desc, img, backgroundColor, transform } = info;
   const navigate = useNavigate();
 
   const { user, setUser } = useUserContext();
