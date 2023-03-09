@@ -15,7 +15,7 @@ export default function Header() {
       <a href='/'>
         <img
           className={styles.logo}
-          src='/assets/images/Logo/Logo.png'
+          src='/assets/images/Logo/Logo2.png'
           alt=''
         />
       </a>

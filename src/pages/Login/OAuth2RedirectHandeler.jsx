@@ -61,5 +61,5 @@ export const onLoginSuccess = (res) => {
   sessionStorage.setItem("refreshToken", refreshToken);
   sessionStorage.setItem("id", id);
   sessionStorage.setItem("kakaoNickname", nickname);
-  axios.defaults.headers.common["X-AUTH-TOKEN"] = accessToken;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
 };
