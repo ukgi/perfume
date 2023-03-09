@@ -29,9 +29,8 @@ export default function OAuth2RedirectHandeler() {
 export const handleKakaoOauth = () => {
   axios
     .post(`${process.env.REACT_APP_SERVER_DOMAIN}/member/response`)
-    .then((res) => console.log(res))
+    .then((res) => console.log("api요청이 성공적으로 진행됩니다👍", res))
     .catch((err) => {
-      console.log("err.response", err.response);
       if (err.response && err.response.status === 401) {
         console.log("401 error");
         onSilentRefresh();
