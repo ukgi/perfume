@@ -7,7 +7,7 @@ import { useUserContext } from "../../context/UserContextApi";
 export default function UserName() {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { kakaoNickname, id } = state;
+  const { kakaoNickname } = state;
 
   const { userName, setUserName } = useUserContext();
   const handleUserName = (e) => setUserName(e.target.value);
