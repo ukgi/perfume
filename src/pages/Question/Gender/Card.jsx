@@ -8,12 +8,15 @@ export default function Card({ gender }) {
   const navigate = useNavigate();
 
   const { user, setUser } = useUserContext();
+
   const storeUserAnswer = useCallback(async () => {
     window.sessionStorage.setItem("userAnswer", JSON.stringify(user));
   }, [user]);
+
   useEffect(() => {
     storeUserAnswer();
   }, [storeUserAnswer]);
+
   const handleGender = () =>
     setUser((prev) => ({ ...prev, genderAnswer: gender }));
 

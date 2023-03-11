@@ -1,30 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
-import { useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
-// import { useCallback } from "react";
-// import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContextApi";
 
 export default function UserName() {
   const navigate = useNavigate();
-
-  // const [userName, setUserName] = useState(
-  //   () => JSON.parse(window.sessionStorage.getItem("userName")) || ""
-  // );
-  // const storeUserName = useCallback(async () => {
-  //   window.sessionStorage.setItem("userName", JSON.stringify(userName));
-  // }, [userName]);
-  // useEffect(() => {
-  //   storeUserName();
-  // }, [storeUserName]);
+  const { state } = useLocation();
+  const { kakaoNickname, id } = state;
 
   const { userName, setUserName } = useUserContext();
   const handleUserName = (e) => setUserName(e.target.value);
 
   return (
     <div className={styles.container}>
+      {state && (
+        <h2 className={styles.recommenderTitle}>
+          {kakaoNickname}에게 향기를 선물할 당신의 이름을 입력하세요
+        </h2>
+      )}
       <motion.div
         className={styles.card}
         initial={{ opacity: 0, scale: 0.5 }}

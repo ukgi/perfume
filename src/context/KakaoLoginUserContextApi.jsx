@@ -1,9 +1,22 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 export const KakaoLoginUserContext = createContext();
 
 export function KakaoLoginUserContextApiProvider({ children }) {
-  const [KakaoUser, setKakaoUser] = useState();
+  const [KakaoUser, setKakaoUser] = useState(
+    () =>
+      JSON.parse(window.sessionStorage.getItem("userAnswer")) || {
+        genderAnswer: "",
+        moodAnswer: "",
+        scentAnswer: "",
+        seasonAnswer: "",
+        styleAnswer: "",
+      }
+  );
+
+  useEffect(() => {
+    window.sessionStorage.setItem("userAnswer", JSON.stringify(KakaoUser));
+  }, [KakaoUser]);
 
   return (
     <KakaoLoginUserContext.Provider value={{ KakaoUser, setKakaoUser }}>
