@@ -7,17 +7,18 @@ import { useUserContext } from "../../context/UserContextApi";
 export default function UserName() {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { kakaoNickname } = state;
 
   const { userName, setUserName } = useUserContext();
   const handleUserName = (e) => setUserName(e.target.value);
 
   return (
     <div className={styles.container}>
-      {state && (
+      {state ? (
         <h2 className={styles.recommenderTitle}>
-          {kakaoNickname}에게 향기를 선물할 당신의 이름을 입력하세요
+          {state.kakaoNickname}에게 향기를 선물할 당신의 이름을 입력하세요
         </h2>
+      ) : (
+        <p></p>
       )}
       <motion.div
         className={styles.card}
