@@ -23,7 +23,7 @@ export default function Gender() {
       <div className={styles.cardSection}>
         {["남자", "여자"].map((gender, index) => (
           <motion.div key={index} variants={item}>
-            <Card gender={gender} setUser={setUser} />
+            <Card gender={gender} setUser={setUser} state={state} />
           </motion.div>
         ))}
       </div>

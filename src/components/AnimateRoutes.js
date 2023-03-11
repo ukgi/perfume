@@ -20,6 +20,7 @@ import BrandName from "../pages/BrandName/BrandName";
 import BrandResult from "../pages/BrandResult/BrandResult";
 import Recommend from "../pages/Recommend/Recommend";
 import Start from "../pages/Recommend/Start";
+import Comment from "../pages/Comment/Comment";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -53,6 +54,7 @@ export default function AnimateRoutes() {
             exact
             element={<Start />}
           />
+          <Route path='/comment' exact element={<Comment />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

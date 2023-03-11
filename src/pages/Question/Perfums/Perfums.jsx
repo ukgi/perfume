@@ -3,8 +3,12 @@ import styles from "./Perfums.module.css";
 import Card from "./Card";
 import { motion } from "framer-motion";
 import { container, item } from "../../../Animation/Variants";
-
+import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContextApi";
+import { useLocation } from "react-router-dom";
 export default function Fashion() {
+  const { isRecommend } = useKakaoLoginUserContext();
+  const { state } = useLocation();
+
   return (
     <motion.div
       className={styles.container}
@@ -12,9 +16,15 @@ export default function Fashion() {
       initial='hidden'
       animate='visible'
     >
-      <motion.h2 className={styles.title} variants={container}>
-        원하시는 향기를 고르세요
-      </motion.h2>
+      {isRecommend ? (
+        <motion.h2 className={styles.title} variants={container}>
+          {state}에게 어울리는 향기를 고르세요
+        </motion.h2>
+      ) : (
+        <motion.h2 className={styles.title} variants={container}>
+          원하시는 향기를 고르세요
+        </motion.h2>
+      )}
       <div className={styles.cardSection}>
         {perfums.map((card, index) => (
           <motion.div key={index} variants={item}>

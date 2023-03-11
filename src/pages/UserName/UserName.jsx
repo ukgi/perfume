@@ -3,17 +3,25 @@ import { motion } from "framer-motion";
 import styles from "./UserName.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContextApi";
+import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
 
 export default function UserName() {
   const navigate = useNavigate();
   const { state } = useLocation();
 
   const { userName, setUserName } = useUserContext();
+  const { setRecommend, isRecommend } = useKakaoLoginUserContext();
+
   const handleUserName = (e) => setUserName(e.target.value);
+
+  const handleRecommend = () => {
+    setRecommend((prev) => ({ ...prev, recommender: userName }));
+    navigate("/gender", { state: state.kakaoNickname });
+  };
 
   return (
     <div className={styles.container}>
-      {state ? (
+      {isRecommend ? (
         <h2 className={styles.recommenderTitle}>
           {state.kakaoNickname}에게 향기를 선물할 당신의 이름을 입력하세요
         </h2>
@@ -54,7 +62,9 @@ export default function UserName() {
             <button
               className={styles.button}
               onClick={() => {
-                userName
+                isRecommend
+                  ? handleRecommend()
+                  : userName
                   ? navigate(`/gender`, { state: userName })
                   : alert("이름을 입력해주세요!");
               }}

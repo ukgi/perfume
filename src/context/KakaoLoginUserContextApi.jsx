@@ -3,23 +3,30 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 export const KakaoLoginUserContext = createContext();
 
 export function KakaoLoginUserContextApiProvider({ children }) {
-  const [KakaoUser, setKakaoUser] = useState(
+  const [recommend, setRecommend] = useState(
     () =>
-      JSON.parse(window.sessionStorage.getItem("userAnswer")) || {
+      JSON.parse(window.sessionStorage.getItem("recommendData")) || {
         genderAnswer: "",
         moodAnswer: "",
         scentAnswer: "",
         seasonAnswer: "",
         styleAnswer: "",
+        id: "",
+        recommender: "",
+        comment: "",
       }
   );
 
+  const [isRecommend, setIsRecommend] = useState(false);
+
   useEffect(() => {
-    window.sessionStorage.setItem("userAnswer", JSON.stringify(KakaoUser));
-  }, [KakaoUser]);
+    window.sessionStorage.setItem("recommendData", JSON.stringify(recommend));
+  }, [recommend]);
 
   return (
-    <KakaoLoginUserContext.Provider value={{ KakaoUser, setKakaoUser }}>
+    <KakaoLoginUserContext.Provider
+      value={{ recommend, setRecommend, isRecommend, setIsRecommend }}
+    >
       {children}
     </KakaoLoginUserContext.Provider>
   );

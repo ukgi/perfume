@@ -1,31 +1,35 @@
-import React, { useCallback, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Season.module.css";
 import { useUserContext } from "../../../context/UserContextApi";
+import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContextApi";
 
 export default function Card({ season }) {
   const { seasonTitle, img } = season;
   const navigate = useNavigate();
 
-  const { user, setUser } = useUserContext();
-  const storeUserAnswer = useCallback(async () => {
-    window.sessionStorage.setItem("userAnswer", JSON.stringify(user));
-  }, [user]);
-  useEffect(() => {
-    storeUserAnswer();
-  }, [storeUserAnswer]);
-  const handleSeason = () =>
+  const { setUser } = useUserContext();
+  const { setRecommend, isRecommend } = useKakaoLoginUserContext();
+  const { state } = useLocation();
+
+  const handleSeason = () => {
     setUser((prev) => ({
       ...prev,
       seasonAnswer: seasonTitle,
     }));
+    navigate("/styles");
+  };
+
+  const handleRecommend = () => {
+    setRecommend((prev) => ({ ...prev, seasonAnswer: seasonTitle }));
+    navigate("/styles", { state });
+  };
 
   return (
     <div
       className={styles.card}
       onClick={() => {
-        handleSeason();
-        navigate("/styles");
+        isRecommend ? handleRecommend() : handleSeason();
       }}
     >
       <div className={styles.shape}>
