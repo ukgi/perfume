@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { container, item } from "../../../Animation/Variants";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContextApi";
+import { useLocation } from "react-router-dom";
 
 export default function Styles() {
   const [gender, setGender] = useState(
@@ -26,6 +28,8 @@ export default function Styles() {
           : "/assets/images/styles/여자포멀.png",
     },
   ];
+  const { isRecommend } = useKakaoLoginUserContext();
+  const { state } = useLocation();
 
   useEffect(() => {
     setGender(
@@ -40,9 +44,15 @@ export default function Styles() {
       initial='hidden'
       animate='visible'
     >
-      <motion.h1 className={styles.title} variants={item}>
-        향수와 함께하실 스타일을 골라주세요
-      </motion.h1>
+      {isRecommend ? (
+        <motion.h1 className={styles.title} variants={item}>
+          {state}에게 어울리거나 자주 애용하는 스타일을 골라주세요
+        </motion.h1>
+      ) : (
+        <motion.h1 className={styles.title} variants={item}>
+          향수와 함께하실 스타일을 골라주세요
+        </motion.h1>
+      )}
       <div className={styles.container}>
         {stylesCategory.map((style, index) => {
           return (

@@ -17,11 +17,12 @@ export function KakaoLoginUserContextApiProvider({ children }) {
       }
   );
 
-  const [isRecommend, setIsRecommend] = useState(false);
+  const [isRecommend, setIsRecommend] = useState();
 
   useEffect(() => {
     window.sessionStorage.setItem("recommendData", JSON.stringify(recommend));
-  }, [recommend]);
+    window.sessionStorage.setItem("isRecommend", isRecommend);
+  }, [recommend, isRecommend]);
 
   return (
     <KakaoLoginUserContext.Provider

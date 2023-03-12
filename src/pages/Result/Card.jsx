@@ -13,8 +13,8 @@ export default function Card({ data }) {
       <h2 className={styles.swiperSlidetitle}>{data.perfumeName}</h2>
       <img
         className={styles.swiperSlideImg}
-        src={data.perfumeImageUrl}
-        alt=''
+        src={data.perfume.perfumeImageUrl}
+        alt='perfumeImage'
       />
     </div>
   );

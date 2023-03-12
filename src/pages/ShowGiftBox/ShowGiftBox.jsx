@@ -42,8 +42,8 @@ export default function ShowGiftBox() {
   }, [navigate]);
 
   useEffect(() => {
-    submitUserAnswer();
-    // getMockData();
+    // submitUserAnswer();
+    getMockData();
   }, [getMockData, submitUserAnswer]);
 
   return (

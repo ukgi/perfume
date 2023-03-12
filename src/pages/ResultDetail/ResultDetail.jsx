@@ -8,13 +8,12 @@ import styles from "./ResultDetail.module.css";
 export default function ResultDetail() {
   const { perfumeId } = useParams();
   const [data, setData] = useState();
+  // `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-perfume/${perfumeId}`
 
   useEffect(() => {
     const getPerfumeDetailData = async () => {
       await axios
-        .get(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-perfume/${perfumeId}`
-        )
+        .get("/data/perfumeDetail.json")
         .then((data) => {
           console.log(data.data);
           return setData(data.data);
