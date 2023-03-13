@@ -23,6 +23,7 @@ import Start from "../pages/Recommend/Start";
 import Comment from "../pages/Comment/Comment";
 import Success from "../pages/Success/Success";
 import RecommendDetail from "../pages/DetailRecommend/RecommendDetail";
+import DataRecommender from "../pages/DetailRecommend/DataRecommender";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -60,6 +61,11 @@ export default function AnimateRoutes() {
           <Route path='/comment' exact element={<Comment />} />
           <Route path='/success' exact element={<Success />} />
           <Route path='/recommendDetail' exact element={<RecommendDetail />} />
+          <Route
+            path='/recommendDetail/:recommendId'
+            exact
+            element={<DataRecommender />}
+          />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

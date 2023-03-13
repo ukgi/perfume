@@ -7,7 +7,6 @@ import ItemRecommender from "./ItemRecommender";
 
 export default function RecommendDetail() {
   const { state } = useLocation();
-  console.log(state);
   const [recommenders, setRecommenders] = useState([]);
 
   useEffect(() => {
