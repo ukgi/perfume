@@ -20,7 +20,7 @@ export default function UserName() {
 
   document.onkeydown = (e) => {
     /* F5, Ctrl+r, Ctrl+F5 */
-    if (e.keyCode == 116 || (e.ctrlKey == true && e.keyCode == 82)) {
+    if (e.keyCode === 116 || (e.ctrlKey === true && e.keyCode === 82)) {
       e.cancelBubble = true;
       e.returnValue = false;
       navigate(`/recommend/${state.kakaoNickname}/${state.id}`);
