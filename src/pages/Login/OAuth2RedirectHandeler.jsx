@@ -14,7 +14,6 @@ export default function OAuth2RedirectHandeler() {
         .get("/data/KakaoLoginUser.json")
         //   `${process.env.REACT_APP_SERVER_DOMAIN}/oauth/login?code=${KAKAO_CODE}`
         .then((res) => {
-          console.log(res);
           onLoginSuccess(res);
           navigate("/recommend");
         })
@@ -55,9 +54,11 @@ export const onLoginSuccess = (res) => {
   const refreshToken = res.data.refreshToken;
   const id = res.data.id;
   const nickname = res.data.nickname;
+  const thumbnailImage = res.data.thumbnailImage;
   sessionStorage.setItem("accessToken", accessToken);
   sessionStorage.setItem("refreshToken", refreshToken);
   sessionStorage.setItem("id", id);
   sessionStorage.setItem("kakaoNickname", nickname);
+  sessionStorage.setItem("thumbnailImage", thumbnailImage);
   axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
 };

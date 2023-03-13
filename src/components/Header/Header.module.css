@@ -15,6 +15,7 @@
 }
 
 .loginSection {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -30,7 +31,27 @@
 }
 
 .bell {
-  font-size: 30px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.recommenders {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  font-weight: 600;
+  right: 85px;
+  top: -10px;
+}
+
+.loginProfileImage {
+  width: 50px;
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {

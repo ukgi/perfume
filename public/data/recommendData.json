@@ -17,7 +17,7 @@
         "email": "46@na6v6e22r.1co",
         "thumbnailImage": "Dasdan.avo"
       },
-      "recommender": "병주기",
+      "recommender": "병주",
       "comment": "너무멋져용>_<"
     },
     {
@@ -36,7 +36,83 @@
         "email": "46@na6v6e22r.1co",
         "thumbnailImage": "Dasdan.avo"
       },
-      "recommender": "병주기",
+      "recommender": "찬욱",
+      "comment": "너무멋져용>_<"
+    },
+    {
+      "id": 3,
+      "perfume": {
+        "id": 14,
+        "perfumeName": "구찌 엔비미",
+        "brandName": "구찌",
+        "perfumeFeature": "리치와 파인애플이 상큼달콤하게 섞인 사랑스럽고 경쾌한 꽃향기",
+        "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202108/64f649010b45d6e732913ef6c10c45a4.jpg"
+      },
+      "member": {
+        "id": 2,
+        "memberId": 1234235656,
+        "nickname": "준석",
+        "email": "46@na6v6e22r.1co",
+        "thumbnailImage": "Dasdan.avo"
+      },
+      "recommender": "건희",
+      "comment": "너무멋져용>_<"
+    },
+    {
+      "id": 5,
+      "perfume": {
+        "id": 14,
+        "perfumeName": "구찌 엔비미",
+        "brandName": "구찌",
+        "perfumeFeature": "리치와 파인애플이 상큼달콤하게 섞인 사랑스럽고 경쾌한 꽃향기",
+        "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202108/64f649010b45d6e732913ef6c10c45a4.jpg"
+      },
+      "member": {
+        "id": 2,
+        "memberId": 1234235656,
+        "nickname": "준석",
+        "email": "46@na6v6e22r.1co",
+        "thumbnailImage": "Dasdan.avo"
+      },
+      "recommender": "연지",
+      "comment": "너무멋져용>_<"
+    },
+    {
+      "id": 7,
+      "perfume": {
+        "id": 14,
+        "perfumeName": "구찌 엔비미",
+        "brandName": "구찌",
+        "perfumeFeature": "리치와 파인애플이 상큼달콤하게 섞인 사랑스럽고 경쾌한 꽃향기",
+        "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202108/64f649010b45d6e732913ef6c10c45a4.jpg"
+      },
+      "member": {
+        "id": 2,
+        "memberId": 1234235656,
+        "nickname": "준석",
+        "email": "46@na6v6e22r.1co",
+        "thumbnailImage": "Dasdan.avo"
+      },
+      "recommender": "곤지",
+      "comment": "너무멋져용>_<"
+    },
+    {
+      "id": 10,
+      "perfume": {
+        "id": 14,
+        "perfumeName": "구찌 엔비미",
+        "brandName": "구찌",
+        "perfumeFeature": "리치와 파인애플이 상큼달콤하게 섞인 사랑스럽고 경쾌한 꽃향기",
+        "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202108/64f649010b45d6e732913ef6c10c45a4.jpg"
+      },
+      "member": {
+        "id": 2,
+        "memberId": 1234235656,
+        "nickname": "준석",
+        "email": "46@na6v6e22r.1co",
+        "thumbnailImage": "Dasdan.avo"
+      },
+      "recommender": "현지",
       "comment": "너무멋져용>_<"
     }
   ]

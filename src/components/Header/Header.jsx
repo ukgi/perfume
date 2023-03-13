@@ -16,6 +16,10 @@ export default function Header() {
     navigate("/");
   };
 
+  const handleRecommendPage = () => {
+    navigate("recommend");
+  };
+
   return (
     <header className={styles.header}>
       {isRecommend ? (
@@ -31,8 +35,18 @@ export default function Header() {
       )}
       {sessionStorage.getItem("kakaoNickname") ? (
         <div className={styles.loginSection}>
-          <h3>{sessionStorage.getItem("kakaoNickname")}님 환영합니다</h3>
-          <BsFillBellFill className={styles.bell} />
+          <img
+            className={styles.loginProfileImage}
+            src={sessionStorage.getItem("thumbnailImage")}
+            alt=''
+          />
+          <span className={styles.recommenders}>
+            {sessionStorage.getItem("recommenders")}
+          </span>
+          <BsFillBellFill
+            onClick={handleRecommendPage}
+            className={styles.bell}
+          />
           <button onClick={handleLogout}>로그아웃</button>
         </div>
       ) : (
