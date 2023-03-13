@@ -1,4 +1,6 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { useRef } from "react";
 import styles from "./Recommend.module.css";
 
@@ -6,22 +8,28 @@ export default function Recommend() {
   const id = sessionStorage.getItem("id");
   const nickName = sessionStorage.getItem("kakaoNickname");
   const copyLinkRef = useRef();
+  const [recommendData, setRecommendData] = useState([]);
+
+  useEffect(() => {
+    const handleRecommendData = () => {
+      axios
+        .get("data/recommendData.json") //
+        .then((res) => setRecommendData(res.data.recommendationList));
+    };
+    handleRecommendData();
+  }, []);
 
   const copyTextUrl = () => {
-    // Browser compatibility 알림
     if (!document.queryCommandSupported("copy")) {
       alert("No Support");
       return;
     }
-
-    // 선택 후 복사
     copyLinkRef.current.focus();
     copyLinkRef.current.select();
     document.execCommand("copy");
-
-    // 복사 완료 알림
     alert("링크를 복사했습니다.");
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.userInfo}>
@@ -32,7 +40,7 @@ export default function Recommend() {
       <div className={styles.testContainer}>
         <h3 className={styles.testContainerTitle}>실시간 테스트 현황</h3>
         <div className={styles.testResultBox}>
-          <p className={styles.testTakers}>3명</p>
+          <p className={styles.testTakers}>{recommendData.length}명</p>
           <p className={styles.testTakersDesc}>응시자 수</p>
         </div>
       </div>

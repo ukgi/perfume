@@ -17,7 +17,7 @@ export function KakaoLoginUserContextApiProvider({ children }) {
       }
   );
 
-  const [isRecommend, setIsRecommend] = useState();
+  const [isRecommend, setIsRecommend] = useState(false);
 
   useEffect(() => {
     window.sessionStorage.setItem("recommendData", JSON.stringify(recommend));

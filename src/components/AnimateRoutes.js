@@ -24,6 +24,7 @@ import Comment from "../pages/Comment/Comment";
 
 export default function AnimateRoutes() {
   const location = useLocation();
+
   return (
     <UserContextApiProvider>
       <AnimatePresence>

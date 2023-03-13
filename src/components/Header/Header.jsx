@@ -8,9 +8,11 @@ export default function Header() {
   const navigate = useNavigate();
   const { isRecommend } = useKakaoLoginUserContext();
 
-  //⬇️ 수정 필요 !!
   const handleLogout = () => {
-    sessionStorage.clear();
+    sessionStorage.removeItem("accessToken");
+    sessionStorage.removeItem("refreshToken");
+    sessionStorage.removeItem("id");
+    sessionStorage.removeItem("kakaoNickname");
     navigate("/");
   };
 

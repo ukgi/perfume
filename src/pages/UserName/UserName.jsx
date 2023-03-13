@@ -8,7 +8,6 @@ import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi
 export default function UserName() {
   const navigate = useNavigate();
   const { state } = useLocation();
-
   const { userName, setUserName } = useUserContext();
   const { setRecommend, isRecommend } = useKakaoLoginUserContext();
 
@@ -17,6 +16,16 @@ export default function UserName() {
   const handleRecommend = () => {
     setRecommend((prev) => ({ ...prev, recommender: userName }));
     navigate("/gender", { state: state.kakaoNickname });
+  };
+
+  document.onkeydown = (e) => {
+    /* F5, Ctrl+r, Ctrl+F5 */
+    if (e.keyCode == 116 || (e.ctrlKey == true && e.keyCode == 82)) {
+      e.cancelBubble = true;
+      e.returnValue = false;
+      navigate(`/recommend/${state.kakaoNickname}/${state.id}`);
+      return false;
+    }
   };
 
   return (

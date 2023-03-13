@@ -1,0 +1,43 @@
+{
+  "id": 2,
+  "recommendationList": [
+    {
+      "id": 2,
+      "perfume": {
+        "id": 14,
+        "perfumeName": "구찌 엔비미",
+        "brandName": "구찌",
+        "perfumeFeature": "리치와 파인애플이 상큼달콤하게 섞인 사랑스럽고 경쾌한 꽃향기",
+        "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202108/64f649010b45d6e732913ef6c10c45a4.jpg"
+      },
+      "member": {
+        "id": 2,
+        "memberId": 1234235656,
+        "nickname": "준석",
+        "email": "46@na6v6e22r.1co",
+        "thumbnailImage": "Dasdan.avo"
+      },
+      "recommender": "병주기",
+      "comment": "너무멋져용>_<"
+    },
+    {
+      "id": 4,
+      "perfume": {
+        "id": 52,
+        "perfumeName": "데렉램 레인데이",
+        "brandName": "데렉램",
+        "perfumeFeature": "비온 뒤 솔잎이 덕지덕지 붙은 나무판자를 찌걱찌걱 밟을 때의 분위기",
+        "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202301/f8859b4a0b4530a75857a54b8a3e7440.jpg"
+      },
+      "member": {
+        "id": 2,
+        "memberId": 1234235656,
+        "nickname": "준석",
+        "email": "46@na6v6e22r.1co",
+        "thumbnailImage": "Dasdan.avo"
+      },
+      "recommender": "병주기",
+      "comment": "너무멋져용>_<"
+    }
+  ]
+}
