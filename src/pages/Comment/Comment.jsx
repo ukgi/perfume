@@ -30,10 +30,16 @@ export default function Comment() {
 
   return (
     <div className={styles.body}>
-      <h2>{state}에게 추천 이유를 적어주세요</h2>
-      <div>
-        <input type='textarea' onChange={handleInput} value={comment} />
+      <h2 className={styles.title}>{state}에게 추천 이유를 적어주세요</h2>
+      <div className={styles.commentSection}>
+        <textarea
+          className={styles.textarea}
+          type='textarea'
+          onChange={handleInput}
+          value={comment}
+        />
         <button
+          className={styles.btn}
           onClick={() => {
             handleRecommend();
             postRecommendData();

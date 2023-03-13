@@ -23,16 +23,27 @@
 
 .loginSection button {
   border: none;
-  background-color: tomato;
+  background-color: gray;
   padding: 12px;
   font-weight: 700;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.loginSection button:hover {
+  color: var(--color-white);
+  background-color: tomato;
 }
 
 .bell {
   font-size: 40px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.bell:hover {
+  color: tomato;
 }
 
 .recommenders {

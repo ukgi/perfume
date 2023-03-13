@@ -4,8 +4,13 @@ import styles from "./Season.module.css";
 import { motion } from "framer-motion";
 import Card from "./Card";
 import { container, item } from "../../../Animation/Variants";
+import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContextApi";
+import { useLocation } from "react-router-dom";
 
 export default function Season() {
+  const { isRecommend } = useKakaoLoginUserContext();
+  const { state } = useLocation();
+
   return (
     <motion.div
       className={styles.container}
@@ -13,9 +18,15 @@ export default function Season() {
       initial='hidden'
       animate='visible'
     >
-      <motion.h2 className={styles.title} variants={item}>
-        향수를 사용하실 계절을 골라주세요
-      </motion.h2>
+      {isRecommend ? (
+        <motion.h2 className={styles.title} variants={item}>
+          {state}님의 생일은 언제인가요?
+        </motion.h2>
+      ) : (
+        <motion.h2 className={styles.title} variants={item}>
+          향수를 사용하실 계절을 골라주세요
+        </motion.h2>
+      )}
       <div className={styles.cardSection}>
         {seasons.map((season, index) => (
           <motion.div key={index} variants={item}>
