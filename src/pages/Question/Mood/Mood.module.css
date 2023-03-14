@@ -18,6 +18,10 @@
   color: var(--color-white);
 }
 
+.cardBox {
+  padding-bottom: 50px;
+}
+
 .card {
   position: relative;
   width: 200px;

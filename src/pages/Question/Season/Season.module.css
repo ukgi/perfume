@@ -18,14 +18,14 @@
 
 .container .cardSection {
   display: flex;
-  transform: translateY(50px);
+  transform: translateY(100px);
 }
 
 .container .cardSection .card {
   margin: 50px 20px 70px;
   position: relative;
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   cursor: pointer;
 }
 

@@ -13,6 +13,8 @@ export default function Header() {
     sessionStorage.removeItem("refreshToken");
     sessionStorage.removeItem("id");
     sessionStorage.removeItem("kakaoNickname");
+    sessionStorage.removeItem("recommenders");
+    sessionStorage.removeItem("thumbnailImage");
     navigate("/");
   };
 

@@ -35,7 +35,7 @@ export default function Mood() {
       )}
       {mood.map((moodInfo, index) => {
         return (
-          <motion.div key={index} variants={item}>
+          <motion.div className={styles.cardBox} key={index} variants={item}>
             <Card info={moodInfo} />
           </motion.div>
         );

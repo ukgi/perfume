@@ -44,17 +44,19 @@ export default function Services() {
     },
   ];
   return (
-    <motion.div
-      className={styles.container}
-      variants={container}
-      initial='hidden'
-      animate='visible'
-    >
-      {servicesInfo.map((info, index) => (
-        <div key={index}>
-          <Card info={info} />
-        </div>
-      ))}
-    </motion.div>
+    <div className={styles.body}>
+      <motion.div
+        className={styles.container}
+        variants={container}
+        initial='hidden'
+        animate='visible'
+      >
+        {servicesInfo.map((info, index) => (
+          <div key={index}>
+            <Card info={info} />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 }
