@@ -1,12 +1,12 @@
 {
-  "scentRecommend": "당신은 달콤한 과일같은 향기와 잘 어울릴 것 같아요! 이런 향수를 쓰면 지나간 사람들이 한번씩 뒤돌아볼 것 같아요 :)",
-  "moodRecommend": "시크한분위기를 연출해보는 것은 어떠신가요? 분명 당신에게 잘 어울릴 거예요 :)",
+  "scentRecommend": "당신은 오렌지나 자몽처럼 상큼한 향을 좋아하시는군요! 신선한 향은 당신을 더욱 매력적으로 보이게 할 거예요.",
+  "moodRecommend": "상큼 발랄한 매력의 소유자이시군요. 이 향수와 함께 순정만화의 주인공처럼 상큼한 분위기를 연출해 보세요. 묵직하고 분위기있어야 할 때보다 가볍고 편하게 있을 때 사용해보세요.",
   "seasonRecommend": "어느 계절에 써도 괜찮은 향수에요! 사계절 내내 당신의 매력을 퍼뜨려봐요 :)",
   "perfume": {
-    "id": 314,
-    "perfumeName": "에트로 라자스탄",
-    "brandName": "에트로",
-    "perfumeFeature": "자유를 찾아 유랑하는 집시보헤미안 스타일의 묵직한 앰버와 미모사 그리고 머스크의 폭닥한 향기",
-    "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202206/989d152fd78e144ce0404c47503e98d6.jpg"
+    "id": 231,
+    "perfumeName": "세르주루텐 뉘드셀로판",
+    "brandName": "세르주루텐",
+    "perfumeFeature": "세르주루텐 베스트셀러 샴푸 향기처럼 은은한 오스만투스가 마음을 홀리게 하는 상큼함",
+    "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202108/33c00f401c5c22088841dc47480ab73c.jpg"
   }
 }

@@ -1,6 +1,7 @@
 .body {
   position: relative;
   text-align: center;
+  background-color: var(--color-white);
 }
 .title {
   position: absolute;
@@ -22,6 +23,6 @@
 }
 
 .swiperSlideImg {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
 }

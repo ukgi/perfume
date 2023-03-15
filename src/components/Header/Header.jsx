@@ -6,7 +6,11 @@ import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi
 
 export default function Header() {
   const navigate = useNavigate();
+
   const { isRecommend } = useKakaoLoginUserContext();
+
+  const url = new URL(window.location.href).pathname;
+  console.log("url", url);
 
   const handleLogout = () => {
     sessionStorage.removeItem("accessToken");
@@ -28,11 +32,20 @@ export default function Header() {
         <span></span>
       ) : (
         <a href='/'>
-          <img
-            className={styles.logo}
-            src='/assets/images/Logo/Logo2.png'
-            alt=''
-          />
+          {url === "/result" ? (
+            <img
+              className={styles.logo}
+              src='/assets/images/Logo/Logo.png'
+              alt=''
+              style={{ width: "120px" }}
+            />
+          ) : (
+            <img
+              className={styles.logo}
+              src='/assets/images/Logo/Logo2.png'
+              alt=''
+            />
+          )}
         </a>
       )}
       {sessionStorage.getItem("kakaoNickname") ? (

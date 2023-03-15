@@ -2,12 +2,13 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./ResultDetail.module.css";
 
 export default function ResultDetail() {
   const { perfumeId } = useParams();
   const [data, setData] = useState();
+  const navigate = useNavigate();
   // `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-perfume/${perfumeId}`
 
   useEffect(() => {
@@ -48,16 +49,26 @@ export default function ResultDetail() {
             </div>
             <img
               className={styles.sectionTwoImg}
-              src='/assets/images/Appreciation.svg'
+              src={`/assets/images/resultDetail/${
+                JSON.parse(sessionStorage.getItem("userAnswer")).moodAnswer
+              }.png`}
               alt=''
+              style={{ width: "500px" }}
             />
           </div>
           <div className={styles.sectionThree}>
-            <img
-              className={styles.sectionThreeImg}
-              src='/assets/images/InLove.svg'
-              alt=''
-            />
+            <div className={styles.bubbles}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <div className={styles.sectionThreeText}>
               <h3 className={styles.sectionThreeTitle}>
                 이런 효과를 줄 수 있어요
@@ -75,12 +86,13 @@ export default function ResultDetail() {
               <span className={styles.sectionFourDesc}>
                 <p>{data.seasonRecommend}</p>
               </span>
+              <button
+                className={styles.returnRootBtn}
+                onClick={() => navigate("/services")}
+              >
+                처음으로 돌아가기
+              </button>
             </div>
-            <img
-              className={styles.sectionFourImg}
-              src='/assets/images/Fall.svg'
-              alt=''
-            />
           </div>
         </div>
       )}
