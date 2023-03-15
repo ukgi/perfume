@@ -11,15 +11,11 @@ export default function BrandName() {
 
   const handleBrand = (e) => setBrand(e.target.value);
 
+  // ${process.env.REACT_APP_SERVER_DOMAIN}/perfume/find-by-brand
   const readPerfumeData = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/find-by-brand`,
-        {
-          brandName: brand,
-        }
-      );
+      const response = await axios.get(`/data/perfumeBrand.json`);
       console.log(response);
       navigate(`/brandName/${brand}`, { state: response.data });
     } catch (error) {
