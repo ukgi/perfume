@@ -50,6 +50,8 @@ export default function ResultDetail() {
             <img
               className={styles.sectionTwoImg}
               src={`/assets/images/resultDetail/${
+                JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
+              }_${
                 JSON.parse(sessionStorage.getItem("userAnswer")).moodAnswer
               }.png`}
               alt=''
