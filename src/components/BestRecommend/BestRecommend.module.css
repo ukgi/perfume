@@ -1,0 +1,34 @@
+.testContainer {
+  padding-bottom: 12px;
+  margin-top: 20px;
+  text-align: center;
+  width: 30%;
+  height: 200px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+}
+
+.testContainerTitle {
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 12px 0;
+}
+
+.testResultBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.testTakers {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.testTakersDesc {
+  color: rgb(53, 53, 53);
+}

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsFillBellFill } from "react-icons/bs";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
+import Recommenders from "../Recommenders/Recommenders";
+import axios from "axios";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -12,13 +14,19 @@ export default function Header() {
   const url = new URL(window.location.href).pathname;
   console.log("url", url);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    axios.post("서버url", {
+      memberId: sessionStorage.getItem("id"),
+      accessToken: sessionStorage.getItem("accessToken"),
+    });
+
     sessionStorage.removeItem("accessToken");
     sessionStorage.removeItem("refreshToken");
     sessionStorage.removeItem("id");
     sessionStorage.removeItem("kakaoNickname");
     sessionStorage.removeItem("recommenders");
     sessionStorage.removeItem("thumbnailImage");
+
     navigate("/");
   };
 
@@ -55,9 +63,7 @@ export default function Header() {
             src={sessionStorage.getItem("thumbnailImage")}
             alt=''
           />
-          <span className={styles.recommenders}>
-            {sessionStorage.getItem("recommenders")}
-          </span>
+          <Recommenders />
           <BsFillBellFill
             onClick={handleRecommendPage}
             className={styles.bell}

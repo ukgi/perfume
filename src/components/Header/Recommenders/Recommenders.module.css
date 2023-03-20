@@ -1,0 +1,14 @@
+.recommenders {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 85px;
+  bottom: 30px;
+  background-color: grey;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 600;
+}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import BestRecommend from "../../components/BestRecommend/BestRecommend";
 import styles from "./Recommend.module.css";
 
 export default function Recommend() {
@@ -17,7 +18,6 @@ export default function Recommend() {
       axios
         .get("data/recommendData.json") //
         .then((res) => {
-          console.log(res);
           sessionStorage.setItem(
             "recommenders",
             res.data.recommendationList.length
@@ -72,6 +72,7 @@ export default function Recommend() {
           <p className={styles.testTakersDesc}>응시자 수</p>
         </div>
       </div>
+      <BestRecommend />
       <button onClick={handleRecommendDetail} className={styles.button}>
         자세히 알아보기
       </button>
