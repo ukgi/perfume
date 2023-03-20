@@ -12,15 +12,23 @@ export default function Comment() {
 
   const [comment, setComment] = useState("");
 
-  const handleInput = (e) => setComment(e.target.value);
+  const handleInput = (e) => {
+    setComment(e.target.value);
+  };
 
   const handleRecommend = () => {
     setRecommend((prev) => ({ ...prev, comment }));
+    postRecommendData();
   };
 
-  const postRecommendData = () => {
+  const postRecommendData = async () => {
     axios
-      .post("https://jsonplaceholder.typicode.com/posts", recommend) //
+      .post(
+        `${process.env.REACT_APP_SERVER_DOMAIN}/member/recommend/${
+          JSON.parse(sessionStorage.getItem("recommendData")).id
+        }`,
+        recommend
+      ) //
       .then((res) => {
         console.log(res);
         navigate("/success");
@@ -42,7 +50,6 @@ export default function Comment() {
           className={styles.btn}
           onClick={() => {
             handleRecommend();
-            postRecommendData();
           }}
         >
           제출하기

@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-tsparticles": "^2.8.0",
     "sass": "^1.58.0",
+    "styled-components": "^5.3.9",
     "swiper": "^9.0.2",
     "web-vitals": "^2.1.0"
   },

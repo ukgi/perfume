@@ -12,17 +12,20 @@ export default function Header() {
   const { isRecommend } = useKakaoLoginUserContext();
 
   const url = new URL(window.location.href).pathname;
-  console.log("url", url);
 
   const handleLogout = async () => {
-    axios.post("서버url", {
-      memberId: sessionStorage.getItem("id"),
-      accessToken: sessionStorage.getItem("accessToken"),
+    axios.delete(`${process.env.REACT_APP_SERVER_DOMAIN}/member/logout`, {
+      data: {
+        memberId: sessionStorage.getItem("memberId"),
+        accessToken: sessionStorage.getItem("accessToken"),
+      },
+      withCredentials: true,
     });
 
     sessionStorage.removeItem("accessToken");
     sessionStorage.removeItem("refreshToken");
     sessionStorage.removeItem("id");
+    sessionStorage.removeItem("memberId");
     sessionStorage.removeItem("kakaoNickname");
     sessionStorage.removeItem("recommenders");
     sessionStorage.removeItem("thumbnailImage");

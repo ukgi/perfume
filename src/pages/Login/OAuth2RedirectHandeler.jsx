@@ -11,8 +11,10 @@ export default function OAuth2RedirectHandeler() {
     if (!KAKAO_CODE) return;
     const getKakaoToken = async () => {
       axios
-        .get("/data/KakaoLoginUser.json")
-        //   `${process.env.REACT_APP_SERVER_DOMAIN}/oauth/login?code=${KAKAO_CODE}`
+        .get(
+          `${process.env.REACT_APP_SERVER_DOMAIN}/oauth/login?code=${KAKAO_CODE}`
+        )
+        // "/data/KakaoLoginUser.json"
         .then((res) => {
           onLoginSuccess(res);
           navigate("/recommend");
@@ -22,7 +24,19 @@ export default function OAuth2RedirectHandeler() {
     getKakaoToken();
   }, [KAKAO_CODE, navigate]);
 
-  return <></>;
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      로딩중 ...
+    </div>
+  );
 }
 
 export const handleKakaoOauth = () => {
@@ -49,16 +63,18 @@ export const onSilentRefresh = async () => {
 };
 
 export const onLoginSuccess = (res) => {
-  console.log(res);
+  console.log("로그인 회원정보", res);
   const accessToken = res.data.accessToken;
   const refreshToken = res.data.refreshToken;
   const id = res.data.id;
+  const memberId = res.data.memberId;
   const nickname = res.data.nickname;
   const thumbnailImage = res.data.thumbnailImage;
   sessionStorage.setItem("accessToken", accessToken);
   sessionStorage.setItem("refreshToken", refreshToken);
   sessionStorage.setItem("id", id);
+  sessionStorage.setItem("memberId", memberId);
   sessionStorage.setItem("kakaoNickname", nickname);
   sessionStorage.setItem("thumbnailImage", thumbnailImage);
-  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+  axios.defaults.headers.common["Authorization"] = `${accessToken}`;
 };

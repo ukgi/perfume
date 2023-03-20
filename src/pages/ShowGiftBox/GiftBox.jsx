@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 export default function GiftBox({ data }) {
   const navigate = useNavigate();
+
   return (
     <motion.div
       className={styles.gift}

@@ -1,11 +1,13 @@
+import axios from "axios";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import styles from "./BrandResult.module.css";
 
 export default function Card({ item }) {
-  const navigate = useNavigate();
-  const readDetail = () => {
-    navigate(`/result/${item.id}`);
+  const readDetail = async () => {
+    const data = await axios.get(
+      `${process.env.REACT_APP_SERVER_DOMAIN}/survey/show-similar-perfume/${item.id}`
+    );
+    console.log(data);
   };
 
   return (

@@ -6,8 +6,6 @@ import Card from "./Card";
 export default function BrandResult() {
   const { state } = useLocation();
 
-  console.log("state", state);
-
   return (
     <div className={styles.container}>
       {state &&

@@ -9,12 +9,14 @@ export default function ResultDetail() {
   const { perfumeId } = useParams();
   const [data, setData] = useState();
   const navigate = useNavigate();
-  // `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-perfume/${perfumeId}`
 
   useEffect(() => {
     const getPerfumeDetailData = async () => {
       await axios
-        .get("/data/perfumeDetail.json")
+        .get(
+          `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-perfume/${perfumeId}`
+        )
+        // "/data/perfumeDetail.json"
         .then((data) => {
           console.log(data.data);
           return setData(data.data);

@@ -5,16 +5,32 @@ import { useEffect } from "react";
 import styles from "./BestRecommend.module.css";
 
 export default function BestRecommend() {
+  const id = sessionStorage.getItem("id");
   const [bestRecommend, setBestRecommend] = useState({});
 
   useEffect(() => {
+    const accessToken = sessionStorage.getItem("accessToken");
+    const config = {
+      headers: { Authorization: `${accessToken}` },
+    };
     const handleBestRecommend = async () => {
-      const data = await axios.get("data/BestRecommend.json");
-      setBestRecommend(data.data);
-      return data.data;
+      try {
+        const data = await axios.get(
+          `${process.env.REACT_APP_SERVER_DOMAIN}/member/show-result/${id}`,
+          config
+        );
+        setBestRecommend(data.data);
+        console.log("best recommend", data.data);
+        return data.data;
+      } catch (err) {
+        console.log(err);
+        if (err.response.status === 404) {
+          console.log("추천 목록이 없습니다 ❌");
+        }
+      }
     };
     handleBestRecommend();
-  }, []);
+  }, [id]);
 
   return (
     <>

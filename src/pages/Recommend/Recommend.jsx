@@ -15,18 +15,26 @@ export default function Recommend() {
 
   useEffect(() => {
     const handleRecommendData = () => {
+      const accessToken = sessionStorage.getItem("accessToken");
+      const config = {
+        headers: { Authorization: `${accessToken}` },
+      };
       axios
-        .get("data/recommendData.json") //
+        .get(
+          `${process.env.REACT_APP_SERVER_DOMAIN}/member/show-recommended-perfume/${id}`,
+          config
+        ) //
         .then((res) => {
           sessionStorage.setItem(
             "recommenders",
             res.data.recommendationList.length
           );
           setRecommendData(res.data.recommendationList);
-        });
+        })
+        .catch(console.error);
     };
     handleRecommendData();
-  }, []);
+  }, [id]);
 
   const copyTextUrl = () => {
     if (!document.queryCommandSupported("copy")) {
