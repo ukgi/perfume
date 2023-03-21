@@ -69,6 +69,11 @@
   object-fit: cover;
 }
 
+.cardImgLoading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
 .container .cardSection .card .shape .content {
   position: absolute;
   top: 0;

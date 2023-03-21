@@ -1,4 +1,5 @@
 import React from "react";
+import ProgressiveImage from "react-progressive-graceful-image";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContextApi";
 import { useUserContext } from "../../../context/UserContextApi";
@@ -31,7 +32,18 @@ export default function Card({ info }) {
         isRecommend ? handleRecommend() : handlePerfums();
       }}
     >
-      <img className={styles.cardImg} src={img} alt='' />
+      <ProgressiveImage src={img}>
+        {(src, loading) => {
+          return (
+            <img
+              className={loading ? styles.cardImgLoading : styles.cardImg}
+              src={src}
+              alt='perfume'
+            />
+          );
+        }}
+      </ProgressiveImage>
+
       <div
         className={styles.cardIntro}
         style={{ backgroundColor: `${backgroundColor}` }}

@@ -48,6 +48,11 @@
   background-color: var(--color-black);
 }
 
+.cardImgLoading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
 .moodText {
   display: flex;
   align-items: flex-end;

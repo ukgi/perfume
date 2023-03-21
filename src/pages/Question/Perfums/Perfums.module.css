@@ -35,6 +35,11 @@
   transition: 0.5s;
 }
 
+.cardImgLoading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
 .card {
   width: 220px;
   position: relative;

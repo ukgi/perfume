@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../../context/UserContextApi";
 import styles from "./Mood.module.css";
 import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContextApi";
+import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function Card({ info }) {
   const { mood, img, desc } = info;
@@ -32,7 +33,18 @@ export default function Card({ info }) {
         isRecommend ? handleRecommend() : handleMood();
       }}
     >
-      <img className={styles.cardImg} src={img} alt='' />
+      <ProgressiveImage src={img}>
+        {(src, loading) => {
+          return (
+            <img
+              className={loading ? styles.cardImgLoading : styles.cardImg}
+              src={src}
+              alt='mood'
+            />
+          );
+        }}
+      </ProgressiveImage>
+
       <div className={styles.moodText}>
         <p className={styles.moodDesc}>{desc}</p>
       </div>

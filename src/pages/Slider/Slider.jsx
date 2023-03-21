@@ -36,7 +36,6 @@ export default function Slider() {
           muted
           typeof='mp4'
         ></video>
-        {/* <img src='/assets/images/mask.jpg' alt='' className={styles.mask} /> */}
         <div className={styles.content}>
           <motion.h2
             initial={{ opacity: 0 }}
