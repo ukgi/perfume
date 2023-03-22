@@ -1,13 +1,26 @@
-.container {
-  padding-top: 180px;
+.body {
+  position: relative;
+  padding-top: 250px;
   padding-bottom: 50px;
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
   align-items: center;
+}
+
+.perfumeContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, auto));
+  justify-items: center;
+  row-gap: 18px;
+}
+
+.title {
+  position: absolute;
+  top: 150px;
 }
 
 .perfumeImg {

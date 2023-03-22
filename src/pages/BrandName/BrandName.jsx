@@ -11,7 +11,6 @@ import styled from "styled-components";
 export default function BrandName() {
   const [brand, setBrand] = useState("");
   const [isHaveInputValue, setIsHaveInputValue] = useState(false);
-
   const [dropDownItemIndex, setDropDownItemIndex] = useState(-1);
 
   const navigate = useNavigate();
@@ -27,8 +26,6 @@ export default function BrandName() {
       const data = await axios.get(
         `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-all-brand`
       );
-      console.log(data.data);
-
       return data.data;
     },
     {
@@ -48,7 +45,6 @@ export default function BrandName() {
         }
       );
       // `/data/perfumeBrand.json`
-      console.log(response);
       navigate(`/brandName/${brand}`, { state: response.data });
     } catch (error) {
       if (error.response.status === 404) {
@@ -107,7 +103,14 @@ export default function BrandName() {
             onChange={handleBrand}
             onKeyUp={handleDropDownKey}
           />
-          <DeleteButton onClick={() => setBrand("")}>&times;</DeleteButton>
+          <DeleteButton
+            onClick={(e) => {
+              e.preventDefault();
+              setBrand("");
+            }}
+          >
+            &times;
+          </DeleteButton>
           <SearchButton type='submit' onClick={readPerfumeData}>
             <BsSearch />
           </SearchButton>

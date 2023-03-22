@@ -24,6 +24,7 @@ import Comment from "../pages/Comment/Comment";
 import Success from "../pages/Success/Success";
 import RecommendDetail from "../pages/DetailRecommend/RecommendDetail";
 import DataRecommender from "../pages/DetailRecommend/DataRecommender";
+import BrandDetail from "../pages/BrandDetail/BrandDetail";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -66,6 +67,7 @@ export default function AnimateRoutes() {
             exact
             element={<DataRecommender />}
           />
+          <Route path='/brandDetail/:brandId' exact element={<BrandDetail />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

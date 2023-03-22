@@ -1,17 +1,12 @@
-import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./BrandResult.module.css";
 
 export default function Card({ item }) {
-  const readDetail = async () => {
-    const data = await axios.get(
-      `${process.env.REACT_APP_SERVER_DOMAIN}/survey/show-similar-perfume/${item.id}`
-    );
-    console.log(data);
-  };
+  const navigate = useNavigate();
 
   return (
-    <div onClick={readDetail}>
+    <div onClick={() => navigate(`/brandDetail/${item.id}`, { state: item })}>
       <img className={styles.perfumeImg} src={item.perfumeImageUrl} alt='' />
     </div>
   );
