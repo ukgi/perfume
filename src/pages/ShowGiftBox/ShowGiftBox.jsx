@@ -22,7 +22,7 @@ export default function ShowGiftBox() {
   } = useQuery(["surveyData"], async () => {
     try {
       const data = await axios.post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/survey/show-perfume-by-survey`,
+        `https://inhyang.site/survey/show-perfume-by-survey`,
         user
       );
       console.log("서버로부터 도착한 데이터🚀", data.data.slice(0, 10));
