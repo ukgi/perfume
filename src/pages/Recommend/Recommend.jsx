@@ -64,7 +64,7 @@ export default function Recommend() {
             className={styles.input}
             type='text'
             ref={copyLinkRef}
-            defaultValue={`http://localhost:3000/recommend/${nickName}/${id}`}
+            defaultValue={`https://inhyang.netlify.app/recommend/${nickName}/${id}`}
           />
           <button className={styles.linkBtn} onClick={copyTextUrl}>
             링크 복사
