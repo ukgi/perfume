@@ -17,10 +17,6 @@
   position: relative;
   width: 480px;
   height: 480px;
-
-  /* box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
-    inset -5px -5px 5px rgba(255, 255, 255, 0.5),
-    5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5); */
 }
 
 .box {
@@ -134,9 +130,18 @@
     width: 350px;
     height: 350px;
   }
+
+  .input {
+    width: 75%;
+  }
+
   .button {
     width: 150px;
     font-size: 1em;
     font-weight: 600;
+  }
+  .underline,
+  .label {
+    display: none;
   }
 }
