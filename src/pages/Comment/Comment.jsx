@@ -11,18 +11,16 @@ export default function Comment() {
   const { recommend, setRecommend } = useKakaoLoginUserContext();
   const navigate = useNavigate();
 
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState(
+    () => JSON.parse(sessionStorage.getItem("recommendData")).comment || ""
+  );
 
   const handleInput = (e) => {
     setComment(e.target.value);
-  };
-
-  const handleRecommend = () => {
     setRecommend((prev) => ({ ...prev, comment }));
-    postRecommendData();
   };
 
-  const postRecommendData = async () => {
+  const handleRecommend = async () => {
     axios
       .post(
         `${config.api}/member/recommend/${
