@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { config } from "../../config";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -13,10 +14,7 @@ export default function ResultDetail() {
   useEffect(() => {
     const getPerfumeDetailData = async () => {
       await axios
-        .get(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-perfume/${perfumeId}`
-        )
-        // "/data/perfumeDetail.json"
+        .get(`${config.api}/perfume/show-perfume/${perfumeId}`)
         .then((data) => {
           console.log(data.data);
           return setData(data.data);
