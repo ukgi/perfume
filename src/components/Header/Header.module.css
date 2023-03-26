@@ -69,4 +69,7 @@
   .header {
     padding: 20px 40px;
   }
+  .logo {
+    width: 50px;
+  }
 }

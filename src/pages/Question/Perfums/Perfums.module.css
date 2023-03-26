@@ -99,7 +99,7 @@
 @media (min-width: 1350px) {
   .cardSection {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    padding-top: 12px;
+    padding-top: 90px;
   }
   .title {
     top: 140px;

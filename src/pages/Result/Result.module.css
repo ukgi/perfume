@@ -1,28 +1,52 @@
 .body {
-  position: relative;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 0 35px;
+  margin: 150px 50px;
+  border: 2px solid black;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   background: center / cover no-repeat url("/public/assets/images/bg.png");
-  padding: 0 100px;
-  overflow: hidden;
 }
 
-.title {
-  transform: translateY(60px);
-}
-
-.swiperSlide {
-  text-align: center;
+.wrapper {
+  max-width: 1200px;
   position: relative;
-  width: 100%;
+}
+
+.wrapper .carousel {
+  font-size: 0px;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
 }
 
-.swiperSlidetitle {
-  transform: translateY(50px);
-  font-size: 1.1em;
+.carousel .cardImg {
+  height: 340px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: calc(100% / 3);
 }
 
-.swiperSlideImg {
-  width: 350px;
-  height: 350px;
+.cardImg:first-child {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel .cardImg {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .body {
+    border: none;
+    background: inherit;
+  }
+  .carousel .cardImg {
+    width: 100%;
+  }
 }

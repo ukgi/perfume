@@ -26,7 +26,6 @@ export default function ShowGiftBox() {
         `${config.api}/survey/show-perfume-by-survey`,
         user
       );
-      console.log("서버로부터 도착한 데이터🚀", data.data.slice(0, 10));
       return data.data.slice(0, 10);
     } catch (error) {
       console.error(error);
@@ -40,7 +39,9 @@ export default function ShowGiftBox() {
       {error && <div>Error 😱</div>}
       {surveyData && (
         <>
-          <h2>{userName}님에게 꼭 맞는 향수가 도착했습니다</h2>
+          <h2 className={styles.title}>
+            {userName}님에게 꼭 맞는 향수가 도착했습니다
+          </h2>
           <GiftBox data={surveyData} />
         </>
       )}
