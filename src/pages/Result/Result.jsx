@@ -5,10 +5,10 @@ import styles from "./Result.module.css";
 // ⬇️ Import Swiper styles
 import SwiperCore, { Navigation, Pagination, FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
-import "swiper/scss/effect-coverflow";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 import Card from "./Card";
 import { useUserContext } from "../../context/UserContextApi";
 SwiperCore.use([Navigation, Pagination, FreeMode]);
@@ -28,11 +28,23 @@ export default function Result() {
         pagination={{
           clickable: true,
         }}
-        style={{ height: "100vh" }}
+        style={{
+          height: "100vh",
+          border: "2px solid black",
+          marginTop: "100px",
+          overflow: "hidden",
+        }}
       >
         {state.map((data, index) => {
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                overflow: "hidden",
+              }}
+            >
               <Card data={data} />
             </SwiperSlide>
           );

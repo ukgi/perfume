@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./BrandDetail.module.css";
 

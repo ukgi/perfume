@@ -1,28 +1,28 @@
 .body {
   position: relative;
   text-align: center;
-  background-color: var(--color-white);
+  background: center / cover no-repeat url("/public/assets/images/bg.png");
+  padding: 0 100px;
+  overflow: hidden;
 }
+
 .title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 80px;
+  transform: translateY(60px);
 }
 
 .swiperSlide {
+  text-align: center;
   position: relative;
-  padding-top: 200px;
   width: 100%;
   cursor: pointer;
 }
 
 .swiperSlidetitle {
-  position: absolute;
+  transform: translateY(50px);
   font-size: 1.1em;
 }
 
 .swiperSlideImg {
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
 }

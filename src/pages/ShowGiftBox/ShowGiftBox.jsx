@@ -19,14 +19,14 @@ export default function ShowGiftBox() {
     isLoading,
     error,
     data: surveyData,
-  } = useQuery(["surveyData", user], async () => {
+  } = useQuery(["surveyData"], async () => {
     try {
       const data = await axios.post(
         `${process.env.REACT_APP_SERVER_DOMAIN}/survey/show-perfume-by-survey`,
         user
       );
-      console.log("서버로부터 도착한 데이터🚀", data.data);
-      return data.data;
+      console.log("서버로부터 도착한 데이터🚀", data.data.slice(0, 10));
+      return data.data.slice(0, 10);
     } catch (error) {
       console.error(error);
       navigate("/error");
