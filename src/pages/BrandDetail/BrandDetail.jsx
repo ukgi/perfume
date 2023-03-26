@@ -39,8 +39,6 @@ export default function BrandDetail() {
     }
   );
 
-  console.log("유사 향수 데이터", relatedPerfume);
-
   return (
     <div className={styles.body}>
       <div className={styles.sectionOne}>
