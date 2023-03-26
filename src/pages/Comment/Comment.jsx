@@ -4,6 +4,7 @@ import styles from "./Comment.module.css";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
 import { useState } from "react";
 import axios from "axios";
+import { config } from "../../config";
 
 export default function Comment() {
   const { state } = useLocation();
@@ -24,7 +25,7 @@ export default function Comment() {
   const postRecommendData = async () => {
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/member/recommend/${
+        `${config.api}/member/recommend/${
           JSON.parse(sessionStorage.getItem("recommendData")).id
         }`,
         recommend

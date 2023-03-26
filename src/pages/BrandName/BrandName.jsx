@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import styled from "styled-components";
+import { config } from "../../config";
 
 export default function BrandName() {
   const [brand, setBrand] = useState("");
@@ -23,9 +24,7 @@ export default function BrandName() {
   const { data: brandList } = useQuery(
     ["brandList"],
     async () => {
-      const data = await axios.get(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/show-all-brand`
-      );
+      const data = await axios.get(`${config.api}/perfume/show-all-brand`);
       return data.data;
     },
     {
@@ -38,12 +37,9 @@ export default function BrandName() {
   const readPerfumeData = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/perfume/find-by-brand`,
-        {
-          brandName: brand,
-        }
-      );
+      const response = await axios.post(`${config.api}/perfume/find-by-brand`, {
+        brandName: brand,
+      });
       // `/data/perfumeBrand.json`
       navigate(`/brandName/${brand}`, { state: response.data });
     } catch (error) {

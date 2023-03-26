@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./BrandDetail.module.css";
+import { config } from "../../config";
 
 // 🔽 import swiper styles
 import SwiperCore, { Navigation, Pagination, FreeMode } from "swiper";
@@ -25,7 +26,7 @@ export default function BrandDetail() {
     async () => {
       try {
         const data = await axios.get(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/survey/show-similar-perfume/${id}`
+          `${config.api}/survey/show-similar-perfume/${id}`
         );
         return data.data.slice(0, 10);
       } catch (error) {

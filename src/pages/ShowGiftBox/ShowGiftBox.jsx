@@ -6,6 +6,7 @@ import { useUserContext } from "../../context/UserContextApi";
 import styles from "./ShowGiftBox.module.css";
 import GiftBox from "./GiftBox";
 import { useNavigate } from "react-router-dom";
+import { config } from "../../config";
 
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
@@ -22,7 +23,7 @@ export default function ShowGiftBox() {
   } = useQuery(["surveyData"], async () => {
     try {
       const data = await axios.post(
-        `https://inhyang.site/survey/show-perfume-by-survey`,
+        `${config.api}/survey/show-perfume-by-survey`,
         user
       );
       console.log("서버로부터 도착한 데이터🚀", data.data.slice(0, 10));

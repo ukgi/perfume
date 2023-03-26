@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { config } from "../../config";
 
 export default function OAuth2RedirectHandeler() {
   const navigate = useNavigate();
@@ -11,9 +12,7 @@ export default function OAuth2RedirectHandeler() {
     if (!KAKAO_CODE) return;
     const getKakaoToken = async () => {
       axios
-        .get(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/oauth/login?code=${KAKAO_CODE}`
-        )
+        .get(`${config.api}/oauth/login?code=${KAKAO_CODE}`)
         // "/data/KakaoLoginUser.json"
         .then((res) => {
           onLoginSuccess(res);
@@ -41,7 +40,7 @@ export default function OAuth2RedirectHandeler() {
 
 export const handleKakaoOauth = () => {
   axios
-    .post(`${process.env.REACT_APP_SERVER_DOMAIN}/member/response`)
+    .post(`${config.api}/member/response`)
     .then((res) => console.log("api요청이 성공적으로 진행됩니다👍", res))
     .catch((err) => {
       if (err.response && err.response.status === 401) {
@@ -55,7 +54,7 @@ export const onSilentRefresh = async () => {
   axios.defaults.headers.common["X-REFRESH-TOKEN"] =
     sessionStorage.getItem("refreshToken");
   axios({
-    url: `${process.env.REACT_APP_SERVER_DOMAIN}/member/regenerate`,
+    url: `${config.api}/member/regenerate`,
     method: "post",
   })
     .then(onLoginSuccess)

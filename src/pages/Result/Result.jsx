@@ -22,7 +22,7 @@ export default function Result() {
       <h2 className={styles.title}>{userName} 님을 위한 향수입니다</h2>
       <Swiper
         navigation
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={30}
         freeMode={true}
         pagination={{
