@@ -5,6 +5,9 @@ import styles from "./DataRecommender.module.css";
 export default function DataRecommender() {
   const { state } = useLocation();
   const { recommender, perfume, comment } = state;
+
+  console.log(comment);
+
   return (
     <div className={styles.body}>
       <h2 className={styles.title}>{recommender}님이 추천하는 향수입니다</h2>

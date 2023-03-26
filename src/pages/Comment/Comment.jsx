@@ -47,12 +47,7 @@ export default function Comment() {
           onChange={handleInput}
           value={comment}
         />
-        <button
-          className={styles.btn}
-          onClick={() => {
-            handleRecommend();
-          }}
-        >
+        <button className={styles.btn} onClick={() => handleRecommend()}>
           제출하기
         </button>
       </div>
