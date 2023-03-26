@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BestRecommend from "../../components/BestRecommend/BestRecommend";
 import styles from "./Recommend.module.css";
-import { config } from "../../config";
+import { config as server } from "../../config";
 
 export default function Recommend() {
   const id = sessionStorage.getItem("id");
@@ -21,7 +21,7 @@ export default function Recommend() {
         headers: { Authorization: `${accessToken}` },
       };
       axios
-        .get(`${config.api}/member/show-recommended-perfume/${id}`, config) //
+        .get(`${server.api}/member/show-recommended-perfume/${id}`, config) //
         .then((res) => {
           sessionStorage.setItem(
             "recommenders",
