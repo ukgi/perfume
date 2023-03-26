@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { config as server } from "../../config";
+
 import styles from "./BestRecommend.module.css";
 
 export default function BestRecommend() {
@@ -16,7 +18,7 @@ export default function BestRecommend() {
     const handleBestRecommend = async () => {
       try {
         const data = await axios.get(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/member/show-result/${id}`,
+          `${server.api}/member/show-result/${id}`,
           config
         );
         setBestRecommend(data.data);
