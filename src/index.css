@@ -10,6 +10,7 @@
   --color-white1: hsl(0, 0%, 100%);
   --color-white2: hsl(0, 0%, 90%);
   --color-blue: hsl(215, 100%, 20%);
+  --color-main: #9b7c39;
   font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
 }
 

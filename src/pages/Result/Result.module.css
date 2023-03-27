@@ -22,17 +22,17 @@
   position: relative;
   background: linear-gradient(
     45deg,
-    #00f376 10%,
+    var(--color-main) 10%,
     transparent 10%,
     transparent 50%,
-    #00f376 50%,
-    #00f376 60%,
+    var(--color-main) 50%,
+    var(--color-main) 60%,
     transparent 60%,
     transparent 100%
   );
   background-size: 15px 15px;
-  box-shadow: 0 0 0 7px #000, 0 0 0 14px #00f376;
-  filter: hue-rotate(calc(3 * 90deg));
+  box-shadow: 0 0 0 7px rgba(177, 176, 130, 0.7), 0 0 0 14px var(--color-main);
+
   animation: animate 0.5s linear infinite;
 }
 
@@ -46,7 +46,7 @@
   content: "";
   position: absolute;
   inset: 30px;
-  border: 3px dashed #00f376;
+  border: 3px dashed var(--color-main);
 }
 
 @keyframes animate {
@@ -70,9 +70,9 @@
   transition: all 0.2s ease-in-out;
 }
 
-.card:hover .textBox {
+/* .card:hover .textBox {
   visibility: visible;
-}
+} */
 
 .card:hover .cardImg {
   transform: scale(1.1);
@@ -95,7 +95,6 @@
   opacity: 0.8;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
-  background-color: lightgrey;
 }
 
 .perfumeName {

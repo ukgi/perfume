@@ -14,9 +14,8 @@ export default function ResultDetail() {
   useEffect(() => {
     const getPerfumeDetailData = async () => {
       await axios
-        .get("/data/perfumeDetail.json")
+        .get(`${config.api}/perfume/show-perfume/${perfumeId}`)
         .then((data) => {
-          console.log(data.data);
           return setData(data.data);
         })
         .catch(console.error);
@@ -30,9 +29,11 @@ export default function ResultDetail() {
         <div className={styles.body}>
           <div className={styles.sectionOne}>
             <div className={styles.sectionOneText}>
-              <h1>{data.perfume.perfumeName}</h1>
-              <h2>{data.perfume.brandName}</h2>
-              <p>{data.perfume.perfumeFeature}</p>
+              <h1 className={styles.perfumeName}>{data.perfume.perfumeName}</h1>
+              <h2 className={styles.perfumeBrand}>{data.perfume.brandName}</h2>
+              <p className={styles.perfumeFeature}>
+                {data.perfume.perfumeFeature}
+              </p>
             </div>
             <img
               className={styles.sectionOneImg}
@@ -55,7 +56,6 @@ export default function ResultDetail() {
                 JSON.parse(sessionStorage.getItem("userAnswer")).moodAnswer
               }.png`}
               alt=''
-              style={{ width: "500px" }}
             />
           </div>
           <div className={styles.sectionThree}>
@@ -88,12 +88,21 @@ export default function ResultDetail() {
               <span className={styles.sectionFourDesc}>
                 <p>{data.seasonRecommend}</p>
               </span>
-              <button
-                className={styles.returnRootBtn}
-                onClick={() => navigate("/services")}
-              >
-                처음으로 돌아가기
-              </button>
+              <div className={styles.buttonContainer}>
+                <button
+                  className={styles.returnRootBtn}
+                  onClick={() => window.history.back()}
+                >
+                  이전 페이지로 돌아가기
+                </button>
+                <button
+                  className={styles.returnRootBtn}
+                  onClick={() => navigate("/services")}
+                  onTouchStart={() => navigate("/services")}
+                >
+                  처음으로 돌아가기
+                </button>
+              </div>
             </div>
           </div>
         </div>
