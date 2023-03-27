@@ -4,12 +4,14 @@ import styles from "./UserName.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContextApi";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
+import { useState } from "react";
 
 export default function UserName() {
   const navigate = useNavigate();
   const { state } = useLocation();
   const { userName, setUserName } = useUserContext();
   const { setRecommend, isRecommend } = useKakaoLoginUserContext();
+  const [isInputFocus, setIsInputFocus] = useState(false);
 
   const handleUserName = (e) => setUserName(e.target.value);
 
@@ -30,9 +32,24 @@ export default function UserName() {
 
   // window.location.reload() && window.history.back();
 
+  const handleInputFocus = () => {
+    return setIsInputFocus(true);
+  };
+
+  const handleInputBlur = () => {
+    return setIsInputFocus(false);
+  };
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.recommenderTitle}>당신의 이름을 입력하세요</h2>
+      <h2
+        className={styles.recommenderTitle}
+        style={
+          isInputFocus ? { visibility: "hidden" } : { visibility: "visible" }
+        }
+      >
+        당신의 이름을 입력하세요
+      </h2>
       <motion.div
         className={styles.card}
         initial={{ opacity: 0, scale: 0.5 }}
@@ -61,6 +78,8 @@ export default function UserName() {
               onChange={handleUserName}
               required={true}
               style={{ color: "white" }}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
             ></input>
             <div className={styles.underline}></div>
             <label className={styles.label}>Name</label>
