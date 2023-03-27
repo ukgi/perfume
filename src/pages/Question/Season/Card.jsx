@@ -32,6 +32,9 @@ export default function Card({ season }) {
       onClick={() => {
         isRecommend ? handleRecommend() : handleSeason();
       }}
+      onTouchStart={() => {
+        isRecommend ? handleRecommend() : handleSeason();
+      }}
     >
       <div className={styles.shape}>
         <ProgressiveImage src={img}>

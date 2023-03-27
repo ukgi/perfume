@@ -31,6 +31,9 @@ export default function Card({ info }) {
       onClick={() => {
         isRecommend ? handleRecommend() : handlePerfums();
       }}
+      onTouchStart={() => {
+        isRecommend ? handleRecommend() : handlePerfums();
+      }}
     >
       <ProgressiveImage src={img}>
         {(src, loading) => {

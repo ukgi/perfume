@@ -11,8 +11,6 @@ export default function Header() {
 
   const { isRecommend } = useKakaoLoginUserContext();
 
-  const url = new URL(window.location.href).pathname;
-
   const handleLogout = async () => {
     axios.delete(`${process.env.REACT_APP_SERVER_DOMAIN}/member/logout`, {
       data: {
@@ -43,20 +41,11 @@ export default function Header() {
         <span></span>
       ) : (
         <a href='/'>
-          {url === "/result" ? (
-            <img
-              className={styles.logo}
-              src='/assets/images/Logo/Logo.png'
-              alt=''
-              style={{ width: "120px" }}
-            />
-          ) : (
-            <img
-              className={styles.logo}
-              src='/assets/images/Logo/Logo2.png'
-              alt=''
-            />
-          )}
+          <img
+            className={styles.logo}
+            src='/assets/images/Logo/Logo2.png'
+            alt=''
+          />
         </a>
       )}
       {sessionStorage.getItem("kakaoNickname") ? (

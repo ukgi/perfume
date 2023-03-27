@@ -33,11 +33,6 @@ body {
   background: center / cover no-repeat url("/public/assets/images/bg.png");
 }
 
-.dragging {
-  cursor: grab;
-  scroll-behavior: smooth;
-}
-
 /* ⬇️ 웹 폰트 (눈누) */
 @font-face {
   font-family: "MapoFlowerIsland";

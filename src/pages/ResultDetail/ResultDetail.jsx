@@ -14,7 +14,7 @@ export default function ResultDetail() {
   useEffect(() => {
     const getPerfumeDetailData = async () => {
       await axios
-        .get(`${config.api}/perfume/show-perfume/${perfumeId}`)
+        .get("/data/perfumeDetail.json")
         .then((data) => {
           console.log(data.data);
           return setData(data.data);

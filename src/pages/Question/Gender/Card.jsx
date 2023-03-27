@@ -25,6 +25,9 @@ export default function Card({ gender, state }) {
       onClick={() => {
         isRecommend ? handleRecommend() : handleGender();
       }}
+      onTouchStart={() => {
+        isRecommend ? handleRecommend() : handleGender();
+      }}
       style={
         gender === "남자"
           ? {

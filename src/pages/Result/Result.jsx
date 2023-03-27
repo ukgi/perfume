@@ -2,136 +2,48 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Result.module.css";
 import { useUserContext } from "../../context/UserContextApi";
-import { AiOutlineLeft } from "react-icons/ai";
-import { AiOutlineRight } from "react-icons/ai";
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-
-let prevPageX, prevScrollLeft, positionDiff;
-let firstImg, arrowIcons;
+import ReactElasticCarousel from "react-elastic-carousel";
 
 export default function Result() {
   const { state } = useLocation();
   const { userName } = useUserContext();
   const navigate = useNavigate();
-  const carousel = useRef();
-
-  const [isDragStart, setIsDragStart] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-
-  const showHideIcons = () => {
-    let scrollWidth =
-      carousel.current.scrollWidth - carousel.current.clientWidth;
-    arrowIcons[0].style.display =
-      carousel.current.scrollLeft === 0 ? "none" : "block";
-    arrowIcons[1].style.display =
-      carousel.current.scrollLeft === scrollWidth ? "none" : "block";
-  };
-
-  useEffect(() => {
-    arrowIcons = document.querySelectorAll("svg");
-    firstImg = document.querySelectorAll("img")[0];
-
-    arrowIcons.forEach((icon) => {
-      icon.addEventListener("click", () => {
-        let firstImgWidth = firstImg.clientWidth + 14;
-        carousel.current.scrollLeft +=
-          icon.id === "left" ? -firstImgWidth : firstImgWidth;
-        setTimeout(() => showHideIcons(), 60);
-      });
-    });
-  }, []);
-
-  const handleDragStart = (e) => {
-    setIsDragStart(true);
-    prevPageX = e.pageX || e.touches[0].pageX;
-    prevScrollLeft = carousel.current.scrollLeft;
-  };
-
-  const handleDragging = (e) => {
-    if (!isDragStart) return;
-    e.preventDefault();
-    setIsDragging(true);
-    carousel.current.classList.add("dragging");
-    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-    carousel.current.scrollLeft = prevScrollLeft - positionDiff;
-    showHideIcons();
-  };
-
-  const handleDragStop = () => {
-    setIsDragStart(false);
-    carousel.current.classList.remove("dragging");
-
-    if (!isDragging) return;
-    setIsDragging(false);
-  };
 
   return (
     <section className={styles.body}>
-      <h2>{userName}님을 위한 향수입니다</h2>
-      <div className={styles.wrapper}>
-        <AiOutlineLeft
-          style={{
-            height: "46px",
-            width: "46px",
-            color: "black",
-            fontSize: "1.2rem",
-            lineHeight: "46px",
-            cursor: "pointer",
-            background: "white",
-            textAlign: "center",
-            borderRadius: "50%",
-            left: "-20px",
-            position: "absolute",
-            top: "50%",
-            transform: "translateY(-50%)",
-            display: "none",
-          }}
-          onClick={() => {}}
-          id='left'
-        />
-        <div
-          className={styles.carousel}
-          onMouseMove={handleDragging}
-          onTouchMove={handleDragging}
-          onMouseDown={handleDragStart}
-          onTouchStart={handleDragStart}
-          onMouseUp={handleDragStop}
-          onMouseLeave={handleDragStop}
-          onTouchEnd={handleDragStop}
-          ref={carousel}
-        >
-          {state.map((data, index) => (
-            <img
-              key={index}
-              className={styles.cardImg}
-              src={data.perfumeImageUrl}
-              alt='perfumeImage'
-              draggable={false}
-              onClick={() => navigate(`/result/${data.id}`)}
-            />
-          ))}
-        </div>
-        <AiOutlineRight
-          style={{
-            height: "46px",
-            width: "46px",
-            color: "black",
-            fontSize: "1.2rem",
-            lineHeight: "46px",
-            cursor: "pointer",
-            background: "white",
-            textAlign: "center",
-            borderRadius: "50%",
-            right: "-20px",
-            position: "absolute",
-            top: "50%",
-            transform: "translateY(-50%)",
-          }}
-          id='right'
-        />
+      <div>
+        <h2 className={styles.title}>{userName}님을 위한 향수입니다</h2>
+        <h3>이미지를 클릭하여 상세 정보를 확인하세요</h3>
       </div>
+
+      <ReactElasticCarousel breakPoints={breakPoints}>
+        {state.map((data, index) => (
+          <div
+            className={styles.card}
+            key={index}
+            onClick={() => navigate(`/result/${data.id}`)}
+          >
+            <div className={styles.textBox}>
+              <h3 className={styles.perfumeName}>{data.perfumeName}</h3>
+              <h5 className={styles.perfumeBrand}>{data.brandName}</h5>
+            </div>
+            <div className={styles.imgBox}>
+              <img
+                className={styles.cardImg}
+                src={data.perfumeImageUrl}
+                alt='perfumeImage'
+                draggable={false}
+              />
+            </div>
+          </div>
+        ))}
+      </ReactElasticCarousel>
     </section>
   );
 }
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+  { width: 850, itemsToShow: 3 },
+];
