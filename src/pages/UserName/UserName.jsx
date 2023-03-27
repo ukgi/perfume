@@ -28,7 +28,7 @@ export default function UserName() {
     }
   };
 
-  window.location.reload() && window.history.back();
+  // window.location.reload() && window.history.back();
 
   return (
     <div className={styles.container}>
