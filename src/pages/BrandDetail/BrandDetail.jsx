@@ -4,17 +4,9 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./BrandDetail.module.css";
 import { config } from "../../config";
-
-// 🔽 import swiper styles
-import SwiperCore, { Navigation, Pagination, FreeMode } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
-import "swiper/scss/effect-coverflow";
 import OtherBrandCard from "./OtherBrandCard";
-
-SwiperCore.use([Navigation, Pagination, FreeMode]);
+import ReactElasticCarousel from "react-elastic-carousel";
+import BackBtn from "../../components/BackBtn/BackBtn";
 
 export default function BrandDetail() {
   const { state } = useLocation();
@@ -72,27 +64,21 @@ export default function BrandDetail() {
         {isLoading ? (
           <span>로딩중 ...</span>
         ) : (
-          <Swiper
-            navigation
-            slidesPerView={5}
-            spaceBetween={20}
-            freeMode={true}
-            pagination={{
-              clickable: true,
-            }}
-            centeredSlides
-          >
+          <ReactElasticCarousel breakPoints={breakPoints}>
             {relatedPerfume &&
               relatedPerfume.map((data, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <OtherBrandCard data={data} />
-                  </SwiperSlide>
-                );
+                return <OtherBrandCard key={index} data={data} />;
               })}
-          </Swiper>
+          </ReactElasticCarousel>
         )}
+        <BackBtn />
       </div>
     </div>
   );
 }
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1, pagination: false },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+  { width: 850, itemsToShow: 3 },
+];

@@ -28,13 +28,11 @@ export default function UserName() {
     }
   };
 
+  window.location.reload() && window.history.back();
+
   return (
     <div className={styles.container}>
-      {isRecommend ? (
-        <h2 className={styles.recommenderTitle}>당신의 이름을 입력하세요</h2>
-      ) : (
-        <p></p>
-      )}
+      <h2 className={styles.recommenderTitle}>당신의 이름을 입력하세요</h2>
       <motion.div
         className={styles.card}
         initial={{ opacity: 0, scale: 0.5 }}

@@ -42,7 +42,6 @@ export default function BrandName() {
       const response = await axios.post(`${config.api}/perfume/find-by-brand`, {
         brandName: brand,
       });
-      // `/data/perfumeBrand.json`
       navigate(`/brandName/${brand}`, { state: response.data });
     } catch (error) {
       if (error.response.status === 404) {
@@ -143,12 +142,15 @@ const activeBorderRadius = "16px 16px 0 0";
 const inactiveBorderRadius = "16px 16px 16px 16px";
 
 const WholeBox = styled.div`
-  padding: 200px;
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const InputBox = styled.div`
+  width: 600px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -162,6 +164,14 @@ const InputBox = styled.div`
   &:focus-within {
     box-shadow: 0 10px 10px rgb(0, 0, 0, 0.3);
   }
+
+  @media (max-width: 850px) {
+    width: 500px;
+  }
+
+  @media (max-width: 550px) {
+    width: 350px;
+  }
 `;
 
 const Input = styled.input`
@@ -171,10 +181,17 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 16px;
-
+  font-size: 20px;
   ::placeholder {
     color: var(--color-black);
+  }
+
+  @media (max-width: 850px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 12px;
   }
 `;
 
@@ -183,6 +200,10 @@ const DeleteButton = styled.button`
   font-size: 40px;
   background-color: inherit;
   border: none;
+
+  @media (max-width: 550px) {
+    font-size: 20px;
+  }
 `;
 
 const SearchButton = styled.button`
@@ -191,6 +212,10 @@ const SearchButton = styled.button`
   cursor: pointer;
   transform: translateY(20%);
   font-size: 32px;
+
+  @media (max-width: 550px) {
+    font-size: 15px;
+  }
 `;
 
 const DropDownBox = styled.ul`
@@ -213,20 +238,3 @@ const DropDownItem = styled.li`
     background-color: lightgray;
   }
 `;
-
-/* <div className={styles.body}>
-<div className={styles.container}>
-  <form className={styles.searchBar} onSubmit={readPerfumeData}>
-    <input
-      className={styles.searchBarInput}
-      type='text'
-      placeholder='평소에 사용하는 향수 브랜드를 입력하세요'
-      value={brand}
-      onChange={handleBrand}
-    />
-    <button className={styles.searchBarBtn} type='submit'>
-      <BsSearch className={styles.searchBarBtnIcon} />
-    </button>
-  </form>
-</div>
-</div> */
