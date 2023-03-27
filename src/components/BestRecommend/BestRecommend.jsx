@@ -33,7 +33,7 @@ export default function BestRecommend() {
     };
     handleBestRecommend();
   }, [id]);
-
+  console.log(bestRecommend);
   return (
     <>
       <div className={styles.testContainer}>
@@ -43,9 +43,11 @@ export default function BestRecommend() {
             {bestRecommend ? Object.values(bestRecommend)[0] : 0}
           </h3>
           <h3 className={styles.testTakersDesc}>
-            {bestRecommend
-              ? Object.keys(bestRecommend)[0]
-              : "추천된 무드가 없습니다"}
+            {Object.keys(bestRecommend)[0] ? (
+              Object.keys(bestRecommend)[0]
+            ) : (
+              <p>추천 데이터가 없습니다</p>
+            )}
           </h3>
         </div>
       </div>
@@ -56,7 +58,7 @@ export default function BestRecommend() {
             {bestRecommend ? Object.values(bestRecommend)[1] : 0}
           </h3>
           <h3 className={styles.testTakersDesc}>
-            {bestRecommend
+            {Object.keys(bestRecommend)[1]
               ? Object.keys(bestRecommend)[1]
               : "추천된 향수가 없습니다"}
           </h3>

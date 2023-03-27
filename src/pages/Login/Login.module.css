@@ -1,17 +1,57 @@
 .body {
+  text-align: center;
+  position: relative;
+}
+
+.container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+  height: 50vh;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 5vh;
+}
+
+.card p {
+  font-size: 3vh;
+}
+
+.btnBox {
+  margin-bottom: 40px;
+  display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 20px;
 }
 
-.title {
-  margin-bottom: 24px;
+.loginContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.logo {
-  width: 150px;
+.loginContainer .title {
+  font-size: 24px;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 550px) {
+  .body {
+    padding: 0 24px;
+  }
+  .loginContainer .title {
+    font-size: 12px;
+  }
 }

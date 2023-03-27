@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import styles from "./Recommenders.module.css";
+import { config as server } from "../../config";
 
 export default function Recommenders() {
   const id = sessionStorage.getItem("id");
@@ -28,7 +29,7 @@ export default function Recommenders() {
         headers: { Authorization: `${accessToken}` },
       };
       const data = await axios.get(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/member/show-recommended-perfume/${id}`,
+        `${server.api}/member/show-recommended-perfume/${id}`,
         config
       );
       setRecommenders(data.data.recommendationList);

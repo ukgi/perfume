@@ -31,9 +31,7 @@ export default function UserName() {
   return (
     <div className={styles.container}>
       {isRecommend ? (
-        <h2 className={styles.recommenderTitle}>
-          {state.kakaoNickname}에게 향기를 선물할 당신의 이름을 입력하세요
-        </h2>
+        <h2 className={styles.recommenderTitle}>당신의 이름을 입력하세요</h2>
       ) : (
         <p></p>
       )}

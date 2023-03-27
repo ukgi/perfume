@@ -31,9 +31,6 @@ export default function Card({ style }) {
       onClick={() => {
         isRecommend ? handleRecommend() : handleStyle();
       }}
-      onTouchStart={() => {
-        isRecommend ? handleRecommend() : handleStyle();
-      }}
     >
       <h3 className={styles.cardOneTitle}>{title}</h3>
       <img className={styles.img} src={img} alt='' />

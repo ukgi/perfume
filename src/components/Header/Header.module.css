@@ -72,4 +72,28 @@
   .logo {
     width: 50px;
   }
+  .loginProfileImage {
+    width: 40px;
+  }
+  .bell {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    padding: 20px 12px;
+  }
+  .logo {
+    width: 40px;
+  }
+  .loginSection {
+    gap: 8px;
+  }
+  .loginProfileImage {
+    width: 30px;
+  }
+  .bell {
+    font-size: 30px;
+  }
 }

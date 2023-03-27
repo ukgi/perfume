@@ -33,6 +33,10 @@
   width: 100%;
 }
 
+.card h1 {
+  margin: 24px 0;
+}
+
 .card h2 {
   font-size: 5vh;
 }
@@ -64,4 +68,18 @@
 .startBtn:hover {
   background-color: rgba(230, 229, 212, 0.7);
   color: #9b7c39;
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 0 25px;
+  }
+  .startBtn {
+    width: 200px;
+    font-size: 18px;
+  }
+  .card h1 {
+    margin: 24px 0;
+    font-size: 24px;
+  }
 }

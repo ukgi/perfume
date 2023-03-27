@@ -6,8 +6,6 @@ export default function DataRecommender() {
   const { state } = useLocation();
   const { recommender, perfume, comment } = state;
 
-  console.log(comment);
-
   return (
     <div className={styles.body}>
       <h2 className={styles.title}>{recommender}님이 추천하는 향수입니다</h2>
@@ -23,6 +21,9 @@ export default function DataRecommender() {
           <div className={styles.balloon}>{comment}</div>
         </div>
       </div>
+      <button className={styles.backBtn} onClick={() => window.history.back()}>
+        뒤로 가기
+      </button>
     </div>
   );
 }

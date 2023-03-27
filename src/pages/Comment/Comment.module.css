@@ -39,3 +39,11 @@
   background-color: rgba(230, 229, 212, 0.7);
   color: #9b7c39;
 }
+
+@media (max-width: 550px) {
+  .commentSection .textarea {
+    width: 350px;
+    height: 300px;
+    font-size: 24px;
+  }
+}

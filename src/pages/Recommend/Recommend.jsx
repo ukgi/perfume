@@ -61,7 +61,7 @@ export default function Recommend() {
             />
             <h2>{nickName}</h2>
             <h3>향수 설문 데이터</h3>
-            <div>
+            <div className={styles.linkContainer}>
               <input
                 className={styles.input}
                 type='text'
@@ -76,8 +76,16 @@ export default function Recommend() {
           <div className={styles.testContainer}>
             <h3 className={styles.testContainerTitle}>실시간 테스트 현황</h3>
             <div className={styles.testResultBox}>
-              <p className={styles.testTakers}>{recommendData.length}명</p>
-              <p className={styles.testTakersDesc}>응시자 수</p>
+              {recommendData.length !== 0 ? (
+                <>
+                  <p className={styles.testTakers}>{recommendData.length}명</p>
+                  <p className={styles.testTakersDesc}>응시자 수</p>
+                </>
+              ) : (
+                <p className={styles.testTakersDesc}>
+                  아직 추천한 사람이 없습니다
+                </p>
+              )}
             </div>
           </div>
           <BestRecommend />

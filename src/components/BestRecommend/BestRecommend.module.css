@@ -32,3 +32,9 @@
 .testTakersDesc {
   color: rgb(53, 53, 53);
 }
+
+@media (max-width: 850px) {
+  .testContainer {
+    width: 80%;
+  }
+}

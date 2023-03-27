@@ -104,3 +104,30 @@
   background-color: #9b7c39;
   color: var(--color-white);
 }
+
+@media (max-width: 850px) {
+  .container {
+    padding: 0 24px 30px;
+  }
+
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .userInfo {
+    width: 100%;
+  }
+  .testContainer {
+    width: 80%;
+  }
+  .button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 850px) {
+  .button {
+    font-size: 15px;
+    width: 50%;
+  }
+}
