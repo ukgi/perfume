@@ -53,7 +53,7 @@ export default function Comment() {
           onClick={() => {
             handleRecommend();
           }}
-          style={{ pointerEvents: "none" }}
+          style={isClick && { display: "none" }}
         >
           제출하기
         </button>
