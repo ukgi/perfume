@@ -3,6 +3,26 @@
   position: relative;
 }
 
+.moveToDownBtn {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  z-index: 10000;
+}
+
+.moveToDownBtn:hover {
+  color: #c09d52;
+}
+
 .container {
   width: 100%;
   min-height: 100vh;

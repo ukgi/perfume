@@ -15,8 +15,6 @@ export default function Comment() {
     () => JSON.parse(sessionStorage.getItem("recommendData")).comment || ""
   );
 
-  const [isClick, setIsClick] = useState(false);
-
   const handleInput = (e) => {
     setComment(e.target.value);
     setRecommend((prev) => ({ ...prev, comment }));
@@ -32,7 +30,6 @@ export default function Comment() {
       ) //
       .then((res) => {
         console.log(res);
-        setIsClick(true);
         navigate("/success");
       })
       .catch(console.error);
@@ -48,13 +45,7 @@ export default function Comment() {
           onChange={handleInput}
           value={comment}
         />
-        <button
-          className={styles.btn}
-          onClick={() => {
-            handleRecommend();
-          }}
-          style={isClick ? { display: "none" } : { display: "block" }}
-        >
+        <button className={styles.btn} onClick={() => handleRecommend()}>
           제출하기
         </button>
       </div>

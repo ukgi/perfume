@@ -37,7 +37,7 @@ export default function BestRecommend() {
   return (
     <>
       <div className={styles.testContainer}>
-        <h2 className={styles.testContainerTitle}>Best 무드 추천</h2>
+        <h2 className={styles.testContainerTitle}>Best 향수 추천</h2>
         <div className={styles.testResultBox}>
           <h3 className={styles.testTakers}>
             {bestRecommend ? Object.values(bestRecommend)[0] : 0}
@@ -52,7 +52,7 @@ export default function BestRecommend() {
         </div>
       </div>
       <div className={styles.testContainer}>
-        <h2 className={styles.testContainerTitle}>Best 향수 추천</h2>
+        <h2 className={styles.testContainerTitle}>Best 향기 추천</h2>
         <div className={styles.testResultBox}>
           <h3 className={styles.testTakers}>
             {bestRecommend ? Object.values(bestRecommend)[1] : 0}

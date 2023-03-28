@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { KAKAO_AUTH_URL } from "./OAuth";
 import styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { blogList } from "./blog-list";
+import { BsArrowDownCircleFill } from "react-icons/bs";
 
 export default function Login() {
+  const ref = useRef();
+  useEffect(() => {
+    const scrollHeight = ref.current.getBoundingClientRect().height;
+    console.log(scrollHeight);
+  }, []);
   return (
-    <div className={styles.body}>
+    <div className={styles.body} ref={ref}>
+      <BsArrowDownCircleFill
+        className={styles.moveToDownBtn}
+        onClick={() => {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        }}
+      ></BsArrowDownCircleFill>
       {blogList.map((item, index) => {
         if (index === 0) {
           return (
