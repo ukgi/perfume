@@ -53,7 +53,7 @@ export default function Comment() {
           onClick={() => {
             handleRecommend();
           }}
-          style={isClick && { display: "none" }}
+          style={isClick ? { display: "none" } : { display: "block" }}
         >
           제출하기
         </button>
