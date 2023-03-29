@@ -6,7 +6,7 @@ import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContext
 import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function Card({ season }) {
-  const { seasonTitle, img } = season;
+  const { seasonTitle, img, seasonDesc } = season;
   const navigate = useNavigate();
 
   const { setUser } = useUserContext();
@@ -33,23 +33,21 @@ export default function Card({ season }) {
         isRecommend ? handleRecommend() : handleSeason();
       }}
     >
-      <div className={styles.shape}>
-        <ProgressiveImage src={img}>
-          {(src, loading) => {
-            return (
-              <img
-                className={loading ? styles.cardImgLoading : styles.img}
-                src={src}
-                alt='season'
-              />
-            );
-          }}
-        </ProgressiveImage>
-        <div className={styles.content}>
-          <div>
-            <h2>{seasonTitle}</h2>
-          </div>
-        </div>
+      <img className={styles.logo} src='/assets/images/Logo/Logo.png' alt='' />
+      <ProgressiveImage src={img}>
+        {(src, loading) => {
+          return (
+            <img
+              className={loading ? styles.cardImgLoading : styles.cardImg}
+              src={src}
+              alt='season'
+            />
+          );
+        }}
+      </ProgressiveImage>
+      <div className={styles.seasonText}>
+        <h2 className={styles.seasonTitle}>{seasonTitle}</h2>
+        <p className={styles.seasonDesc}>{seasonDesc}</p>
       </div>
     </div>
   );

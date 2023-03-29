@@ -33,6 +33,7 @@ export default function Card({ info }) {
         isRecommend ? handleRecommend() : handleMood();
       }}
     >
+      <img className={styles.logo} src='/assets/images/Logo/Logo.png' alt='' />
       <ProgressiveImage src={img}>
         {(src, loading) => {
           return (
@@ -46,6 +47,7 @@ export default function Card({ info }) {
       </ProgressiveImage>
 
       <div className={styles.moodText}>
+        <h2 className={styles.moodTitle}>{mood}</h2>
         <p className={styles.moodDesc}>{desc}</p>
       </div>
     </div>

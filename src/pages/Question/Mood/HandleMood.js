@@ -27,7 +27,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "산뜻한",
         img: "/assets/images/mood/산뜻한.jpg",
-        desc: "이제 막 세탁한 옷감같은 산뜻함",
+        desc: "금방 세탁한 옷감같은 산뜻함",
       },
       {
         mood: "포근한",
@@ -65,7 +65,7 @@ export const handleMood = (state, setMood) => {
       {
         mood: "산뜻한",
         img: "/assets/images/mood/산뜻한.jpg",
-        desc: "이제 막 세탁한 옷감같은 산뜻함",
+        desc: "금방 세탁한 옷감같은 산뜻함",
       },
     ]);
   } else if (state === "시트러스") {
@@ -73,12 +73,12 @@ export const handleMood = (state, setMood) => {
       {
         mood: "상큼한",
         img: "/assets/images/mood/상큼한.jpg",
-        desc: "잘 익은 과일을 베어문듯한 상큼함",
+        desc: "과일을 베어문듯한 상큼함",
       },
       {
         mood: "산뜻한",
         img: "/assets/images/mood/산뜻한.jpg",
-        desc: "이제 막 세탁한 옷감같은 산뜻함",
+        desc: "금방 세탁한 옷감같은 산뜻함",
       },
       {
         mood: "세련된",

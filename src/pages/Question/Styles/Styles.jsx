@@ -9,8 +9,12 @@ import { useKakaoLoginUserContext } from "../../../context/KakaoLoginUserContext
 import { useLocation } from "react-router-dom";
 
 export default function Styles() {
+  const { isRecommend } = useKakaoLoginUserContext();
+  const { state } = useLocation();
   const [gender, setGender] = useState(
-    () => JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
+    isRecommend
+      ? () => JSON.parse(sessionStorage.getItem("recommendData")).genderAnswer
+      : () => JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
   );
   const stylesCategory = [
     {
@@ -28,14 +32,14 @@ export default function Styles() {
           : "/assets/images/styles/여자포멀.png",
     },
   ];
-  const { isRecommend } = useKakaoLoginUserContext();
-  const { state } = useLocation();
 
   useEffect(() => {
     setGender(
-      () => JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
+      isRecommend
+        ? () => JSON.parse(sessionStorage.getItem("recommendData")).genderAnswer
+        : () => JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
     );
-  }, [gender]);
+  }, [gender, isRecommend]);
 
   return (
     <motion.div
