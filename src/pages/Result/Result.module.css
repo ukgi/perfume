@@ -22,16 +22,16 @@
   position: relative;
   background: linear-gradient(
     45deg,
-    var(--color-main) 10%,
+    gray 10%,
     transparent 10%,
     transparent 50%,
-    var(--color-main) 50%,
-    var(--color-main) 60%,
+    gray 50%,
+    gray 60%,
     transparent 60%,
     transparent 100%
   );
   background-size: 15px 15px;
-  box-shadow: 0 0 0 7px rgba(177, 176, 130, 0.7), 0 0 0 14px var(--color-main);
+  box-shadow: 0 0 0 7px rgb(66, 66, 66), 0 0 0 14px rgb(73, 73, 73);
 
   animation: animate 0.5s linear infinite;
 }
@@ -46,7 +46,7 @@
   content: "";
   position: absolute;
   inset: 30px;
-  border: 3px dashed var(--color-main);
+  border: 3px dashed rgb(85, 85, 85);
   transition: all 0.1s ease-in-out;
 }
 

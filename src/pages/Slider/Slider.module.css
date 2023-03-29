@@ -149,8 +149,19 @@
   .slider .imgBx {
     padding: 40px;
   }
-  .slider .imgBx .content {
+  #contentTwo {
     right: 0;
+  }
+  #contentTwo p,
+  #contentTwo h2 {
+    text-align: center;
+  }
+  #contentThree {
+    left: 0;
+  }
+  #contentThree p,
+  #contentThree h2 {
+    text-align: center;
   }
   .slider .imgBx .content h2 {
     font-size: 3em;

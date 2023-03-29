@@ -156,7 +156,7 @@ const InputBox = styled.div`
   align-items: center;
   gap: 15px;
   padding: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(0, 0, 0, 0.3);
   border-radius: ${(props) =>
     props.isHaveInputValue ? activeBorderRadius : inactiveBorderRadius};
   z-index: 3;
@@ -182,8 +182,10 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 20px;
+  color: white;
   ::placeholder {
-    color: var(--color-black);
+    color: var(--color-white);
+    font-weight: 600;
   }
 
   @media (max-width: 850px) {
@@ -200,6 +202,7 @@ const DeleteButton = styled.button`
   font-size: 40px;
   background-color: inherit;
   border: none;
+  color: white;
 
   @media (max-width: 550px) {
     font-size: 20px;
@@ -212,6 +215,7 @@ const SearchButton = styled.button`
   cursor: pointer;
   transform: translateY(20%);
   font-size: 32px;
+  color: white;
 
   @media (max-width: 550px) {
     font-size: 15px;
