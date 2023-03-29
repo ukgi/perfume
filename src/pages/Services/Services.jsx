@@ -37,10 +37,10 @@ export default function Services() {
     {
       title: "타인 향수 추천",
       dec: "소중한 사람에게 잘 어울릴 거 같은 향수를 지금 바로 만나보세요",
-      bannerBackground: "rgba(255, 148, 77, 0.7)",
+      bannerBackground: "rgba(187, 106, 53, 0.7)",
       contentBackground: "rgba(250, 191, 152, 0.7)",
-      textColor: "#fa6501",
-      borderBottomColor: "rgba(248, 130, 52, 0.7)",
+      textColor: "#9b0015",
+      borderBottomColor: "rgba(168, 91, 40, 0.7)",
     },
   ];
   return (

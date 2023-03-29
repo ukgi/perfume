@@ -44,14 +44,33 @@
   max-width: 800px;
 }
 
+#contentTwo {
+  right: 300px;
+}
+
+#contentTwo p,
+#contentTwo h2 {
+  text-align: right;
+}
+
+#contentThree {
+  left: 300px;
+}
+
+#contentThree p,
+#contentThree h2 {
+  text-align: left;
+}
+
 .slider .imgBx .content h2 {
-  font-size: 6em;
+  font-size: 7em;
   line-height: 1.5em;
   color: #fff;
 }
 
 .slider .imgBx .content p {
-  font-size: 1.5em;
+  font-family: "Arimo", sans-serif;
+  font-size: 1.2em;
   line-height: 1.3em;
   color: #fff;
 }
@@ -69,8 +88,8 @@
 
 #perfumeBottle {
   position: relative;
-  top: 50px;
-  left: -180px;
+  top: 60px;
+  left: 120px;
   z-index: 10;
 }
 
@@ -80,30 +99,6 @@
   width: 1000px;
 }
 
-@media (max-width: 768px) {
-  .slider .imgBx {
-    padding: 40px;
-  }
-  .slider .imgBx .content h2 {
-    font-size: 3em;
-  }
-  .slider .imgBx .content h3 {
-    font-size: 1.5em;
-  }
-  .slider .imgBx .content p {
-    font-size: 1em;
-    color: #fff;
-    margin-top: 10px;
-  }
-  #perfumeBottle {
-    display: none;
-  }
-  #lastSlideContent {
-    position: relative;
-    right: 0;
-  }
-}
-
 .button {
   position: relative;
   display: inline-flex;
@@ -111,9 +106,10 @@
   align-items: center;
   width: 300px;
   height: 75px;
-  margin: 10px 0;
-  background-color: inherit;
+  margin: 28px 0;
+  background-color: gray;
   border: none;
+  border-radius: 24px;
   font-size: 1.8em;
   font-weight: 600;
   color: var(--color-white);
@@ -123,9 +119,10 @@
 
 .button:hover {
   color: var(--color-black);
+  background-color: var(--color-main);
 }
 
-.button::before {
+/* .button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -145,4 +142,31 @@
 .button span {
   position: relative;
   z-index: 1;
+} */
+
+@media (max-width: 768px) {
+  .slider .imgBx {
+    padding: 40px;
+  }
+  .slider .imgBx .content {
+    right: 0;
+  }
+  .slider .imgBx .content h2 {
+    font-size: 3em;
+  }
+  .slider .imgBx .content h3 {
+    font-size: 1.5em;
+  }
+  .slider .imgBx .content p {
+    font-size: 1em;
+    color: #fff;
+    margin-top: 10px;
+  }
+  #perfumeBottle {
+    display: none;
+  }
+  #lastSlideContent {
+    position: relative;
+    right: 0;
+  }
 }
