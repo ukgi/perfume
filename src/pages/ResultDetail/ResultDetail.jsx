@@ -98,7 +98,6 @@ export default function ResultDetail() {
                 <button
                   className={styles.returnRootBtn}
                   onClick={() => navigate("/services")}
-                  onTouchStart={() => navigate("/services")}
                 >
                   처음으로 돌아가기
                 </button>
