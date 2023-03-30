@@ -1,3 +1,5 @@
+import { KAKAO_AUTH_URL } from "./OAuth";
+
 export const blogList = [
   {
     image: "/assets/images/Logo/Logo2.png",
@@ -15,7 +17,8 @@ export const blogList = [
   },
   {
     h2: "STEP 3",
-    p: "상대방이 응답을 완료하면 당신의 계정으로 상대방이 추천한 향수를 볼 수 있어요",
+    p: "상대방이 응답을 완료하면 당신의 계정으로 상대방이 추천한 향수를 볼 수 있어요. 지금 로그인해보세요.",
     image: "/assets/images/checkImage.svg",
+    href: KAKAO_AUTH_URL,
   },
 ];

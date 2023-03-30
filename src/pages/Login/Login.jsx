@@ -1,22 +1,37 @@
-import React from "react";
-import { KAKAO_AUTH_URL } from "./OAuth";
+import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { blogList } from "./blog-list";
-import { BsArrowDownCircleFill } from "react-icons/bs";
+import { BsArrowDownCircleFill, BsArrowUpCircleFill } from "react-icons/bs";
 
 export default function Login() {
+  const [isScrollDown, setIsScrollDown] = useState(false);
+
   return (
     <div className={styles.body}>
-      <BsArrowDownCircleFill
-        className={styles.moveToDownBtn}
-        onClick={() => {
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
-        }}
-      ></BsArrowDownCircleFill>
+      {isScrollDown ? (
+        <BsArrowUpCircleFill
+          className={styles.moveToDownBtn}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            setIsScrollDown(false);
+          }}
+        ></BsArrowUpCircleFill>
+      ) : (
+        <BsArrowDownCircleFill
+          className={styles.moveToDownBtn}
+          onClick={() => {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+            setIsScrollDown(true);
+          }}
+        ></BsArrowDownCircleFill>
+      )}
       {blogList.map((item, index) => {
         if (index === 0) {
           return (
@@ -27,27 +42,21 @@ export default function Login() {
         } else {
           return (
             <div className={styles.container} key={index}>
-              <Card image={item.image} h2={item.h2} p={item.p} />
+              <Card
+                image={item.image}
+                h2={item.h2}
+                p={item.p}
+                href={item.href}
+              />
             </div>
           );
         }
       })}
-      <div className={styles.loginContainer}>
-        <h2 className={styles.title}>
-          해당 서비스를 이용하기 위해선 간단한 로그인이 필요합니다
-        </h2>
-        <a href={KAKAO_AUTH_URL}>
-          <img
-            src='/assets/images/kakaoLogo/kakaoLoginBtn.png'
-            alt='kakaoLogo'
-          />
-        </a>
-      </div>
     </div>
   );
 }
 
-function Card({ image, h1, h2, p, id }) {
+function Card({ image, h1, h2, p, id, href }) {
   return (
     <motion.div
       className={styles.card}
@@ -57,15 +66,25 @@ function Card({ image, h1, h2, p, id }) {
       viewport={{ once: false, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
     >
-      <motion.img
-        src={image}
-        alt=''
-        variants={imageAnimate}
-        height={200}
-      ></motion.img>
       {h1 && <motion.h1 variants={textAnimate}>{h1}</motion.h1>}
       <motion.h2 variants={textAnimate}>{h2}</motion.h2>
       <motion.p variants={textAnimate}>{p}</motion.p>
+      <div className={styles.stepThreeImageBox}>
+        <motion.img
+          src={image}
+          alt=''
+          variants={imageAnimate}
+          height={200}
+        ></motion.img>
+        {href && (
+          <motion.a variants={imageAnimate} href={href}>
+            <img
+              src='/assets/images/kakaoLogo/kakaoLoginBtn.png'
+              alt='kakaoLogo'
+            />
+          </motion.a>
+        )}
+      </div>
     </motion.div>
   );
 }

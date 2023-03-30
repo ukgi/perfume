@@ -10,8 +10,8 @@
 
 .moveToDownBtn {
   margin-top: 20px;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: none;
   background-color: inherit;
@@ -81,5 +81,9 @@
   .card h1 {
     margin: 24px 0;
     font-size: 24px;
+  }
+  .moveToDownBtn {
+    width: 40px;
+    height: 40px;
   }
 }

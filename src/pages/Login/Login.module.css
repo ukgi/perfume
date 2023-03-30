@@ -41,30 +41,20 @@
 
 .card h2 {
   font-size: 5vh;
+  margin-bottom: 12px;
 }
 
 .card p {
   font-size: 3vh;
+  margin-bottom: 32px;
 }
 
-.btnBox {
-  margin-bottom: 40px;
+.stepThreeImageBox {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-}
-
-.loginContainer {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.loginContainer .title {
-  font-size: 24px;
-  color: var(--color-white);
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 30px;
 }
 
 @media (max-width: 550px) {
@@ -77,5 +67,14 @@
   .moveToDownBtn {
     width: 40px;
     height: 40px;
+  }
+  .card h2 {
+    font-size: 3.5vh;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 2vh;
+    margin-bottom: 32px;
   }
 }

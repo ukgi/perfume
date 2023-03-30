@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { blogList } from "./blog-list.js";
 import { motion } from "framer-motion";
 import { useNavigate, useParams } from "react-router-dom";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
 import styles from "./Start.module.css";
-import { BsArrowDownCircleFill } from "react-icons/bs";
+import { BsArrowDownCircleFill, BsArrowUpCircleFill } from "react-icons/bs";
 
 export default function Start() {
   const { kakaoNickname, id } = useParams();
   const { setRecommend, setIsRecommend } = useKakaoLoginUserContext();
+  const [isScrollDown, setIsScrollDown] = useState(false);
 
   const navigate = useNavigate();
 
@@ -24,15 +25,29 @@ export default function Start() {
 
   return (
     <div className={styles.container}>
-      <BsArrowDownCircleFill
-        className={styles.moveToDownBtn}
-        onClick={() => {
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
-        }}
-      ></BsArrowDownCircleFill>
+      {isScrollDown ? (
+        <BsArrowUpCircleFill
+          className={styles.moveToDownBtn}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            setIsScrollDown(false);
+          }}
+        ></BsArrowUpCircleFill>
+      ) : (
+        <BsArrowDownCircleFill
+          className={styles.moveToDownBtn}
+          onClick={() => {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+            setIsScrollDown(true);
+          }}
+        ></BsArrowDownCircleFill>
+      )}
       {blogList.map((item, index) => {
         if (index === 0) {
           return (
