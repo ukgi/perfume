@@ -9,6 +9,10 @@
 }
 
 .moveToDownBtn {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 20px;
   width: 60px;
   height: 60px;
@@ -17,6 +21,7 @@
   background-color: inherit;
   cursor: pointer;
   transition: all 0.2s ease-in;
+  z-index: 10000;
 }
 
 .moveToDownBtn:hover {
