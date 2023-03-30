@@ -49,6 +49,9 @@ export default function Card({ info }) {
       <div className={styles.moodText}>
         <h2 className={styles.moodTitle}>{mood}</h2>
         <p className={styles.moodDesc}>{desc}</p>
+        <p className={styles.moodSubDesc}>
+          If I could put memories in a bottle like scent
+        </p>
       </div>
     </div>
   );

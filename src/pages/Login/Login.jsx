@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { KAKAO_AUTH_URL } from "./OAuth";
 import styles from "./Login.module.css";
 import { motion } from "framer-motion";
@@ -6,13 +6,8 @@ import { blogList } from "./blog-list";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 
 export default function Login() {
-  const ref = useRef();
-  useEffect(() => {
-    const scrollHeight = ref.current.getBoundingClientRect().height;
-    console.log(scrollHeight);
-  }, []);
   return (
-    <div className={styles.body} ref={ref}>
+    <div className={styles.body}>
       <BsArrowDownCircleFill
         className={styles.moveToDownBtn}
         onClick={() => {

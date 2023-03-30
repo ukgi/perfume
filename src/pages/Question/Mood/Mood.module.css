@@ -82,6 +82,14 @@
   font-weight: 600;
 }
 
+.moodText .moodSubDesc {
+  position: absolute;
+  bottom: 120px;
+  font-family: "Dancing Script", cursive;
+  font-size: 12px;
+  text-align: left;
+}
+
 .moodText .moodTitle {
   font-size: 1.2em;
   font-family: "Nanum Brush Script", cursive;

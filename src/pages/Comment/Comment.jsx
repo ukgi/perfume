@@ -11,13 +11,14 @@ export default function Comment() {
   const { recommend, setRecommend } = useKakaoLoginUserContext();
   const navigate = useNavigate();
 
+  const [isClick, setIsClick] = useState(false);
   const [comment, setComment] = useState(
     () => JSON.parse(sessionStorage.getItem("recommendData")).comment || ""
   );
 
   const handleInput = (e) => {
-    setComment(e.target.value);
     setRecommend((prev) => ({ ...prev, comment }));
+    setComment(e.target.value);
   };
 
   const handleRecommend = async () => {
@@ -35,6 +36,8 @@ export default function Comment() {
       .catch(console.error);
   };
 
+  console.log("버튼 클릭", isClick);
+
   return (
     <div className={styles.body}>
       <h2 className={styles.title}>{state}에게 추천 이유를 적어주세요</h2>
@@ -45,7 +48,14 @@ export default function Comment() {
           onChange={handleInput}
           value={comment}
         />
-        <button className={styles.btn} onClick={() => handleRecommend()}>
+        <button
+          style={isClick ? { display: "none" } : { display: "block" }}
+          className={styles.btn}
+          onClick={() => {
+            setIsClick(true);
+            handleRecommend();
+          }}
+        >
           제출하기
         </button>
       </div>

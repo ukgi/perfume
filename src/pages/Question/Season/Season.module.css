@@ -82,6 +82,14 @@
   font-weight: 600;
 }
 
+.seasonText .seasonSubDesc {
+  position: absolute;
+  bottom: 120px;
+  font-family: "Dancing Script", cursive;
+  font-size: 12px;
+  text-align: left;
+}
+
 .seasonText .seasonTitle::after {
   content: "";
   width: 50px;

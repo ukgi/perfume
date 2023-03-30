@@ -48,6 +48,9 @@ export default function Card({ season }) {
       <div className={styles.seasonText}>
         <h2 className={styles.seasonTitle}>{seasonTitle}</h2>
         <p className={styles.seasonDesc}>{seasonDesc}</p>
+        <p className={styles.seasonSubDesc}>
+          If I could put memories in a bottle like scent
+        </p>
       </div>
     </div>
   );

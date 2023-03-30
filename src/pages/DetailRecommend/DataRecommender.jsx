@@ -10,16 +10,26 @@ export default function DataRecommender() {
     <div className={styles.body}>
       <h2 className={styles.title}>{recommender}님이 추천하는 향수입니다</h2>
       <div className={styles.perfumeList}>
-        <h3>{perfume.perfumeName}</h3>
-        <p>{perfume.perfumeFeature}</p>
+        <img
+          className={styles.logo}
+          src='/assets/images/Logo/Logo.png'
+          alt=''
+        />
         <img
           className={styles.perfumeImage}
           src={perfume.perfumeImageUrl}
-          alt=''
+          alt='perfume'
         />
-        <div className={styles.commentBox}>
-          <div className={styles.balloon}>{comment}</div>
+        <div className={styles.perfumeText}>
+          <h3 className={styles.perfumeTitle}>{perfume.perfumeName}</h3>
+          <p className={styles.perfumeFeature}>{perfume.perfumeFeature}</p>
+          <p className={styles.perfumeSubDesc}>
+            If I could put memories in a bottle like scent
+          </p>
         </div>
+      </div>
+      <div className={styles.commentBox}>
+        <div className={styles.balloon}>{comment}</div>
       </div>
       <button className={styles.backBtn} onClick={() => window.history.back()}>
         뒤로 가기
