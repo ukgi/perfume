@@ -55,13 +55,7 @@ export default function Slider() {
       </SwiperSlide>
 
       <SwiperSlide className={styles.imgBx}>
-        <video
-          src='/assets/videos/videos07.mp4'
-          autoPlay
-          loop
-          muted
-          typeof='mp4'
-        ></video>
+        <img src='/assets/images/13.jpg' alt='perfume' />
         <div className={styles.content} id={styles.contentTwo}>
           <h2>취향</h2>
           <p>
@@ -74,7 +68,7 @@ export default function Slider() {
       </SwiperSlide>
 
       <SwiperSlide className={styles.imgBx}>
-        <img src='/assets/images/10.jpeg' alt='' />
+        <img src='/assets/images/14.jpg' alt='' />
         <div className={styles.content} id={styles.contentThree}>
           <h2>지향</h2>
           <p>

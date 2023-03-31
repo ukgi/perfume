@@ -51,6 +51,7 @@
 #contentTwo p,
 #contentTwo h2 {
   text-align: right;
+  color: var(--color-black);
 }
 
 #contentThree {
@@ -152,9 +153,11 @@
   #contentTwo {
     right: 0;
   }
+
   #contentTwo p,
   #contentTwo h2 {
     text-align: center;
+    color: var(--color-black);
   }
   #contentThree {
     left: 0;
