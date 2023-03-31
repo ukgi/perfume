@@ -26,6 +26,14 @@ export default function BestRecommend() {
         );
         setBestRecommend(data.data);
 
+        const bestPerfumeImage = await axios.get(
+          `${server.api}/perfume/perfume-image`,
+          {
+            perfumeName: `${Object.keys(data.data)[0]}`,
+          }
+        );
+        setBestPerfume(bestPerfumeImage.data);
+
         return data.data;
       } catch (err) {
         console.log(err);
@@ -35,20 +43,8 @@ export default function BestRecommend() {
       }
     };
 
-    const handleBestPerfumeImage = async () => {
-      try {
-        const data = await axios.get(`${server.api}/perfume/perfume-image`, {
-          perfumeName: `${Object.keys(bestRecommend)[0]}`,
-        });
-        setBestPerfume(data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
     handleBestRecommend();
-    handleBestPerfumeImage();
-  }, [id, bestRecommend]);
+  }, [id]);
 
   const handleDetailPerfume = () =>
     navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
