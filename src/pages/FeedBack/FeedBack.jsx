@@ -32,16 +32,19 @@ export default function FeedBack() {
       <div className={styles.mainText}>
         <h1 className={styles.title}>
           인:향은 여러분의 정성어린 의견을 <br />
-          적극 반응하겠습니다.
+          적극 반영하겠습니다.
         </h1>
         <p className={styles.desc}>
-          소중한 피드백을 해주신다면 감사드립니다.
+          소중한 피드백을 해주신다면 감사합니다.
           <br /> 여러분의 불편함을 꼭 해결하겠습니다.
         </p>
       </div>
 
       <div className={styles.servicesRadio}>
-        <h2>어떤 서비스에 대해 피드백을 하고 싶으신가요?</h2>
+        <h2>
+          어떤 서비스에 대해 <br />
+          피드백을 하고 싶으신가요?
+        </h2>
         <div>
           <div onClick={handleServiceName}>
             <input type='radio' id='firstService' name='services' />
