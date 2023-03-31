@@ -34,18 +34,6 @@ export default function BrandDetail() {
   return (
     <div className={styles.body}>
       <div className={styles.sectionOne}>
-        <div className={styles.bubbles}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <div className={styles.sectionOneText}>
           <h1>{perfumeName}</h1>
           <h2>{brandName}</h2>

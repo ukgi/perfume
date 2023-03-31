@@ -199,6 +199,7 @@
   border: none;
   background-color: grey;
   transition: all 0.2s ease-in;
+  text-decoration: none;
 }
 
 .returnRootBtn:hover {

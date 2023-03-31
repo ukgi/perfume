@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { config as server } from "../../config";
 
 import styles from "./BestRecommend.module.css";
@@ -9,6 +10,8 @@ import styles from "./BestRecommend.module.css";
 export default function BestRecommend() {
   const id = sessionStorage.getItem("id");
   const [bestRecommend, setBestRecommend] = useState({});
+  const [bestPerfume, setBestPerfume] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const accessToken = sessionStorage.getItem("accessToken");
@@ -22,7 +25,7 @@ export default function BestRecommend() {
           config
         );
         setBestRecommend(data.data);
-        console.log("best recommend", data.data);
+
         return data.data;
       } catch (err) {
         console.log(err);
@@ -31,9 +34,25 @@ export default function BestRecommend() {
         }
       }
     };
+
+    const handleBestPerfumeImage = async () => {
+      try {
+        const data = await axios.post(`${server.api}/perfume/perfume-image`, {
+          perfumeName: `${Object.values(bestRecommend)[0]}`,
+        });
+        setBestPerfume(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     handleBestRecommend();
-  }, [id]);
-  console.log(bestRecommend);
+    handleBestPerfumeImage();
+  }, [id, bestRecommend]);
+
+  const handleDetailPerfume = () =>
+    navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
+
   return (
     <>
       <div className={styles.testContainer}>
@@ -49,6 +68,19 @@ export default function BestRecommend() {
               <p>추천 데이터가 없습니다</p>
             )}
           </h3>
+          {bestPerfume && (
+            <div>
+              <img
+                className={styles.bestPerfume}
+                src={bestPerfume.perfumeImageUrl}
+                alt=''
+                onClick={handleDetailPerfume}
+              />
+              <p className={styles.bestPerfumeSubDesc}>
+                클릭하여 세부 정보를 확인하세요
+              </p>
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.testContainer}>

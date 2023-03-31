@@ -12,16 +12,13 @@ export default function Comment() {
   const navigate = useNavigate();
 
   const [isClick, setIsClick] = useState(false);
-  const [comment, setComment] = useState(
-    () => JSON.parse(sessionStorage.getItem("recommendData")).comment || ""
-  );
 
   const handleInput = (e) => {
-    setComment(e.target.value);
-    setRecommend((prev) => ({ ...prev, comment }));
+    setRecommend((prev) => ({ ...prev, comment: e.target.value }));
   };
 
   const handleRecommend = async () => {
+    console.log(recommend);
     axios
       .post(
         `${config.api}/member/recommend/${
@@ -41,7 +38,6 @@ export default function Comment() {
           className={styles.textarea}
           type='textarea'
           onChange={handleInput}
-          value={comment}
         />
         <button
           style={isClick ? { display: "none" } : { display: "block" }}

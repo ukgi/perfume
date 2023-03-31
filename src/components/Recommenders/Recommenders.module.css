@@ -12,3 +12,19 @@
   border-radius: 50%;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .recommenders {
+    right: 80px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .recommenders {
+    width: 18px;
+    height: 18px;
+    font-size: 0.8em;
+    right: 72px;
+  }
+}

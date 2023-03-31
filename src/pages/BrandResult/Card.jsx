@@ -4,7 +4,7 @@ import styles from "./BrandResult.module.css";
 
 export default function Card({ item }) {
   const navigate = useNavigate();
-  console.log(item);
+
   return (
     <div
       className={styles.card}

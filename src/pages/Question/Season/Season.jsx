@@ -40,25 +40,25 @@ const seasons = [
   {
     seasonTitle: "봄",
     color: "#ed9af0",
-    img: "/assets/images/seasons/봄2.jpg",
+    img: "/assets/images/seasons/봄.webp",
     seasonDesc: "벚꽃이 피는 따스한 봄",
   },
   {
     seasonTitle: "여름",
     color: "#64f588",
-    img: "/assets/images/seasons/여름.jpg",
+    img: "/assets/images/seasons/여름.webp",
     seasonDesc: "시원한 바다가 생각나는 여름",
   },
   {
     seasonTitle: "가을",
     color: "#ff651e",
-    img: "/assets/images/seasons/가을.jpg",
+    img: "/assets/images/seasons/가을.webp",
     seasonDesc: "낙엽이 떨어지는 가을",
   },
   {
     seasonTitle: "겨울",
     color: "#64f0f5",
-    img: "/assets/images/seasons/겨울.jpg",
+    img: "/assets/images/seasons/겨울.webp",
     seasonDesc: "함박눈이 떨어지는 겨울",
   },
 ];

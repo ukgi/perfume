@@ -1,15 +1,20 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./DataRecommender.module.css";
 
 export default function DataRecommender() {
   const { state } = useLocation();
   const { recommender, perfume, comment } = state;
+  const navigate = useNavigate();
+
+  const handlePerfumeDetail = () => {
+    navigate(`/brandDetail/${perfume.id}`, { state: perfume });
+  };
 
   return (
     <div className={styles.body}>
       <h2 className={styles.title}>{recommender}님이 추천하는 향수입니다</h2>
-      <div className={styles.perfumeList}>
+      <div className={styles.perfumeList} onClick={handlePerfumeDetail}>
         <img
           className={styles.logo}
           src='/assets/images/Logo/Logo.png'

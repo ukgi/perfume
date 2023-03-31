@@ -39,7 +39,7 @@ export default function ResultDetail() {
   if (isError)
     return (
       <div className={styles.subBody}>
-        <h3>에러 😡</h3>
+        <h3>Error 😡</h3>
       </div>
     );
 
@@ -73,12 +73,14 @@ export default function ResultDetail() {
               </span>
             </div>
             <img
+              loading={"lazy"}
+              decoding={"async"}
               className={styles.sectionTwoImg}
               src={`/assets/images/resultDetail/${
                 JSON.parse(sessionStorage.getItem("userAnswer")).genderAnswer
               }_${
                 JSON.parse(sessionStorage.getItem("userAnswer")).moodAnswer
-              }.png`}
+              }.webp`}
               alt=''
             />
           </div>

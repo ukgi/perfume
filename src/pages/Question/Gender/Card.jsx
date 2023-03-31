@@ -28,10 +28,10 @@ export default function Card({ gender, state }) {
       style={
         gender === "남자"
           ? {
-              background: `url('/assets/images/man.jpg') center / cover no-repeat`,
+              background: `url('/assets/images/man.webp') center / cover no-repeat`,
             }
           : {
-              background: `url('/assets/images/woman.jpg')  center / cover no-repeat`,
+              background: `url('/assets/images/woman.webp')  center / cover no-repeat`,
             }
       }
     >

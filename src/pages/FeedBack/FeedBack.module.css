@@ -72,6 +72,7 @@
   .body {
     padding: 0 24px;
     overflow: hidden;
+    height: 100vh;
   }
   .mainText {
     text-align: center;

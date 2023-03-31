@@ -75,6 +75,11 @@ export default function Card({ info }) {
       >
         <h1 className={styles.cardTitle}>{title}</h1>
         <p className={styles.cardDesc}>{desc}</p>
+        <img
+          className={styles.logo}
+          src='/assets/images/Logo/Logo2.png'
+          alt=''
+        />
       </div>
     </div>
   );
