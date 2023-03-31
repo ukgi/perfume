@@ -23,10 +23,6 @@ export default function Result() {
             key={index}
             onClick={() => navigate(`/result/${data.id}`)}
           >
-            <div className={styles.textBox}>
-              <h3 className={styles.perfumeName}>{data.perfumeName}</h3>
-              <h5 className={styles.perfumeBrand}>{data.brandName}</h5>
-            </div>
             <div className={styles.imgBox}>
               <img
                 className={styles.cardImg}
@@ -34,6 +30,7 @@ export default function Result() {
                 alt='perfumeImage'
                 draggable={false}
               />
+              <h3 className={styles.perfumeName}>{data.perfumeName}</h3>
             </div>
           </div>
         ))}

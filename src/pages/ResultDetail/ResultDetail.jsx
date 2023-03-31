@@ -1,43 +1,67 @@
 import axios from "axios";
 import React from "react";
 import { config } from "../../config";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./ResultDetail.module.css";
+import { useQuery } from "@tanstack/react-query";
 
 export default function ResultDetail() {
   const { perfumeId } = useParams();
-  const [data, setData] = useState();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const getPerfumeDetailData = async () => {
-      await axios
-        .get(`${config.api}/perfume/show-perfume/${perfumeId}`)
-        .then((data) => {
-          return setData(data.data);
-        })
-        .catch(console.error);
-    };
-    getPerfumeDetailData();
-  }, [perfumeId]);
+  const {
+    isLoading,
+    isError,
+    data: perfumeDetailData,
+  } = useQuery(
+    ["perfumeDetail", perfumeId],
+    async () => {
+      try {
+        const data = await axios.get(
+          `${config.api}/perfume/show-perfume/${perfumeId}`
+        );
+        return data.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    {
+      staleTime: 10000 * 60 * 1,
+    }
+  );
+
+  if (isLoading)
+    return (
+      <div className={styles.subBody}>
+        <h3>로딩중 ...</h3>
+      </div>
+    );
+  if (isError)
+    return (
+      <div className={styles.subBody}>
+        <h3>에러 😡</h3>
+      </div>
+    );
 
   return (
     <>
-      {data && (
+      {perfumeDetailData && (
         <div className={styles.body}>
           <div className={styles.sectionOne}>
             <div className={styles.sectionOneText}>
-              <h1 className={styles.perfumeName}>{data.perfume.perfumeName}</h1>
-              <h2 className={styles.perfumeBrand}>{data.perfume.brandName}</h2>
+              <h1 className={styles.perfumeName}>
+                {perfumeDetailData.perfume.perfumeName}
+              </h1>
+              <h2 className={styles.perfumeBrand}>
+                {perfumeDetailData.perfume.brandName}
+              </h2>
               <p className={styles.perfumeFeature}>
-                {data.perfume.perfumeFeature}
+                {perfumeDetailData.perfume.perfumeFeature}
               </p>
             </div>
             <img
               className={styles.sectionOneImg}
-              src={data.perfume.perfumeImageUrl}
+              src={perfumeDetailData.perfume.perfumeImageUrl}
               alt=''
             />
           </div>
@@ -45,7 +69,7 @@ export default function ResultDetail() {
             <div className={styles.sectionTwoText}>
               <h3 className={styles.sectionTwoTitle}>분위기 연출</h3>
               <span className={styles.sectionTwoDesc}>
-                {data.moodRecommend}
+                {perfumeDetailData.moodRecommend}
               </span>
             </div>
             <img
@@ -76,7 +100,7 @@ export default function ResultDetail() {
                 이런 효과를 줄 수 있어요
               </h3>
               <span className={styles.sectionThreeDesc}>
-                <p>{data.scentRecommend}</p>
+                <p>{perfumeDetailData.scentRecommend}</p>
               </span>
             </div>
           </div>
@@ -86,7 +110,7 @@ export default function ResultDetail() {
                 어떤 계절에 사용하면 좋을까요?
               </h3>
               <span className={styles.sectionFourDesc}>
-                <p>{data.seasonRecommend}</p>
+                <p>{perfumeDetailData.seasonRecommend}</p>
               </span>
               <div className={styles.buttonContainer}>
                 <button

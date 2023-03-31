@@ -17,8 +17,8 @@ export default function Comment() {
   );
 
   const handleInput = (e) => {
-    setRecommend((prev) => ({ ...prev, comment }));
     setComment(e.target.value);
+    setRecommend((prev) => ({ ...prev, comment }));
   };
 
   const handleRecommend = async () => {
@@ -29,14 +29,9 @@ export default function Comment() {
         }`,
         recommend
       ) //
-      .then((res) => {
-        console.log(res);
-        navigate("/success");
-      })
+      .then(() => navigate("/success"))
       .catch(console.error);
   };
-
-  console.log("버튼 클릭", isClick);
 
   return (
     <div className={styles.body}>

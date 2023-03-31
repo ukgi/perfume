@@ -15,10 +15,12 @@
 .imgBox {
   margin-top: 30px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 15px;
   width: 300px;
-  height: 300px;
+  height: 350px;
   position: relative;
   background: linear-gradient(
     45deg,
@@ -32,7 +34,6 @@
   );
   background-size: 15px 15px;
   box-shadow: 0 0 0 7px rgb(66, 66, 66), 0 0 0 14px rgb(73, 73, 73);
-
   animation: animate 0.5s linear infinite;
 }
 
@@ -45,23 +46,16 @@
 .imgBox::after {
   content: "";
   position: absolute;
+  margin-top: 13px;
+  height: 225px;
   inset: 30px;
   border: 3px dashed rgb(85, 85, 85);
   transition: all 0.1s ease-in-out;
 }
 
-@keyframes animate {
-  0% {
-    background-position: 0;
-  }
-  100% {
-    background-position: 15px;
-  }
-}
-
 .card {
   position: relative;
-  height: 350px;
+  height: 400px;
   cursor: pointer;
 }
 
@@ -71,10 +65,6 @@
   transition: all 0.2s ease-in-out;
 }
 
-/* .card:hover .textBox {
-  visibility: visible;
-} */
-
 .card:hover .cardImg {
   transform: scale(1.1);
 }
@@ -83,26 +73,18 @@
   border: none;
 }
 
-.textBox {
-  width: 300px;
-  height: 300px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  position: absolute;
-  top: 8.5%;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0.8;
-  visibility: hidden;
-  transition: all 0.2s ease-in-out;
+.perfumeName {
+  color: var(--color-white);
+  font-size: 0.8em;
 }
 
-.perfumeName {
-  margin-bottom: 12px;
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 15px;
+  }
 }
 
 @media (max-width: 550px) {

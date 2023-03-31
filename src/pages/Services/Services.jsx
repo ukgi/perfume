@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Services.module.css";
 import { motion } from "framer-motion";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   const container = {
@@ -56,6 +57,9 @@ export default function Services() {
             <Card info={info} />
           </div>
         ))}
+        <Link to='/feedBack' className={styles.feedBackBtn}>
+          피드백 하러가기
+        </Link>
       </motion.div>
     </div>
   );

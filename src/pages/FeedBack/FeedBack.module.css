@@ -1,0 +1,114 @@
+.body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.mainText {
+  text-align: center;
+  margin-top: 180px;
+}
+
+.servicesRadio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.servicesRadio h2 {
+  margin: 18px 0;
+}
+
+.feedBackContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedBackContainer h2 {
+  margin-bottom: 12px;
+}
+
+.feedBackContainer textarea {
+  font-size: 1.1em;
+  width: 500px;
+  height: 200px;
+  outline: none;
+}
+
+.submitBtn {
+  margin-bottom: 24px;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 24px;
+  border: 2px solid black;
+  cursor: pointer;
+  background: gray;
+  transition: all 0.3s ease-in-out;
+}
+
+.submitBtn:hover {
+  color: var(--color-white);
+  background-color: var(--color-main);
+}
+
+.success {
+  font-weight: 700;
+  font-size: 1.3em;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .body {
+    padding: 0 24px;
+    overflow: hidden;
+  }
+  .mainText {
+    text-align: center;
+    margin-top: 180px;
+  }
+
+  .mainText h1 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+  .mainText p {
+    font-size: 0.8em;
+  }
+
+  .servicesRadio h2 {
+    font-size: 1.2em;
+  }
+
+  .feedBackContainer h2 {
+    margin-bottom: 12px;
+    font-size: 1.2em;
+  }
+
+  .feedBackContainer textarea {
+    font-size: 0.9em;
+    width: 300px;
+    height: 100px;
+    outline: none;
+  }
+
+  .submitBtn {
+    font-size: 1em;
+  }
+
+  .success {
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--color-white);
+  }
+}

@@ -65,7 +65,29 @@
   justify-content: center;
 }
 
-@media (max-width: 900px) {
+.feedBackBtn {
+  margin-bottom: 24px;
+  position: absolute;
+  bottom: 0;
+  padding: 12px 24px;
+  font-size: 24px;
+  font-weight: 700;
+  border: 2px solid rgb(67, 66, 66);
+  border-radius: 24px;
+  background-color: grey;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: black;
+}
+
+.feedBackBtn:hover {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+@media (max-width: 850px) {
   .body {
     height: 100%;
   }
@@ -74,5 +96,11 @@
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+  }
+
+  .feedBackBtn {
+    position: static;
+    font-size: 18px;
+    z-index: 3000;
   }
 }

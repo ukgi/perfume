@@ -5,6 +5,14 @@
   flex-direction: column;
 }
 
+.subBody {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sectionOne {
   width: 100%;
   padding-top: 150px;
@@ -74,7 +82,8 @@
 }
 
 .bubbles span {
-  position: relative;
+  display: inline-block;
+  position: absolute;
   width: 30px;
   height: 30px;
   background: #4fc3dc;
@@ -206,9 +215,11 @@
 @media (max-width: 850px) {
   .perfumeName {
     font-size: 30px;
+    margin-bottom: 8px;
   }
   .perfumeBrand {
     font-size: 25px;
+    margin-bottom: 6px;
   }
   .perfumeFeature {
     font-size: 18px;
@@ -233,13 +244,13 @@
 
 @media (max-width: 550px) {
   .perfumeName {
-    font-size: 25px;
+    font-size: 30px;
   }
   .perfumeBrand {
     font-size: 20px;
   }
   .perfumeFeature {
-    font-size: 14px;
+    font-size: 12px;
   }
   .sectionOneImg {
     width: 300px;
@@ -271,7 +282,7 @@
   }
 
   .bubbles span {
-    position: relative;
+    display: inline-block;
     width: 20px;
     height: 20px;
     background: #4fc3dc;
