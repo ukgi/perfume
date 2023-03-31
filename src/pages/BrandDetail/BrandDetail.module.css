@@ -71,6 +71,10 @@
   .sectionOne {
     padding: 0 24px;
   }
+
+  .sectionOneText h1 {
+    margin-top: 200px;
+  }
   .sectionOneImg {
     width: 300px;
   }

@@ -38,7 +38,7 @@ export default function BestRecommend() {
     const handleBestPerfumeImage = async () => {
       try {
         const data = await axios.get(`${server.api}/perfume/perfume-image`, {
-          perfumeName: `${Object.values(bestRecommend)[0]}`,
+          perfumeName: `${Object.keys(bestRecommend)[0]}`,
         });
         setBestPerfume(data.data);
       } catch (error) {
