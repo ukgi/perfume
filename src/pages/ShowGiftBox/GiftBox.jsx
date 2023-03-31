@@ -10,7 +10,6 @@ export default function GiftBox({ data }) {
     <motion.div
       className={styles.gift}
       onClick={() => navigate("/result", { state: data })}
-      onTouchStart={() => navigate("/result", { state: data })}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.2 }}
