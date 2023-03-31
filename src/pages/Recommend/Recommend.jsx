@@ -40,7 +40,7 @@ export default function Recommend() {
       return;
     }
     copyLinkRef.current.focus();
-    // copyLinkRef.current.select();
+    copyLinkRef.current.select();
     document.execCommand("copy");
     alert("링크를 복사했습니다.");
   };
