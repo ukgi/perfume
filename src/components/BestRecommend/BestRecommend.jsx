@@ -35,7 +35,6 @@ export default function BestRecommend() {
           },
         });
         setBestPerfume(bestPerfumeImage.data);
-
         return data.data;
       } catch (err) {
         console.log(err);

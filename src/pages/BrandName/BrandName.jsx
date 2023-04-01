@@ -32,8 +32,6 @@ export default function BrandName() {
     }
   );
 
-  console.log("brandList", brandList);
-
   const [dropDownList, setDropDownList] = useState(brandList);
 
   const readPerfumeData = async (e) => {
