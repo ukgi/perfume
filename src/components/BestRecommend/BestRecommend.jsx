@@ -26,16 +26,14 @@ export default function BestRecommend() {
         );
         setBestRecommend(data.data);
 
-        const bestPerfumeImage = await axios(
-          `${server.api}/perfume/perfume-image`,
-          {
-            method: "GET",
-            headers: { Authorization: `${accessToken}` },
-            data: {
-              perfumeName: `${Object.keys(data.data)[0]}`,
-            },
-          }
-        );
+        const bestPerfumeImage = await axios({
+          method: "get",
+          url: `${server.api}/perfume/perfume-image`,
+          headers: { Authorization: `${accessToken}` },
+          data: {
+            perfumeName: `${Object.keys(data.data)[0]}`,
+          },
+        });
         setBestPerfume(bestPerfumeImage.data);
 
         return data.data;
