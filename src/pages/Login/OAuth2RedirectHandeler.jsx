@@ -61,7 +61,6 @@ export const onSilentRefresh = async () => {
 };
 
 export const onLoginSuccess = (res) => {
-  console.log("로그인 회원정보", res);
   const accessToken = res.data.accessToken;
   const refreshToken = res.data.refreshToken;
   const id = res.data.id;

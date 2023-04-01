@@ -36,6 +36,7 @@ export default function BestRecommend() {
             },
           }
         );
+        console.log(Object.keys(data.data)[0]);
         setBestPerfume(bestPerfumeImage.data);
 
         return data.data;
