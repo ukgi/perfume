@@ -31,12 +31,11 @@ export default function BestRecommend() {
           {
             method: "GET",
             headers: { Authorization: `${accessToken}` },
-            body: {
+            data: {
               perfumeName: `${Object.keys(data.data)[0]}`,
             },
           }
         );
-        console.log(Object.keys(data.data)[0]);
         setBestPerfume(bestPerfumeImage.data);
 
         return data.data;
