@@ -39,7 +39,9 @@
 
 .sectionTwoTitle,
 .sectionFourTitle {
+  font-size: 1.5em;
   color: var(--color-white);
+  margin-bottom: 12px;
 }
 
 .sectionTwo,
@@ -59,11 +61,6 @@
   width: 500px;
 }
 
-.sectionFour {
-  text-align: center;
-  justify-content: center;
-}
-
 .sectionThree {
   padding: 0 32px;
   width: 100%;
@@ -73,6 +70,65 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.sectionThreeTitle {
+  font-size: 1.5em;
+  margin-bottom: 12px;
+}
+
+.sectionThreeDesc {
+  font-size: 1em;
+}
+
+.sectionFour {
+  text-align: center;
+  justify-content: center;
+}
+
+.sectionTwoText,
+.sectionThreeText,
+.sectionFourText {
+  max-width: 600px;
+}
+
+.sectionThreeText {
+  text-align: center;
+  position: absolute;
+}
+
+.sectionTwoDesc,
+.sectionFourDesc {
+  font-size: 1em;
+  font-weight: 200;
+  color: var(--color-white);
+}
+
+.sectionThree {
+  background-color: var(--color-white);
+}
+
+.returnRootBtn {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  background-color: grey;
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.returnRootBtn:hover {
+  background-color: #9b7c39;
+  color: white;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 .bubbles {
@@ -160,6 +216,7 @@
   left: 90%;
   animation-delay: 4s;
 }
+
 @keyframes animate {
   0% {
     transform: translateY(100vh) scale(0);
@@ -168,49 +225,6 @@
   100% {
     transform: translateY(0) scale(1);
   }
-}
-
-.sectionTwoText,
-.sectionThreeText,
-.sectionFourText {
-  max-width: 600px;
-}
-
-.sectionThreeText {
-  text-align: center;
-  position: absolute;
-}
-
-.sectionTwoDesc,
-.sectionFourDesc {
-  color: var(--color-white);
-}
-
-.sectionThree {
-  background-color: var(--color-white);
-}
-
-.returnRootBtn {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 25px;
-  border: none;
-  background-color: grey;
-  transition: all 0.2s ease-in;
-  text-decoration: none;
-}
-
-.returnRootBtn:hover {
-  background-color: #9b7c39;
-  color: white;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
 }
 
 @media (max-width: 850px) {
@@ -232,7 +246,6 @@
   .sectionTwoText {
     position: absolute;
     text-align: center;
-    font-weight: 600;
     z-index: 1000;
   }
   .sectionTwoImg {
@@ -261,13 +274,24 @@
     padding: 0 12px;
     position: absolute;
     text-align: center;
-    font-weight: 600;
     z-index: 1000;
   }
   .sectionTwo {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .sectionTwoTitle,
+  .sectionFourTitle,
+  .sectionThreeTitle {
+    font-size: 1.4em;
+  }
+
+  .sectionTwoDesc,
+  .sectionThreeDesc,
+  .sectionFourDesc {
+    font-size: 0.8em;
   }
 
   .sectionTwoImg {
