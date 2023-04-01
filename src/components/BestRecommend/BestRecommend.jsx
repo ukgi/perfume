@@ -30,7 +30,7 @@ export default function BestRecommend() {
           method: "get",
           url: `${server.api}/perfume/perfume-image`,
           headers: { Authorization: `${accessToken}` },
-          data: {
+          params: {
             perfumeName: `${Object.keys(data.data)[0]}`,
           },
         });
