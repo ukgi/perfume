@@ -30,14 +30,6 @@ export default function UserName() {
     }
   };
 
-  window.addEventListener("beforeunload", () => {
-    navigate(`/recommend/${state.kakaoNickname}/${state.id}`);
-  });
-
-  window.addEventListener("load", () => {
-    navigate(`/recommend/${state.kakaoNickname}/${state.id}`);
-  });
-
   // window.location.reload() && window.history.back();
 
   const handleInputFocus = () => {
