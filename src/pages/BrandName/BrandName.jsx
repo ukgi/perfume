@@ -89,7 +89,7 @@ export default function BrandName() {
   useEffect(showDropDownList, [brand, brandList]);
 
   return (
-    <>
+    <div className={styles.All}>
       <WholeBox>
         <form>
           <InputBox isHaveInputValue={isHaveInputValue}>
@@ -141,7 +141,7 @@ export default function BrandName() {
       >
         처음으로 돌아가기
       </button>
-    </>
+    </div>
   );
 }
 
