@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styles from "./BrandResult.module.css";
 import Card from "./Card";
 import ReactElasticCarousel from "react-elastic-carousel";
@@ -8,7 +8,6 @@ import BackBtn from "../../components/BackBtn/BackBtn";
 export default function BrandResult() {
   const { state } = useLocation();
   const { brandName } = useParams();
-  const navigate = useNavigate();
 
   return (
     <div className={styles.body}>
@@ -25,12 +24,6 @@ export default function BrandResult() {
           })}
       </ReactElasticCarousel>
       <BackBtn />
-      <button
-        className={styles.returnRootBtn}
-        onClick={() => navigate("/services")}
-      >
-        처음으로 돌아가기
-      </button>
     </div>
   );
 }

@@ -8,7 +8,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { config } from "../../config";
-import styles from "./BrandName.module.css";
 
 export default function BrandName() {
   const [brand, setBrand] = useState("");
@@ -89,59 +88,51 @@ export default function BrandName() {
   useEffect(showDropDownList, [brand, brandList]);
 
   return (
-    <div className={styles.All}>
-      <WholeBox>
-        <form>
-          <InputBox isHaveInputValue={isHaveInputValue}>
-            <Input
-              type='text'
-              value={brand}
-              placeholder='평소에 사용하시던 브랜드를 찾아주세요'
-              onChange={handleBrand}
-              onKeyUp={handleDropDownKey}
-            />
-            <DeleteButton
-              onClick={(e) => {
-                e.preventDefault();
-                setBrand("");
-              }}
-            >
-              &times;
-            </DeleteButton>
-            <SearchButton type='submit' onClick={readPerfumeData}>
-              <BsSearch />
-            </SearchButton>
-          </InputBox>
-          {isHaveInputValue && (
-            <DropDownBox>
-              {dropDownList.length === 0 && (
-                <DropDownItem>해당하는 단어가 없습니다</DropDownItem>
-              )}
-              {dropDownList.map((dropDownItem, dropDownIndex) => {
-                return (
-                  <DropDownItem
-                    key={dropDownIndex}
-                    onClick={() => clickDropDownItem(dropDownItem)}
-                    onMouseOver={() => setDropDownItemIndex(dropDownIndex)}
-                    className={
-                      dropDownItemIndex === dropDownIndex ? "selected" : ""
-                    }
-                  >
-                    {dropDownItem}
-                  </DropDownItem>
-                );
-              })}
-            </DropDownBox>
-          )}
-        </form>
-      </WholeBox>
-      <button
-        className={styles.returnRootBtn}
-        onClick={() => navigate("/services")}
-      >
-        처음으로 돌아가기
-      </button>
-    </div>
+    <WholeBox>
+      <form>
+        <InputBox isHaveInputValue={isHaveInputValue}>
+          <Input
+            type='text'
+            value={brand}
+            placeholder='평소에 사용하시던 브랜드를 찾아주세요'
+            onChange={handleBrand}
+            onKeyUp={handleDropDownKey}
+          />
+          <DeleteButton
+            onClick={(e) => {
+              e.preventDefault();
+              setBrand("");
+            }}
+          >
+            &times;
+          </DeleteButton>
+          <SearchButton type='submit' onClick={readPerfumeData}>
+            <BsSearch />
+          </SearchButton>
+        </InputBox>
+        {isHaveInputValue && (
+          <DropDownBox>
+            {dropDownList.length === 0 && (
+              <DropDownItem>해당하는 단어가 없습니다</DropDownItem>
+            )}
+            {dropDownList.map((dropDownItem, dropDownIndex) => {
+              return (
+                <DropDownItem
+                  key={dropDownIndex}
+                  onClick={() => clickDropDownItem(dropDownItem)}
+                  onMouseOver={() => setDropDownItemIndex(dropDownIndex)}
+                  className={
+                    dropDownItemIndex === dropDownIndex ? "selected" : ""
+                  }
+                >
+                  {dropDownItem}
+                </DropDownItem>
+              );
+            })}
+          </DropDownBox>
+        )}
+      </form>
+    </WholeBox>
   );
 }
 
