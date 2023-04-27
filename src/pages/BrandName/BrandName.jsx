@@ -1,5 +1,4 @@
 import React from "react";
-// import styles from "./BrandName.module.css";
 import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
@@ -67,7 +66,6 @@ export default function BrandName() {
   };
 
   const handleDropDownKey = (event) => {
-    //input에 값이 있을때만 작동
     if (isHaveInputValue) {
       if (
         event.key === "ArrowDown" &&
@@ -132,6 +130,13 @@ export default function BrandName() {
           </DropDownBox>
         )}
       </form>
+      <ReturnRoot
+        onClick={() => {
+          navigate("/services");
+        }}
+      >
+        처음으로 돌아가기
+      </ReturnRoot>
     </WholeBox>
   );
 }
@@ -139,10 +144,20 @@ export default function BrandName() {
 const activeBorderRadius = "16px 16px 0 0";
 const inactiveBorderRadius = "16px 16px 16px 16px";
 
+const ReturnRoot = styled.button`
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 24px;
+  cursor: pointer;
+  margin-top: 24px;
+  border-radius: 32px;
+`;
+
 const WholeBox = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
