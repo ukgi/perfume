@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsFillBellFill } from "react-icons/bs";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
-import { config } from "../../config";
+import { SERVER_URI } from "../../pages/Login/OAuth";
 import Recommenders from "../Recommenders/Recommenders";
 import axios from "axios";
 
@@ -13,7 +13,7 @@ export default function Header() {
   const { isRecommend } = useKakaoLoginUserContext();
 
   const handleLogout = async () => {
-    axios.delete(`${config.api}/member/logout`, {
+    axios.delete(`${SERVER_URI}/member/logout`, {
       data: {
         memberId: sessionStorage.getItem("memberId"),
         accessToken: sessionStorage.getItem("accessToken"),

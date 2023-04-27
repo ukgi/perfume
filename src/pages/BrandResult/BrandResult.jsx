@@ -9,6 +9,7 @@ export default function BrandResult() {
   const { state } = useLocation();
   const { brandName } = useParams();
   const navigate = useNavigate();
+
   return (
     <div className={styles.body}>
       <div className={styles.textBox}>
