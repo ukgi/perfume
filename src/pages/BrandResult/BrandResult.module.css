@@ -85,6 +85,23 @@
   background: var(--color-main);
 }
 
+.returnRootBtn {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  background-color: grey;
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.returnRootBtn:hover {
+  background-color: #9b7c39;
+  color: white;
+}
+
 @media (max-width: 550px) {
   .body {
     padding: 0 8px;
