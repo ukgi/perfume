@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { config } from "../../config";
+import styles from './BrandName.module.css'
 
 export default function BrandName() {
   const [brand, setBrand] = useState("");
@@ -132,6 +133,12 @@ export default function BrandName() {
           </DropDownBox>
         )}
       </form>
+      <button
+        className={styles.returnRootBtn}
+        onClick={() => navigate("/services")}
+      >
+        처음으로 돌아가기
+      </button>
     </WholeBox>
   );
 }
