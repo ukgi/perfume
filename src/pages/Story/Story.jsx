@@ -28,7 +28,7 @@ export default function Story() {
   if (isLoading)
     return (
       <div className={styles.subBody}>
-        <h3>로딩중 ...</h3>
+        <h3>이야기를 만드는 중입니다. 잠시만 기다려주세요.</h3>
       </div>
     );
   if (isError)

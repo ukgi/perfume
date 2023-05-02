@@ -91,6 +91,17 @@ export default function BestRecommend() {
               ? Object.keys(bestRecommend)[1]
               : "추천된 향수가 없습니다"}
           </h3>
+          {bestRecommend && (
+            <div>
+              <img
+                className={styles.bestPerfume}
+                src={`/assets/images/perfumeImg/${Object.keys(
+                  bestRecommend[1]
+                )}`}
+                alt=''
+              />
+            </div>
+          )}
         </div>
       </div>
     </>
