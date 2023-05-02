@@ -3,6 +3,7 @@ import styles from "./Story.module.css";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useUserContext } from "../../context/UserContextApi";
+import { config } from "../../config";
 
 export default function Story() {
   const { user, userName } = useUserContext();
