@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { config } from "../../config";
+import RootBtn from "../../components/RootBtn/RootBtn";
 
 export default function BrandName() {
   const [brand, setBrand] = useState("");
@@ -23,7 +24,7 @@ export default function BrandName() {
   const { data: brandList } = useQuery(
     ["brandList"],
     async () => {
-      const data = await axios.get(`${config.api}/perfume/show-all-brand`);
+      const data = await axios.get(`/data/AllBrandPerfume.json`);
       return data.data;
     },
     {
@@ -36,9 +37,7 @@ export default function BrandName() {
   const readPerfumeData = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${config.api}/perfume/find-by-brand`, {
-        brandName: brand,
-      });
+      const response = await axios.get(`/data/perfumeBrand.json`);
       navigate(`/brandName/${brand}`, { state: response.data });
     } catch (error) {
       if (error.response.status === 404) {
@@ -130,28 +129,13 @@ export default function BrandName() {
           </DropDownBox>
         )}
       </form>
-      <ReturnRoot
-        onClick={() => {
-          navigate("/services");
-        }}
-      >
-        처음으로 돌아가기
-      </ReturnRoot>
+      <RootBtn />
     </WholeBox>
   );
 }
 
 const activeBorderRadius = "16px 16px 0 0";
 const inactiveBorderRadius = "16px 16px 16px 16px";
-
-const ReturnRoot = styled.button`
-  font-weight: 600;
-  font-size: 16px;
-  padding: 12px 24px;
-  cursor: pointer;
-  margin-top: 24px;
-  border-radius: 32px;
-`;
 
 const WholeBox = styled.div`
   width: 100%;

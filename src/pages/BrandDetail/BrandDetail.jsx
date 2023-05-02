@@ -7,6 +7,7 @@ import { config } from "../../config";
 import OtherBrandCard from "./OtherBrandCard";
 import ReactElasticCarousel from "react-elastic-carousel";
 import BackBtn from "../../components/BackBtn/BackBtn";
+import RootBtn from "../../components/RootBtn/RootBtn";
 
 export default function BrandDetail() {
   const { state } = useLocation();
@@ -17,9 +18,7 @@ export default function BrandDetail() {
     ["relatedPerfume", id],
     async () => {
       try {
-        const data = await axios.get(
-          `${config.api}/survey/show-similar-perfume/${id}`
-        );
+        const data = await axios.get(`/data/perfumeBrand.json`);
         return data.data.slice(0, 10);
       } catch (error) {
         console.error(error);
@@ -59,7 +58,10 @@ export default function BrandDetail() {
               })}
           </ReactElasticCarousel>
         )}
-        <BackBtn />
+        <div className={styles.btnBox}>
+          <BackBtn />
+          <RootBtn />
+        </div>
       </div>
     </div>
   );

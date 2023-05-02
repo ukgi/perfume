@@ -42,19 +42,10 @@
   color: var(--color-white);
 }
 
-.backBtn {
-  margin-top: 12px;
-  font-size: 22px;
-  padding: 12px 24px;
-  border-radius: 24px;
-  border: none;
-  font-weight: 600;
-  transition: all 0.2s ease-in;
-}
-
-.backBtn:hover {
-  color: var(--color-white);
-  background: var(--color-main);
+.btnBox {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 @keyframes animate {
@@ -80,8 +71,5 @@
   }
   .sectionTwoDesc {
     font-size: 12px;
-  }
-  .backBtn {
-    font-size: 16px;
   }
 }

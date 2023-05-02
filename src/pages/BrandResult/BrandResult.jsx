@@ -4,6 +4,7 @@ import styles from "./BrandResult.module.css";
 import Card from "./Card";
 import ReactElasticCarousel from "react-elastic-carousel";
 import BackBtn from "../../components/BackBtn/BackBtn";
+import RootBtn from "../../components/RootBtn/RootBtn";
 
 export default function BrandResult() {
   const { state } = useLocation();
@@ -12,9 +13,7 @@ export default function BrandResult() {
   return (
     <div className={styles.body}>
       <div className={styles.textBox}>
-        <h1 className={styles.title}>
-          {brandName}의 다른 제품들을 소개해드릴게요
-        </h1>
+        <h1 className={styles.title}>{brandName}의 제품들을 소개해드릴게요</h1>
         <h4>이미지를 클릭하여 상세 정보를 확인하세요</h4>
       </div>
       <ReactElasticCarousel breakPoints={breakPoints}>
@@ -23,7 +22,10 @@ export default function BrandResult() {
             return <Card key={index} item={item} />;
           })}
       </ReactElasticCarousel>
-      <BackBtn />
+      <div className={styles.btnBox}>
+        <BackBtn />
+        <RootBtn />
+      </div>
     </div>
   );
 }
