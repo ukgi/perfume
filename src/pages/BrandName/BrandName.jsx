@@ -141,6 +141,7 @@ const WholeBox = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  gap: 24px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

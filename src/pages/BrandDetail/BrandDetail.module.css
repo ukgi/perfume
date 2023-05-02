@@ -9,15 +9,26 @@
 
 .sectionOne {
   padding-top: 200px;
+  padding-bottom: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: #d0e0c3;
+}
+
+.sectionOneImg {
+  width: 500px;
+  height: 500px;
 }
 
 .sectionOneText {
   text-align: center;
+}
+
+.sectionOneText p {
+  padding-bottom: 30px;
+  font-family: "KyoboHandwriting2022khn";
 }
 
 .sectionOneText h2 {
@@ -28,7 +39,7 @@
   margin: 0 auto;
   padding: 20px 0;
   width: 100%;
-  background-color: var(--color-black);
+  background-color: beige;
   text-align: center;
 }
 
@@ -39,7 +50,11 @@
 
 .sectionTwoTitle,
 .sectionTwoDesc {
-  color: var(--color-white);
+  color: brown;
+}
+
+.sectionTwoDesc {
+  font-size: 18px;
 }
 
 .btnBox {

@@ -4,6 +4,7 @@ import { config } from "../../config";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./ResultDetail.module.css";
 import { useQuery } from "@tanstack/react-query";
+import { FaQuoteLeft } from "react-icons/fa";
 
 export default function ResultDetail() {
   const { perfumeId } = useParams();
@@ -17,9 +18,7 @@ export default function ResultDetail() {
     ["perfumeDetail", perfumeId],
     async () => {
       try {
-        const data = await axios.get(
-          `${config.api}/perfume/show-perfume/${perfumeId}`
-        );
+        const data = await axios.get("/data/perfumeDetail.json");
         return data.data;
       } catch (error) {
         console.error(error);
@@ -67,6 +66,7 @@ export default function ResultDetail() {
           </div>
           <div className={styles.sectionTwo}>
             <div className={styles.sectionTwoText}>
+              <FaQuoteLeft style={{ color: "#ECE6D8", fontSize: "38px" }} />
               <h3 className={styles.sectionTwoTitle}>분위기 연출</h3>
               <span className={styles.sectionTwoDesc}>
                 {perfumeDetailData.moodRecommend}

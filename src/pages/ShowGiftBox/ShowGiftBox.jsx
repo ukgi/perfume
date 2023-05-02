@@ -1,6 +1,3 @@
-// 📛 서버 통신 코드는 여기에 작성해 둠.
-// 후에 코드 리팩토링하고 로직 변경해보기
-
 import React from "react";
 import { useUserContext } from "../../context/UserContextApi";
 import styles from "./ShowGiftBox.module.css";
@@ -22,10 +19,7 @@ export default function ShowGiftBox() {
     data: surveyData,
   } = useQuery(["surveyData"], async () => {
     try {
-      const data = await axios.post(
-        `${config.api}/survey/show-perfume-by-survey`,
-        user
-      );
+      const data = await axios.get("/data/survey.json");
       return data.data.slice(0, 10);
     } catch (error) {
       console.error(error);

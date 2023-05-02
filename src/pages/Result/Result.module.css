@@ -43,16 +43,6 @@
   inset: 20px;
 }
 
-.imgBox::after {
-  content: "";
-  position: absolute;
-  margin-top: 13px;
-  height: 225px;
-  inset: 30px;
-  border: 3px dashed rgb(85, 85, 85);
-  transition: all 0.1s ease-in-out;
-}
-
 .card {
   position: relative;
   height: 400px;

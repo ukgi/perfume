@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: #f5e6c5;
   position: relative;
   overflow: hidden;
 }
@@ -40,7 +40,7 @@
 .sectionTwoTitle,
 .sectionFourTitle {
   font-size: 1.5em;
-  color: var(--color-white);
+  color: #484848;
   margin-bottom: 12px;
 }
 
@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-black);
+  background-color: #9f886f;
   overflow: hidden;
 }
 
@@ -70,6 +70,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #d78b30;
 }
 
 .sectionThreeTitle {
@@ -84,6 +85,7 @@
 .sectionFour {
   text-align: center;
   justify-content: center;
+  background-color: #3f422e;
 }
 
 .sectionTwoText,
@@ -101,11 +103,7 @@
 .sectionFourDesc {
   font-size: 1em;
   font-weight: 200;
-  color: var(--color-white);
-}
-
-.sectionThree {
-  background-color: var(--color-white);
+  color: #484848;
 }
 
 .returnRootBtn {
