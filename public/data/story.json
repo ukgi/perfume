@@ -1,0 +1,13 @@
+{
+  "id": "string",
+  "object": "string",
+  "created": "2023-05-02",
+  "model": "string",
+  "choices": [
+    {
+      "text": "텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트",
+      "index": 0,
+      "finish_reason": "string"
+    }
+  ]
+}

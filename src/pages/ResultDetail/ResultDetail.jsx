@@ -18,7 +18,9 @@ export default function ResultDetail() {
     ["perfumeDetail", perfumeId],
     async () => {
       try {
-        const data = await axios.get("/data/perfumeDetail.json");
+        const data = await axios.get(
+          `${config.api}/perfume/show-perfume/${perfumeId}`
+        );
         return data.data;
       } catch (error) {
         console.error(error);
@@ -57,6 +59,12 @@ export default function ResultDetail() {
               <p className={styles.perfumeFeature}>
                 {perfumeDetailData.perfume.perfumeFeature}
               </p>
+              <button
+                className={styles.goToStoryBtn}
+                onClick={() => navigate("/story")}
+              >
+                나만의 향수 스토리 확인하기
+              </button>
             </div>
             <img
               className={styles.sectionOneImg}
@@ -65,13 +73,6 @@ export default function ResultDetail() {
             />
           </div>
           <div className={styles.sectionTwo}>
-            <div className={styles.sectionTwoText}>
-              <FaQuoteLeft style={{ color: "#ECE6D8", fontSize: "38px" }} />
-              <h3 className={styles.sectionTwoTitle}>분위기 연출</h3>
-              <span className={styles.sectionTwoDesc}>
-                {perfumeDetailData.moodRecommend}
-              </span>
-            </div>
             <img
               loading={"lazy"}
               decoding={"async"}
@@ -83,21 +84,17 @@ export default function ResultDetail() {
               }.webp`}
               alt=''
             />
+            <div className={styles.sectionTwoText}>
+              <FaQuoteLeft style={{ color: "#ECE6D8", fontSize: "38px" }} />
+              <h3 className={styles.sectionTwoTitle}>분위기 연출</h3>
+              <span className={styles.sectionTwoDesc}>
+                {perfumeDetailData.moodRecommend}
+              </span>
+            </div>
           </div>
           <div className={styles.sectionThree}>
-            <div className={styles.bubbles}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
             <div className={styles.sectionThreeText}>
+              <FaQuoteLeft style={{ color: "#ECE6D8", fontSize: "38px" }} />
               <h3 className={styles.sectionThreeTitle}>
                 이런 효과를 줄 수 있어요
               </h3>
@@ -105,9 +102,17 @@ export default function ResultDetail() {
                 <p>{perfumeDetailData.scentRecommend}</p>
               </span>
             </div>
+            <img
+              loading={"lazy"}
+              decoding={"async"}
+              className={styles.sectionThreeImg}
+              src={`/assets/images/sample01.jpg`}
+              alt=''
+            />
           </div>
           <div className={styles.sectionFour}>
             <div className={styles.sectionFourText}>
+              <FaQuoteLeft style={{ color: "#9F886F", fontSize: "38px" }} />
               <h3 className={styles.sectionFourTitle}>
                 어떤 계절에 사용하면 좋을까요?
               </h3>

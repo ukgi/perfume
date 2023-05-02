@@ -18,7 +18,9 @@ export default function BrandDetail() {
     ["relatedPerfume", id],
     async () => {
       try {
-        const data = await axios.get(`/data/perfumeBrand.json`);
+        const data = await axios.get(
+          `${config.api}/survey/show-similar-perfume/${id}`
+        );
         return data.data.slice(0, 10);
       } catch (error) {
         console.error(error);

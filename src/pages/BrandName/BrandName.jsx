@@ -24,7 +24,7 @@ export default function BrandName() {
   const { data: brandList } = useQuery(
     ["brandList"],
     async () => {
-      const data = await axios.get(`/data/AllBrandPerfume.json`);
+      const data = await axios.get(`${config.api}/perfume/show-all-brand`);
       return data.data;
     },
     {
@@ -37,7 +37,9 @@ export default function BrandName() {
   const readPerfumeData = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`/data/perfumeBrand.json`);
+      const response = await axios.post(`${config.api}/perfume/find-by-brand`, {
+        brandName: brand,
+      });
       navigate(`/brandName/${brand}`, { state: response.data });
     } catch (error) {
       if (error.response.status === 404) {
