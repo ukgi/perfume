@@ -97,7 +97,7 @@ export default function BestRecommend() {
                 className={styles.bestPerfume}
                 src={`/assets/images/perfumeImg/${Object.keys(
                   bestRecommend[1]
-                )}`}
+                )}.webp`}
                 alt=''
               />
             </div>
