@@ -95,9 +95,9 @@ export default function BestRecommend() {
             <div>
               <img
                 className={styles.bestPerfume}
-                src={`/assets/images/perfumeImg/${Object.keys(
-                  bestRecommend[1]
-                )}.webp`}
+                src={`/assets/images/perfumeImg/${
+                  Object.keys(bestRecommend)[1]
+                }.webp`}
                 alt=''
               />
             </div>
