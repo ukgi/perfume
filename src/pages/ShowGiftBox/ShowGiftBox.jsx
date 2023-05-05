@@ -19,7 +19,10 @@ export default function ShowGiftBox() {
     data: surveyData,
   } = useQuery(["surveyData"], async () => {
     try {
-      const data = await axios.get("/data/survey.json");
+      const data = await axios.post(
+        `${config.api}/survey/show-perfume-by-survey`,
+        user
+      );
       return data.data.slice(0, 10);
     } catch (error) {
       console.error(error);
