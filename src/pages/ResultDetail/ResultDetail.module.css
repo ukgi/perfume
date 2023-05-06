@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
   gap: 42px;
-  background-color: #f5e6c5;
+  background-color: var(--color-white);
   position: relative;
   overflow: hidden;
 }
@@ -40,25 +40,7 @@
   height: 500px;
 }
 
-.goToStoryBtn {
-  position: absolute;
-  bottom: 62px;
-  font-size: 20px;
-  padding: 12px 24px;
-  background-color: #bcb8b2;
-  border: none;
-  cursor: pointer;
-}
-
-.sectionTwoTitle,
-.sectionFourTitle {
-  font-size: 1.5em;
-  color: #484848;
-  margin-bottom: 12px;
-}
-
-.sectionTwo,
-.sectionFour {
+.sectionTwo {
   padding: 0 32px;
   width: 100%;
   height: 500px;
@@ -66,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #9f886f;
+  background-color: var(--color-black);
   overflow: hidden;
 }
 
@@ -85,41 +67,70 @@
   background-color: #d78b30;
 }
 
-.sectionThreeImg {
-  width: 700px;
-}
-
-.sectionThreeTitle {
-  font-size: 1.5em;
-  margin-bottom: 12px;
-}
-
-.sectionThreeDesc {
-  font-size: 1em;
-}
-
-.sectionFour {
-  text-align: center;
-  justify-content: center;
-  background-color: #f5e6c5;
-}
-
-.sectionTwoText,
-.sectionThreeText,
-.sectionFourText {
+.sectionTwoText {
   max-width: 600px;
 }
 
-.sectionThreeText {
-  padding-left: 32px;
-  text-align: right;
+.sectionFourText {
+  padding: 0 24px;
+  max-width: 600px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sectionOne {
+  background: no-repeat center/cover url(../../../public/assets/images/9.jpg);
+  width: 100%;
+  height: 100%;
+}
+
+#sectionTwo {
+  background: no-repeat center/cover
+    url(../../../public/assets/images/sample01.jpg);
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+#sectionTwo h3 {
+  color: black;
+}
+
+#sectionTwo span {
+  color: black;
+}
+
+#sectionThree {
+  background: no-repeat center/cover
+    url(../../../public/assets/images/sample04.jpg);
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+.sectionTwoTitle,
+.sectionFourTitle {
+  font-size: 1.5em;
+  color: var(--color-white);
+  margin-bottom: 12px;
 }
 
 .sectionTwoDesc,
 .sectionFourDesc {
   font-size: 1em;
   font-weight: 200;
-  color: #484848;
+  color: var(--color-white);
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 .returnRootBtn {
@@ -127,7 +138,6 @@
   font-size: 20px;
   font-weight: 600;
   padding: 12px 24px;
-  border-radius: 25px;
   border: none;
   background-color: grey;
   transition: all 0.2s ease-in;
@@ -135,24 +145,7 @@
 }
 
 .returnRootBtn:hover {
-  background-color: #9b7c39;
   color: white;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(100vh) scale(0);
-    visibility: visible;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
 }
 
 @media (max-width: 850px) {
@@ -179,12 +172,42 @@
   .sectionTwoImg {
     opacity: 0.6;
   }
-  .buttonContainer button {
-    font-size: 18px;
+  .returnRootBtn {
+    width: 120px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 550px) {
+  .sectionOne {
+    width: 100%;
+    padding-top: 150px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    background-color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sectionThree {
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttonContainer {
+    position: relative;
+  }
+
+  #goToRootBtn {
+    position: absolute;
+    bottom: -300px;
+  }
+
   .perfumeName {
     font-size: 30px;
   }
@@ -211,23 +234,17 @@
   }
 
   .sectionTwoTitle,
-  .sectionFourTitle,
-  .sectionThreeTitle {
+  .sectionFourTitle {
     font-size: 1.4em;
   }
 
   .sectionTwoDesc,
-  .sectionThreeDesc,
   .sectionFourDesc {
     font-size: 0.8em;
   }
 
   .sectionTwoImg {
     width: 300px;
-  }
-
-  .sectionThreeText {
-    padding: 0 12px;
   }
 
   .buttonContainer button {

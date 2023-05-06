@@ -5,6 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import styles from "./ResultDetail.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { FaQuoteLeft } from "react-icons/fa";
+import { BsAsterisk } from "react-icons/bs";
+import { BsCalendarCheck } from "react-icons/bs";
+import { BsBook } from "react-icons/bs";
 
 export default function ResultDetail() {
   const { perfumeId } = useParams();
@@ -18,9 +21,7 @@ export default function ResultDetail() {
     ["perfumeDetail", perfumeId],
     async () => {
       try {
-        const data = await axios.get(
-          `${config.api}/perfume/show-perfume/${perfumeId}`
-        );
+        const data = await axios.get(`/data/perfumeDetail.json`);
         return data.data;
       } catch (error) {
         console.error(error);
@@ -59,12 +60,6 @@ export default function ResultDetail() {
               <p className={styles.perfumeFeature}>
                 {perfumeDetailData.perfume.perfumeFeature}
               </p>
-              <button
-                className={styles.goToStoryBtn}
-                onClick={() => navigate("/story")}
-              >
-                나만의 향수 스토리 확인하기
-              </button>
             </div>
             <img
               className={styles.sectionOneImg}
@@ -93,33 +88,36 @@ export default function ResultDetail() {
             </div>
           </div>
           <div className={styles.sectionThree}>
-            <div className={styles.sectionThreeText}>
-              <FaQuoteLeft style={{ color: "#ECE6D8", fontSize: "38px" }} />
-              <h3 className={styles.sectionThreeTitle}>
+            <div className={styles.sectionFourText} id={styles.sectionOne}>
+              <BsAsterisk
+                style={{
+                  fontSize: "38px",
+                  color: "white",
+                  paddingBottom: "12px",
+                }}
+              />
+              <h3 className={styles.sectionFourTitle}>
                 이런 효과를 줄 수 있어요
               </h3>
-              <span className={styles.sectionThreeDesc}>
+              <span className={styles.sectionFourDesc}>
                 <p>{perfumeDetailData.scentRecommend}</p>
               </span>
             </div>
-            <img
-              loading={"lazy"}
-              decoding={"async"}
-              className={styles.sectionThreeImg}
-              src={`/assets/images/sample01.jpg`}
-              alt=''
-            />
-          </div>
-          <div className={styles.sectionFour}>
-            <div className={styles.sectionFourText}>
-              <FaQuoteLeft style={{ color: "#9F886F", fontSize: "38px" }} />
+            <div className={styles.sectionFourText} id={styles.sectionTwo}>
+              <BsCalendarCheck
+                style={{
+                  fontSize: "38px",
+                  color: "black",
+                  paddingBottom: "12px",
+                }}
+              />
               <h3 className={styles.sectionFourTitle}>
                 어떤 계절에 사용하면 좋을까요?
               </h3>
               <span className={styles.sectionFourDesc}>
                 <p>{perfumeDetailData.seasonRecommend}</p>
               </span>
-              <div className={styles.buttonContainer}>
+              <div className={styles.buttonContainer} id={styles.goToRootBtn}>
                 <button
                   className={styles.returnRootBtn}
                   onClick={() => window.history.back()}
@@ -131,6 +129,32 @@ export default function ResultDetail() {
                   onClick={() => navigate("/services")}
                 >
                   처음으로 돌아가기
+                </button>
+              </div>
+            </div>
+            <div className={styles.sectionFourText} id={styles.sectionThree}>
+              <BsBook
+                style={{
+                  fontSize: "38px",
+                  color: "white",
+                  paddingBottom: "12px",
+                }}
+              />
+              <h3 className={styles.sectionFourTitle}>
+                나만의 향수 스토리를 확인해보세요
+              </h3>
+              <span className={styles.sectionFourDesc}>
+                <p>
+                  누구나 어느 것 하나 모난 것 없이 아름다운 향을 가지고
+                  있습니다. 당신에게 어울리는 잔잔한 향수 스토리를 들려드릴게요.
+                </p>
+              </span>
+              <div className={styles.buttonContainer}>
+                <button
+                  className={styles.returnRootBtn}
+                  onClick={() => navigate("/story")}
+                >
+                  나만의 향수 스토리 확인하기
                 </button>
               </div>
             </div>
