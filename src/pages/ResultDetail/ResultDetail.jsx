@@ -21,7 +21,9 @@ export default function ResultDetail() {
     ["perfumeDetail", perfumeId],
     async () => {
       try {
-        const data = await axios.get(`/data/perfumeDetail.json`);
+        const data = await axios.get(
+          `${config.api}/perfume/show-perfume/${perfumeId}`
+        );
         return data.data;
       } catch (error) {
         console.error(error);
