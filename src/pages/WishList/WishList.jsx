@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./WishList.module.css";
 import axios from "axios";
 import { config as server } from "../../config";
+import Card from "./Card";
 
 export default function WishList() {
   const id = sessionStorage.getItem("id");
-
+  const [wishList, setWishList] = useState([]);
   useEffect(() => {
     const handleWishList = () => {
       const accessToken = sessionStorage.getItem("accessToken");
@@ -15,7 +16,7 @@ export default function WishList() {
       axios
         .get(`${server.api}/member/wish/show-list/${id}`, config)
         .then((res) => {
-          console.log(res);
+          setWishList(res.data);
         })
         .catch(console.error);
     };
@@ -31,7 +32,11 @@ export default function WishList() {
           <h1>Wish List</h1>
         </div>
       </section>
-      <section className={styles.itemList}></section>
+      <section className={styles.itemList}>
+        {wishList.map((perfume) => {
+          return <Card perfume={perfume} />;
+        })}
+      </section>
     </div>
   );
 }

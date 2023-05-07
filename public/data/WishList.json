@@ -1,0 +1,36 @@
+[
+  {
+    "id": 0,
+    "member": {
+      "id": 0,
+      "memberId": 0,
+      "nickname": "박찬욱",
+      "email": "wuk99@nate.com",
+      "thumbnailImage": "http://k.kakaocdn.net/dn/ytE5a/btrXIxTQ1F4/SZ7KXdwg32YaVsfl0k6vjk/img_110x110.jpg"
+    },
+    "perfume": {
+      "id": 0,
+      "perfumeName": "에이딕트",
+      "brandName": "복숭아의 청아한 수분감에서 시간이 갈수록 은은한 우드 향취가 뒤섞여 사랑에 빠져 발갛게 달아오른 두 뺨",
+      "perfumeFeature": "//image.oliveyoung.co.kr/uploads/images/goods/550/10/0000/0015/A00000015488106ko.jpg?l=ko",
+      "perfumeImageUrl": "에이딕트 잇더피치 EDP"
+    }
+  },
+  {
+    "id": 0,
+    "member": {
+      "id": 0,
+      "memberId": 0,
+      "nickname": "박찬욱",
+      "email": "wuk99@nate.com",
+      "thumbnailImage": "http://k.kakaocdn.net/dn/ytE5a/btrXIxTQ1F4/SZ7KXdwg32YaVsfl0k6vjk/img_110x110.jpg"
+    },
+    "perfume": {
+      "id": 0,
+      "perfumeName": "에이딕트",
+      "brandName": "복숭아의 청아한 수분감에서 시간이 갈수록 은은한 우드 향취가 뒤섞여 사랑에 빠져 발갛게 달아오른 두 뺨",
+      "perfumeFeature": "//image.oliveyoung.co.kr/uploads/images/goods/550/10/0000/0015/A00000015488106ko.jpg?l=ko",
+      "perfumeImageUrl": "에이딕트 잇더피치 EDP"
+    }
+  }
+]
