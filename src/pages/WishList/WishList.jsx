@@ -49,13 +49,12 @@ export default function WishList() {
         </button>
       </section>
       <section className={styles.itemList}>
-        {wishList ? (
+        {typeof wishList === "string" ? (
+          <h3>위시리스트가 비어있습니다</h3>
+        ) : (
           wishList.map((perfume, index) => {
             return <Card key={index} perfume={perfume.perfume} />;
           })
-        ) : (
-          // 예외처리
-          <h3>위시리시트가 비어있습니다.</h3>
         )}
       </section>
     </div>
