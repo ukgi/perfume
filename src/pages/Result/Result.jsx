@@ -11,6 +11,8 @@ import {
   DialogContent,
   DialogContentText,
 } from "@mui/material";
+import axios from "axios";
+import { config as server } from "../../config";
 
 export default function Result() {
   const { state } = useLocation();
@@ -24,6 +26,26 @@ export default function Result() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleAddWishList = (perfumeId) => {
+    const accessToken = sessionStorage.getItem("accessToken");
+    const config = {
+      headers: { Authorization: `${accessToken}` },
+    };
+    axios
+      .post(
+        `${server.api}/member/wish/select-wish-perfume`,
+        {
+          memberId: sessionStorage.getItem("id"),
+          perfumeId,
+        },
+        config
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch(console.error);
   };
 
   return (
@@ -54,7 +76,12 @@ export default function Result() {
                 </DialogContent>
                 <DialogActions>
                   <Button onClick={handleClose}>아니오</Button>
-                  <Button onClick={handleClose} autoFocus>
+                  <Button
+                    onClick={() => {
+                      return handleAddWishList(data.id);
+                    }}
+                    autoFocus
+                  >
                     네
                   </Button>
                 </DialogActions>
