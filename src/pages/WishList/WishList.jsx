@@ -49,7 +49,7 @@ export default function WishList() {
         </button>
       </section>
       <section className={styles.itemList}>
-        {typeof wishList === "string" ? (
+        {typeof wishList === string ? (
           <h3>위시리스트가 비어있습니다</h3>
         ) : (
           wishList.map((perfume, index) => {
