@@ -16,6 +16,7 @@ export default function WishList() {
       axios
         .get(`${server.api}/member/wish/show-list/${id}`, config)
         .then((res) => {
+          console.log(res.data);
           setWishList(res.data);
         })
         .catch(console.error);
