@@ -4,6 +4,8 @@ import axios from "axios";
 import { config as server } from "../../config";
 
 export default function WishList() {
+  const id = sessionStorage.getItem("id");
+
   useEffect(() => {
     const handleWishList = () => {
       const accessToken = sessionStorage.getItem("accessToken");
@@ -11,17 +13,14 @@ export default function WishList() {
         headers: { Authorization: `${accessToken}` },
       };
       axios
-        .get(
-          `${server.api}/member/wish/show-list/${sessionStorage.getItem("id")}`,
-          config
-        )
+        .get(`${server.api}/member/wish/show-list/${id}`, config)
         .then((res) => {
           console.log(res);
         })
         .catch(console.error);
     };
     handleWishList();
-  }, [sessionStorage.getItem("id")]);
+  }, [id]);
 
   return (
     <div className={styles.body}>
