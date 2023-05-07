@@ -4,17 +4,17 @@ import axios from "axios";
 import { config as server } from "../../config";
 
 export default function WishList() {
-  useEffect(() => {
+  useEffect(async () => {
     try {
       const accessToken = sessionStorage.getItem("accessToken");
       const config = {
         headers: { Authorization: `${accessToken}` },
       };
-      const data = axios.get(
+      const data = await axios.get(
         `${server.api}/member/wish/show-list/${sessionStorage.getItem("id")}`,
         config
       );
-      console.log(data.data);
+      console.log(data);
     } catch (error) {
       console.error(error);
     }
