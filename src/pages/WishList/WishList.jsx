@@ -4,21 +4,24 @@ import axios from "axios";
 import { config as server } from "../../config";
 
 export default function WishList() {
-  useEffect(async () => {
-    try {
+  useEffect(() => {
+    const handleWishList = () => {
       const accessToken = sessionStorage.getItem("accessToken");
       const config = {
         headers: { Authorization: `${accessToken}` },
       };
-      const data = await axios.get(
-        `${server.api}/member/wish/show-list/${sessionStorage.getItem("id")}`,
-        config
-      );
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+      axios
+        .get(
+          `${server.api}/member/wish/show-list/${sessionStorage.getItem("id")}`,
+          config
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch(console.error);
+    };
+    handleWishList();
+  }, [sessionStorage.getItem("id")]);
 
   return (
     <div className={styles.body}>
