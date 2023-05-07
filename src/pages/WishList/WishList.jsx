@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import styles from "./WishList.module.css";
 import axios from "axios";
-import { config } from "../../config";
+import { config as server } from "../../config";
 
 export default function WishList() {
   useEffect(() => {
     try {
+      const accessToken = sessionStorage.getItem("accessToken");
+      const config = {
+        headers: { Authorization: `${accessToken}` },
+      };
       const data = axios.get(
-        `${config.api}/member/wish/show-list/${sessionStorage.getItem("id")}`
+        `${server.api}/member/wish/show-list/${sessionStorage.getItem("id")}`,
+        config
       );
       console.log(data.data);
     } catch (error) {
