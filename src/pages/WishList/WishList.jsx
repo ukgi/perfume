@@ -35,7 +35,7 @@ export default function WishList() {
       </section>
       <section className={styles.itemList}>
         {wishList.map((perfume) => {
-          return <Card perfume={perfume} />;
+          return <Card perfume={perfume.perfume} />;
         })}
       </section>
     </div>
