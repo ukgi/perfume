@@ -18,9 +18,9 @@ export default function BrandDetail() {
     ["relatedPerfume", id],
     async () => {
       try {
-        const data = await axios.get(
-          `${config.api}/survey/show-similar-perfume/${id}`
-        );
+        const data =
+          await axios.get(`${config.api}/survey/show-similar-perfume/${id}
+        `);
         return data.data.slice(0, 10);
       } catch (error) {
         console.error(error);
@@ -47,7 +47,7 @@ export default function BrandDetail() {
           <h3 className={styles.sectionTwoTitle}>유사 향수를 만나보세요</h3>
           <span className={styles.sectionTwoDesc}>
             해당 향수와 유사한 같은 브랜드 및 타 브랜드 제품을 만나보실 수
-            있어요
+            있어요. 이미지를 클릭하세요.
           </span>
         </div>
         {isLoading ? (

@@ -73,7 +73,6 @@
   font-size: 24px;
   font-weight: 700;
   border: 2px solid rgb(67, 66, 66);
-  border-radius: 24px;
   background-color: grey;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

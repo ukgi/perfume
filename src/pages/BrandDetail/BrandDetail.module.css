@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d0e0c3;
+  background-color: white;
 }
 
 .sectionOneImg {
@@ -28,7 +28,6 @@
 
 .sectionOneText p {
   padding-bottom: 30px;
-  font-family: "KyoboHandwriting2022khn";
 }
 
 .sectionOneText h2 {
@@ -37,9 +36,9 @@
 
 .sectionTwo {
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px 24px;
   width: 100%;
-  background-color: beige;
+  background-color: #ececec;
   text-align: center;
 }
 
@@ -50,7 +49,7 @@
 
 .sectionTwoTitle,
 .sectionTwoDesc {
-  color: brown;
+  color: #434343;
 }
 
 .sectionTwoDesc {
@@ -63,19 +62,9 @@
   gap: 12px;
 }
 
-@keyframes animate {
-  0% {
-    visibility: visible;
-    transform: translateY(100vh) scale(0);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-
 @media (max-width: 550px) {
   .sectionOne {
-    padding: 0 24px;
+    padding: 0 24px 24px 24px;
   }
 
   .sectionOneText h1 {
@@ -83,6 +72,7 @@
   }
   .sectionOneImg {
     width: 300px;
+    height: 300px;
   }
   .sectionTwoDesc {
     font-size: 12px;

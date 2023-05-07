@@ -1,0 +1,37 @@
+.body {
+  width: 100%;
+  height: 100%;
+  padding: 56px;
+}
+
+.banner {
+  margin-bottom: 24px;
+  width: 100%;
+  height: 30vh;
+  margin-top: 85px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannerText {
+  padding-top: 100px;
+  margin-left: 50px;
+}
+
+.bannerText h2 {
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.bannerText h1 {
+  margin-left: 5px;
+  font-size: 80px;
+}
+
+.itemList {
+  width: 100%;
+  height: 70vh;
+  background-color: #b7b5b4;
+  border: 2px solid black;
+}

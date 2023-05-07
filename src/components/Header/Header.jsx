@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsFillBellFill } from "react-icons/bs";
+import { BsBookmarkHeart } from "react-icons/bs";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
 import { config } from "../../config";
 import Recommenders from "../Recommenders/Recommenders";
@@ -36,6 +37,10 @@ export default function Header() {
     navigate("recommend");
   };
 
+  const handleWishPage = () => {
+    navigate("wishList");
+  };
+
   return (
     <header className={styles.header}>
       {isRecommend ? (
@@ -61,6 +66,7 @@ export default function Header() {
             onClick={handleRecommendPage}
             className={styles.bell}
           />
+          <BsBookmarkHeart className={styles.bell} onClick={handleWishPage} />
           <button onClick={handleLogout}>로그아웃</button>
         </div>
       ) : (

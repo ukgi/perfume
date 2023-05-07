@@ -27,6 +27,7 @@ import DataRecommender from "../pages/DetailRecommend/DataRecommender";
 import BrandDetail from "../pages/BrandDetail/BrandDetail";
 import FeedBack from "../pages/FeedBack/FeedBack";
 import Story from "../pages/Story/Story";
+import WishList from "../pages/WishList/WishList";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -72,6 +73,7 @@ export default function AnimateRoutes() {
           <Route path='/brandDetail/:brandId' exact element={<BrandDetail />} />
           <Route path='/feedBack' exact element={<FeedBack />} />
           <Route path='/story' exact element={<Story />} />
+          <Route path='/wishList' exact element={<WishList />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>
