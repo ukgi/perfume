@@ -1,0 +1,27 @@
+.card {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+.perfumeImg {
+  width: 100%;
+}
+
+.brandName {
+  font-size: 0.6em;
+}
+
+.perfumeName {
+  font-size: 0.9em;
+}
+
+.deleteBtn {
+  padding: 8px 12px;
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}

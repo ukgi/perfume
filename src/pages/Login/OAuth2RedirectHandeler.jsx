@@ -12,7 +12,7 @@ export default function OAuth2RedirectHandeler() {
     if (!KAKAO_CODE) return;
     const getKakaoToken = async () => {
       axios
-        .get(`${config.api}/oauth/login?code=${KAKAO_CODE}`)
+        .get(`/data/KakaoLoginUser.json`)
         .then((res) => {
           onLoginSuccess(res);
           navigate("/recommend");
