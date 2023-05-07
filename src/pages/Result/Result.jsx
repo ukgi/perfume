@@ -46,6 +46,8 @@ export default function Result() {
         console.log(res);
       })
       .catch(console.error);
+
+    setOpen(false);
   };
 
   return (
