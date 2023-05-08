@@ -15,8 +15,8 @@ export default function Card({ perfume }) {
     axios
       .delete(`${server.api}/member/wish/delete-selected-perfume`, {
         data: {
-          memberId: `${memberId}`,
-          perfumeId: `${id}`,
+          memberId,
+          perfumeId: id,
         },
         config,
         withCredentials: true,
