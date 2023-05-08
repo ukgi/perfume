@@ -4,6 +4,8 @@ import axios from "axios";
 import { config as server } from "../../config";
 import Card from "./Card";
 
+// 😡 중복코드
+
 export default function WishList() {
   const id = sessionStorage.getItem("id");
   const accessToken = sessionStorage.getItem("accessToken");

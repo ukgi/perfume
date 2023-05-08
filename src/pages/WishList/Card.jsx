@@ -1,8 +1,29 @@
 import React from "react";
 import styles from "./Card.module.css";
+import axios from "axios";
+import { config as server } from "../../config";
 
 export default function Card({ perfume }) {
-  const { perfumeName, brandName, perfumeImageUrl } = perfume;
+  const { id, perfumeName, brandName, perfumeImageUrl } = perfume;
+  const memberId = sessionStorage.getItem("id");
+  const accessToken = sessionStorage.getItem("accessToken");
+  const config = {
+    headers: { Authorization: `${accessToken}` },
+  };
+
+  const handleDeleteItem = () => {
+    axios
+      .delete(
+        `${server.api}/member/wish/delete-selected-perfume`,
+        {
+          memberId,
+          perfumeId: id,
+        },
+        config
+      )
+      .then((res) => console.log(res))
+      .catch(console.error);
+  };
 
   return (
     <div className={styles.card}>
@@ -15,7 +36,9 @@ export default function Card({ perfume }) {
         <h5 className={styles.brandName}>{brandName}</h5>
         <h3 className={styles.perfumeName}>{perfumeName}</h3>
       </div>
-      <button className={styles.deleteBtn}>삭제하기</button>
+      <button onClick={handleDeleteItem} className={styles.deleteBtn}>
+        삭제하기
+      </button>
     </div>
   );
 }
