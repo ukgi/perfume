@@ -12,6 +12,7 @@ export default function WishList() {
   };
 
   const [wishList, setWishList] = useState([]);
+  const [emptyList, setEmptyList] = useState(false);
   useEffect(() => {
     const accessToken = sessionStorage.getItem("accessToken");
     const config = {
@@ -21,8 +22,13 @@ export default function WishList() {
       axios
         .get(`${server.api}/member/wish/show-list/${id}`, config)
         .then((res) => {
-          console.log(res.data);
-          setWishList(res.data);
+          if ((res.status = 200)) {
+            console.log(res.data);
+            setEmptyList(false);
+            setWishList(res.data);
+          } else if ((res.status = 404)) {
+            setEmptyList(true);
+          }
         })
         .catch(console.error);
     };
@@ -49,7 +55,7 @@ export default function WishList() {
         </button>
       </section>
       <section className={styles.itemList}>
-        {typeof wishList === string ? (
+        {emptyList === true ? (
           <h3>위시리스트가 비어있습니다</h3>
         ) : (
           wishList.map((perfume, index) => {
