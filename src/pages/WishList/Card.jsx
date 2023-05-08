@@ -13,14 +13,14 @@ export default function Card({ perfume }) {
 
   const handleDeleteItem = () => {
     axios
-      .delete(
-        `${server.api}/member/wish/delete-selected-perfume`,
-        {
+      .delete(`${server.api}/member/wish/delete-selected-perfume`, {
+        data: {
           memberId,
           perfumeId: id,
         },
-        config
-      )
+        config,
+        withCredentials: true,
+      })
       .then((res) => console.log(res))
       .catch(console.error);
   };
