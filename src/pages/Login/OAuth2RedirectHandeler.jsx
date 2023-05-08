@@ -43,7 +43,7 @@ export const handleKakaoOauth = () => {
     .then((res) => console.log("api요청이 성공적으로 진행됩니다👍", res))
     .catch((err) => {
       if (err.response && err.response.status === 401) {
-        console.log("401 error");
+        console.log("401 error(토큰만료) 😡");
         onSilentRefresh();
       } else console.log(err);
     });
