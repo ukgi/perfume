@@ -7,9 +7,6 @@ export default function Card({ perfume }) {
   const { id, perfumeName, brandName, perfumeImageUrl } = perfume;
   const memberId = sessionStorage.getItem("id");
   const accessToken = sessionStorage.getItem("accessToken");
-  const config = {
-    headers: { Authorization: `${accessToken}` },
-  };
 
   const handleDeleteItem = () => {
     axios
@@ -18,7 +15,7 @@ export default function Card({ perfume }) {
           memberId,
           perfumeId: id,
         },
-        config,
+        headers: { Authorization: `${accessToken}` },
         withCredentials: true,
       })
       .then((res) => console.log(res))
