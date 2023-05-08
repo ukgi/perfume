@@ -43,18 +43,6 @@
   inset: 20px;
 }
 
-.wishBtn {
-  position: absolute;
-  font-size: 32px;
-  top: 40px;
-  right: 40px;
-  z-index: 1000;
-}
-
-.wishBtn:hover {
-  color: tomato;
-}
-
 .card {
   position: relative;
   height: 400px;
