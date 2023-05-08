@@ -29,6 +29,7 @@ export default function Result() {
   };
 
   const handleAddWishList = (perfumeId) => {
+    console.log("perfumeId : ", perfumeId);
     const accessToken = sessionStorage.getItem("accessToken");
     const config = {
       headers: { Authorization: `${accessToken}` },
@@ -78,12 +79,7 @@ export default function Result() {
                 </DialogContent>
                 <DialogActions>
                   <Button onClick={handleClose}>아니오</Button>
-                  <Button
-                    onClick={() => {
-                      return handleAddWishList(data.id);
-                    }}
-                    autoFocus
-                  >
+                  <Button onClick={() => handleAddWishList(data.id)} autoFocus>
                     네
                   </Button>
                 </DialogActions>
