@@ -9,12 +9,10 @@ import {
 } from "@mui/material";
 import styles from "./WishListBtn.module.css";
 import { config as server } from "../../config";
-import { useNavigate } from "react-router-dom";
 import { KAKAO_AUTH_URL } from "../../pages/Login/OAuth";
 
 export default function WishListBtn({ perfumeId }) {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -45,7 +43,7 @@ export default function WishListBtn({ perfumeId }) {
           if (
             window.confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")
           ) {
-            navigate(KAKAO_AUTH_URL);
+            window.location.href(KAKAO_AUTH_URL);
           }
         } else console.log(err);
       });
