@@ -38,6 +38,7 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
       })
       .then((res) => {
         console.log(res);
+        window.location.reload();
         handleClose();
       })
       .catch(console.error);

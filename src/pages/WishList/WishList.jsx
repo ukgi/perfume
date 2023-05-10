@@ -72,6 +72,7 @@ export default function WishList() {
     axios
       .delete(`${server.api}/member/wish/delete-all-element/${id}`, config)
       .then(() => {
+        window.location.reload();
         handleClose();
       })
       .catch(console.error);
