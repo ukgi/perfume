@@ -4,35 +4,14 @@ import styles from "./Header.module.css";
 import { BsFillBellFill } from "react-icons/bs";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi";
-import { config } from "../../config";
 import Recommenders from "../Recommenders/Recommenders";
-import axios from "axios";
 import { KAKAO_AUTH_URL } from "../../pages/Login/OAuth";
+import { handleLogout } from "../../pages/Login/OAuth2RedirectHandeler";
 
 export default function Header() {
   const navigate = useNavigate();
 
   const { isRecommend } = useKakaoLoginUserContext();
-
-  const handleLogout = async () => {
-    axios.delete(`${config.api}/member/logout`, {
-      data: {
-        memberId: sessionStorage.getItem("memberId"),
-        accessToken: sessionStorage.getItem("accessToken"),
-      },
-      withCredentials: true,
-    });
-
-    sessionStorage.removeItem("accessToken");
-    sessionStorage.removeItem("refreshToken");
-    sessionStorage.removeItem("id");
-    sessionStorage.removeItem("memberId");
-    sessionStorage.removeItem("kakaoNickname");
-    sessionStorage.removeItem("recommenders");
-    sessionStorage.removeItem("thumbnailImage");
-
-    navigate("/");
-  };
 
   const handleRecommendPage = () => {
     navigate("recommend");

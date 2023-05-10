@@ -44,6 +44,7 @@ export const handleKakaoOauth = () => {
     .catch((err) => {
       if (err.response && err.response.status === 401) {
         console.log("401 error(토큰만료) 😡");
+        handleLogout();
         onSilentRefresh();
       } else console.log(err);
     });
@@ -74,4 +75,24 @@ export const onLoginSuccess = (res) => {
   sessionStorage.setItem("kakaoNickname", nickname);
   sessionStorage.setItem("thumbnailImage", thumbnailImage);
   axios.defaults.headers.common["Authorization"] = `${accessToken}`;
+};
+
+export const handleLogout = async () => {
+  axios.delete(`${config.api}/member/logout`, {
+    data: {
+      memberId: sessionStorage.getItem("memberId"),
+      accessToken: sessionStorage.getItem("accessToken"),
+    },
+    withCredentials: true,
+  });
+
+  sessionStorage.removeItem("accessToken");
+  sessionStorage.removeItem("refreshToken");
+  sessionStorage.removeItem("id");
+  sessionStorage.removeItem("memberId");
+  sessionStorage.removeItem("kakaoNickname");
+  sessionStorage.removeItem("recommenders");
+  sessionStorage.removeItem("thumbnailImage");
+
+  window.location.href = "https://inhyang.netlify.app";
 };
