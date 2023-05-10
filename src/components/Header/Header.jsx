@@ -51,6 +51,8 @@ export default function Header() {
             로그아웃
           </button>
         </div>
+      ) : sessionStorage.getItem("isRecommend") === true ? (
+        <></>
       ) : (
         <a href={KAKAO_AUTH_URL} className={styles.loginBtn}>
           로그인
