@@ -59,7 +59,8 @@ export default function WishList() {
         .get(`${server.api}/member/wish/show-ranking`, config)
         .then((res) => {
           console.log(res.data);
-          setWishListRanking(res.data);
+          const data = res.data.slice(0, 5);
+          setWishListRanking(data);
         })
         .catch(console.error);
     };
@@ -70,7 +71,9 @@ export default function WishList() {
   const handleAllDelete = () => {
     axios
       .delete(`${server.api}/member/wish/delete-all-element/${id}`, config)
-      .then((res) => console.log(res))
+      .then(() => {
+        handleClose();
+      })
       .catch(console.error);
   };
 
