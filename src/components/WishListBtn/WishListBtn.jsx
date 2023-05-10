@@ -56,7 +56,9 @@ export default function WishListBtn({ perfumeId, option }) {
     <>
       <button
         style={
-          option === "brandDetail" ? { position: "relative", bottom: "0" } : {}
+          option === "brandDetail" || "recommender"
+            ? { position: "relative", bottom: "0" }
+            : {}
         }
         className={styles.wishBtn}
         onClick={handleClickOpen}

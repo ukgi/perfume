@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./DataRecommender.module.css";
+import WishListBtn from "../../components/WishListBtn/WishListBtn";
 
 export default function DataRecommender() {
   const { state } = useLocation();
@@ -39,9 +40,15 @@ export default function DataRecommender() {
       <div className={styles.commentBox}>
         <div className={styles.balloon}>{comment}</div>
       </div>
-      <button className={styles.backBtn} onClick={() => window.history.back()}>
-        뒤로 가기
-      </button>
+      <div className={styles.btnBox}>
+        <WishListBtn option='recommender' />
+        <button
+          className={styles.backBtn}
+          onClick={() => window.history.back()}
+        >
+          뒤로 가기
+        </button>
+      </div>
     </div>
   );
 }

@@ -98,11 +98,18 @@
   border-radius: 10px;
 }
 
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
 .backBtn {
   margin-bottom: 20px;
   padding: 12px 32px;
   font-size: 24px;
-  border-radius: 24px;
   border: none;
   cursor: pointer;
   font-weight: 600;
