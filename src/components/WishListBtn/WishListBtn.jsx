@@ -43,7 +43,7 @@ export default function WishListBtn({ perfumeId, option }) {
           if (
             window.confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")
           ) {
-            return window.location.href(KAKAO_AUTH_URL);
+            return (window.location.href = KAKAO_AUTH_URL);
           }
         } else console.log(err);
       });
