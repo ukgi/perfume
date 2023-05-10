@@ -8,6 +8,7 @@ import OtherBrandCard from "./OtherBrandCard";
 import ReactElasticCarousel from "react-elastic-carousel";
 import BackBtn from "../../components/BackBtn/BackBtn";
 import RootBtn from "../../components/RootBtn/RootBtn";
+import WishListBtn from "../../components/WishListBtn/WishListBtn";
 
 export default function BrandDetail() {
   const { state } = useLocation();
@@ -32,15 +33,6 @@ export default function BrandDetail() {
     }
   );
 
-  const goToResultPage = () => {
-    axios
-      .get(`${config.api}/perfume/show-perfume/${id}`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch(console.error);
-  };
-
   return (
     <div className={styles.body}>
       <div className={styles.sectionOne}>
@@ -50,7 +42,7 @@ export default function BrandDetail() {
           <p>{perfumeFeature}</p>
         </div>
         <img className={styles.sectionOneImg} src={perfumeImageUrl} alt='' />
-        <button onClick={goToResultPage}>Click me!</button>
+        <WishListBtn option='brandDetail' />
       </div>
       <div className={styles.sectionTwo}>
         <div className={styles.sectionTwoText}>

@@ -11,7 +11,7 @@ import styles from "./WishListBtn.module.css";
 import { config as server } from "../../config";
 import { KAKAO_AUTH_URL } from "../../pages/Login/OAuth";
 
-export default function WishListBtn({ perfumeId }) {
+export default function WishListBtn({ perfumeId, option }) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -43,7 +43,7 @@ export default function WishListBtn({ perfumeId }) {
           if (
             window.confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")
           ) {
-            window.location.href(KAKAO_AUTH_URL);
+            return window.location.href(KAKAO_AUTH_URL);
           }
         } else console.log(err);
       });
@@ -53,7 +53,13 @@ export default function WishListBtn({ perfumeId }) {
 
   return (
     <>
-      <button className={styles.wishBtn} onClick={handleClickOpen}>
+      <button
+        style={
+          option === "brandDetail" ? { position: "relative", bottom: "0" } : {}
+        }
+        className={styles.wishBtn}
+        onClick={handleClickOpen}
+      >
         위시리스트에 추가하기
       </button>
       <Dialog
