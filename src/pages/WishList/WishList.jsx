@@ -34,7 +34,16 @@ export default function WishList() {
         })
         .catch(console.error);
     };
+    const handleWishListRanking = () => {
+      axios
+        .get(`${server.api}/member/wish/show-ranking`, config)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch(console.error);
+    };
     handleWishList();
+    handleWishListRanking();
   }, [id]);
 
   const handleAllDelete = () => {
