@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { config as server } from "../../config";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./ResultDetail.module.css";
@@ -8,47 +8,11 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { BsAsterisk } from "react-icons/bs";
 import { BsCalendarCheck } from "react-icons/bs";
 import { BsBook } from "react-icons/bs";
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-} from "@mui/material";
+import WishListBtn from "../../components/WishListBtn/WishListBtn";
 
 export default function ResultDetail() {
   const { perfumeId } = useParams();
   const navigate = useNavigate();
-
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleAddWishList = (perfumeId) => {
-    const accessToken = sessionStorage.getItem("accessToken");
-    const config = {
-      headers: { Authorization: `${accessToken}` },
-    };
-    axios
-      .post(
-        `${server.api}/member/wish/select-wish-perfume`,
-        {
-          memberId: sessionStorage.getItem("id"),
-          perfumeId,
-        },
-        config
-      )
-      .then((res) => console.log(res))
-      .catch(console.error);
-
-    setOpen(false);
-  };
 
   const {
     isLoading,
@@ -99,34 +63,13 @@ export default function ResultDetail() {
               <p className={styles.perfumeFeature}>
                 {perfumeDetailData.perfume.perfumeFeature}
               </p>
-              <button className={styles.wishBtn} onClick={handleClickOpen}>
-                위시리스트에 추가하기
-              </button>
+              <WishListBtn perfumeId={perfumeId} />
             </div>
             <img
               className={styles.sectionOneImg}
               src={perfumeDetailData.perfume.perfumeImageUrl}
               alt=''
             />
-
-            <Dialog
-              open={open}
-              onClose={handleClose}
-              aria-labelledby='alert-dialog-title'
-              aria-describedby='alert-dialog-description'
-            >
-              <DialogContent>
-                <DialogContentText id='alert-dialog-description'>
-                  위시리스트에 추가하시겠습니까?
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose}>아니오</Button>
-                <Button onClick={() => handleAddWishList(perfumeId)} autoFocus>
-                  네
-                </Button>
-              </DialogActions>
-            </Dialog>
           </div>
           <div className={styles.sectionTwo}>
             <img

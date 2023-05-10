@@ -1,0 +1,8 @@
+.wishBtn {
+  position: absolute;
+  font-size: 0.8em;
+  bottom: 100px;
+  padding: 12px 24px;
+  background-color: inherit;
+  cursor: pointer;
+}
