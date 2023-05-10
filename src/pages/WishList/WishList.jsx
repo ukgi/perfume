@@ -71,7 +71,12 @@ export default function WishList() {
         window.location.reload();
         handleClose();
       })
-      .catch(console.error);
+      .catch((err) => {
+        if (err.response && err.response.status === 404) {
+          window.alert("삭제할 위시리스트가 없습니다.");
+          handleClose();
+        }
+      });
   };
 
   return (
