@@ -121,7 +121,7 @@ export default function WishList() {
         </div>
       </section>
       <section className={styles.itemList}>
-        {wishList === [] ? (
+        {wishList.length === 0 ? (
           <h3>위시리스트가 비어있습니다</h3>
         ) : (
           wishList.map((perfume, index) => {
