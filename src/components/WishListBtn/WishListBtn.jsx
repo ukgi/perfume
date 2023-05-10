@@ -46,6 +46,8 @@ export default function WishListBtn({ perfumeId, option }) {
           }
         } else if (err.response && err.response.status === 409) {
           window.alert("이미 추가된 향수입니다.");
+        } else {
+          window.alert("서버 오류입니다.");
         }
       });
 

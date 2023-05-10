@@ -41,7 +41,7 @@ export default function DataRecommender() {
         <div className={styles.balloon}>{comment}</div>
       </div>
       <div className={styles.btnBox}>
-        <WishListBtn option='recommender' />
+        <WishListBtn perfumeId={perfume.id} option='recommender' />
         <button
           className={styles.backBtn}
           onClick={() => window.history.back()}

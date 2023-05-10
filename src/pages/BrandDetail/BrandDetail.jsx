@@ -42,7 +42,7 @@ export default function BrandDetail() {
           <p>{perfumeFeature}</p>
         </div>
         <img className={styles.sectionOneImg} src={perfumeImageUrl} alt='' />
-        <WishListBtn option='brandDetail' />
+        <WishListBtn perfumeId={id} option='brandDetail' />
       </div>
       <div className={styles.sectionTwo}>
         <div className={styles.sectionTwoText}>
