@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useUserContext } from "../../context/UserContextApi";
 import { config } from "../../config";
+import { motion } from "framer-motion";
+import { brandPerfume } from "../../Animation/Variants";
 
 export default function Story() {
   const { user, userName } = useUserContext();
@@ -28,6 +30,14 @@ export default function Story() {
   if (isLoading)
     return (
       <div className={styles.subBody}>
+        <motion.img
+          initial='hidden'
+          animate='visible'
+          variants={brandPerfume}
+          src='/assets/images/향수병4.png'
+          alt=''
+          id={styles.perfumeBottle}
+        />
         <h3>이야기를 만드는 중입니다. 잠시만 기다려주세요.</h3>
       </div>
     );

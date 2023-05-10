@@ -39,7 +39,6 @@ export default function WishListBtn({ perfumeId, option }) {
       .then((res) => console.log(res))
       .catch((err) => {
         if (err.response && err.response.status === 401) {
-          console.log("401 error(로그인하세요!) 😡");
           if (
             window.confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")
           ) {
