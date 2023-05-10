@@ -42,7 +42,7 @@ export default function WishList() {
     };
     const handleWishList = () => {
       axios
-        .get("/data/WishList.json")
+        .get(`${server.api}/member/wish/show-list/${id}`, config)
         .then((res) => {
           if ((res.status = 200)) {
             console.log(res.data);
@@ -56,7 +56,7 @@ export default function WishList() {
     };
     const handleWishListRanking = () => {
       axios
-        .get("/data/WishListRanking.json")
+        .get(`${server.api}/member/wish/show-ranking`, config)
         .then((res) => {
           console.log(res.data);
           setWishListRanking(res.data);
