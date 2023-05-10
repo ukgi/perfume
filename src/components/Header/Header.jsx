@@ -7,6 +7,7 @@ import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi
 import { config } from "../../config";
 import Recommenders from "../Recommenders/Recommenders";
 import axios from "axios";
+import { KAKAO_AUTH_URL } from "../../pages/Login/OAuth";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -67,10 +68,14 @@ export default function Header() {
             className={styles.bell}
           />
           <BsBookmarkHeart className={styles.bell} onClick={handleWishPage} />
-          <button onClick={handleLogout}>로그아웃</button>
+          <button onClick={handleLogout} className={styles.logoutBtn}>
+            로그아웃
+          </button>
         </div>
       ) : (
-        <span></span>
+        <a href={KAKAO_AUTH_URL} className={styles.loginBtn}>
+          로그인
+        </a>
       )}
     </header>
   );

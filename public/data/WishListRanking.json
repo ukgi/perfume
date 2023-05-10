@@ -1,0 +1,32 @@
+[
+  {
+    "perfume": {
+      "id": 123,
+      "perfumeName": "로이비 휘그앤시더우드",
+      "brandName": "로이비",
+      "perfumeFeature": "진중한 숲의 향기를 머금은 무화과 그 하얀 달콤함이 경쾌하게 피어나는 포레스트",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202112/a61300649c05fbdce6741d3c452bb391.jpg"
+    },
+    "count": 1
+  },
+  {
+    "perfume": {
+      "id": 36,
+      "perfumeName": "끌로에 로즈",
+      "brandName": "끌로에",
+      "perfumeFeature": "셋째딸 같은 생화장미 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/7fa30b20740dca181607d6945d027169.jpg"
+    },
+    "count": 1
+  },
+  {
+    "perfume": {
+      "id": 36,
+      "perfumeName": "끌로에 로즈",
+      "brandName": "끌로에",
+      "perfumeFeature": "셋째딸 같은 생화장미 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/7fa30b20740dca181607d6945d027169.jpg"
+    },
+    "count": 5
+  }
+]

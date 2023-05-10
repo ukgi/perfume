@@ -21,19 +21,26 @@
   gap: 20px;
 }
 
-.loginSection button {
+.logoutBtn,
+.loginBtn {
   border: none;
   background-color: gray;
   padding: 12px;
   font-weight: 700;
-  border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
   transition: all 0.3s ease-in;
 }
 
-.loginSection button:hover {
+.logoutBtn:hover {
   color: var(--color-white);
   background-color: tomato;
+}
+
+.loginBtn:hover {
+  color: var(--color-white);
+  background-color: darkgreen;
 }
 
 .bell {

@@ -25,3 +25,17 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.trophy {
+  font-size: 40px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.rankingNumber {
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 28px;
+  color: white;
+}
