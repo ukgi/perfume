@@ -23,7 +23,6 @@ export default function WishList() {
 
   const [wishList, setWishList] = useState([]);
   const [wishListRanking, setWishListRanking] = useState([]);
-  const [emptyList, setEmptyList] = useState(false);
 
   const [open, setOpen] = useState(false);
 
@@ -46,10 +45,7 @@ export default function WishList() {
         .then((res) => {
           if ((res.status = 200)) {
             console.log(res.data);
-            setEmptyList(false);
             setWishList(res.data);
-          } else if ((res.status = 404)) {
-            setEmptyList(true);
           }
         })
         .catch(console.error);
@@ -125,7 +121,7 @@ export default function WishList() {
         </div>
       </section>
       <section className={styles.itemList}>
-        {emptyList === true ? (
+        {wishList === [] ? (
           <h3>위시리스트가 비어있습니다</h3>
         ) : (
           wishList.map((perfume, index) => {
