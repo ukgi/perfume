@@ -45,7 +45,9 @@ export default function WishListBtn({ perfumeId, option }) {
           ) {
             return (window.location.href = KAKAO_AUTH_URL);
           }
-        } else console.log(err);
+        } else if (err.response && err.response.status === 409) {
+          window.alert("이미 추가된 향수입니다.");
+        }
       });
 
     setOpen(false);
