@@ -36,7 +36,11 @@ export default function WishListBtn({ perfumeId }) {
         config
       )
       .then((res) => console.log(res))
-      .catch(console.error);
+      .catch((err) => {
+        if (err.response && err.response.status === 401) {
+          console.log("401 error(로그인하세요!) 😡");
+        } else console.log(err);
+      });
 
     setOpen(false);
   };
