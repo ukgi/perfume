@@ -1,23 +1,60 @@
 .body {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.paper {
+  width: 1000px;
+}
+
+.textBox {
+  width: 300px;
+  height: 400px;
+  line-height: 1.8em;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 }
 
 .subBody {
   width: 100%;
   height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 32px;
   justify-content: center;
   align-items: center;
 }
 
-.perfumeBottle {
-  width: 500px;
-  height: 500px;
+.subBody h3 {
+  display: block;
+  transform: translateX(-100px);
+}
+
+#perfumeBottle {
+  width: 650px;
+  height: 650px;
+}
+
+@media (max-width: 550px) {
+  .subBody {
+    padding: 0 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .subBody h3 {
+    transform: translateX(0);
+    font-size: 18px;
+  }
+  #perfumeBottle {
+    width: 350px;
+    height: 350px;
+  }
 }

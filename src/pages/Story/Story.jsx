@@ -34,7 +34,7 @@ export default function Story() {
           initial='hidden'
           animate='visible'
           variants={brandPerfume}
-          src='/assets/images/향수병4.png'
+          src='/assets/images/향수병6.png'
           alt=''
           id={styles.perfumeBottle}
         />
@@ -53,11 +53,21 @@ export default function Story() {
       <img
         loading={"lazy"}
         decoding={"async"}
-        className={styles.sectionTwoImg}
-        src={`/assets/images/sample02.jpg`}
+        className={styles.paper}
+        src={`/assets/images/paper.png`}
         alt=''
       />
-      <p>{data.choices[0].text}</p>
+
+      <div className={styles.textBox}>
+        <p>{data.choices[0].text}</p>
+        {/* <img
+          loading={"lazy"}
+          decoding={"async"}
+          className={styles.logo}
+          src={`/assets/images/Logo/Logo.png`}
+          alt=''
+        /> */}
+      </div>
     </div>
   );
 }
