@@ -72,16 +72,29 @@ export default function Story() {
       </div>
       <div className={styles.textBox}>
         <TypeAnimation
-          sequence={[
-            `${data[0]}`,
-            3000,
-            `${data[1]}`,
-            3000,
-            `${data[2]}`,
-            3000,
-            `${data[3]}`,
-            3000,
-          ]}
+          sequence={
+            data[3] === undefined || null
+              ? [
+                  `${data[0]}`,
+                  3000,
+                  `${data[1]}`,
+                  3000,
+                  `${data[2]}`,
+                  3000,
+                  `아름다운 하루가 시작될 거 같다`,
+                  3000,
+                ]
+              : [
+                  `${data[0]}`,
+                  3000,
+                  `${data[1]}`,
+                  3000,
+                  `${data[2]}`,
+                  3000,
+                  `${data[3]}`,
+                  3000,
+                ]
+          }
           deletionSpeed={{ type: "keyStrokeDelayInMs", value: 50 }}
           omitDeletionAnimation={true}
           wrapper='p'
