@@ -15,7 +15,7 @@ export default function Story() {
   const navigate = useNavigate();
   const { user, userName } = useUserContext();
   const { isLoading, isError, data } = useQuery(
-    ["story"],
+    ["story", user],
     async () => {
       try {
         const data = await axios.post(`${config.api}/perfume/make-story`, {
