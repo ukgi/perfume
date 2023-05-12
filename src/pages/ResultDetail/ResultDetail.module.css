@@ -34,19 +34,20 @@
   line-height: 1.5;
 }
 
+.perfumeFeature {
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
 .sectionOneImg {
   display: block;
   width: 500px;
   height: 500px;
 }
 
-.wishBtn {
-  position: absolute;
-  font-size: 0.8em;
-  bottom: 100px;
-  padding: 12px 24px;
-  background-color: inherit;
-  cursor: pointer;
+.btnBox {
+  display: flex;
+  gap: 32px;
 }
 
 .sectionTwo {
@@ -133,6 +134,22 @@
   color: var(--color-white);
 }
 
+.SimilarBtn {
+  position: absolute;
+  bottom: 24px;
+  margin-top: 12px;
+  font-size: 22px;
+  padding: 12px 24px;
+  border: 1px solid #434343;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.SimilarBtn:hover {
+  color: var(--color-white);
+  background: gray;
+}
+
 .buttonContainer {
   position: absolute;
   bottom: 20px;
@@ -146,14 +163,14 @@
   font-size: 20px;
   font-weight: 600;
   padding: 12px 24px;
-  border: none;
-  background-color: grey;
+  border: 1px solid #434343;
   transition: all 0.2s ease-in;
   text-decoration: none;
 }
 
 .returnRootBtn:hover {
   color: white;
+  background-color: gray;
 }
 
 @media (max-width: 850px) {

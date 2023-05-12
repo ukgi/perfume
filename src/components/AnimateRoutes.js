@@ -28,6 +28,7 @@ import BrandDetail from "../pages/BrandDetail/BrandDetail";
 import FeedBack from "../pages/FeedBack/FeedBack";
 import Story from "../pages/Story/Story";
 import WishList from "../pages/WishList/WishList";
+import AllStory from "../pages/Story/AllStory";
 
 export default function AnimateRoutes() {
   const location = useLocation();
@@ -74,6 +75,7 @@ export default function AnimateRoutes() {
           <Route path='/feedBack' exact element={<FeedBack />} />
           <Route path='/story' exact element={<Story />} />
           <Route path='/wishList' exact element={<WishList />} />
+          <Route path='/allStory' exact element={<AllStory />} />
         </Routes>
       </AnimatePresence>
     </UserContextApiProvider>

@@ -9,7 +9,8 @@ import { BsAsterisk } from "react-icons/bs";
 import { BsCalendarCheck } from "react-icons/bs";
 import { BsBook } from "react-icons/bs";
 import WishListBtn from "../../components/WishListBtn/WishListBtn";
-
+import BackBtn from "../../components/BackBtn/BackBtn";
+import RootBtn from "../../components/RootBtn/RootBtn";
 export default function ResultDetail() {
   const { perfumeId } = useParams();
   const navigate = useNavigate();
@@ -63,7 +64,10 @@ export default function ResultDetail() {
               <p className={styles.perfumeFeature}>
                 {perfumeDetailData.perfume.perfumeFeature}
               </p>
-              <WishListBtn perfumeId={perfumeId} />
+              <div className={styles.btnBox}>
+                <WishListBtn option={"result"} perfumeId={perfumeId} />
+                <RootBtn />
+              </div>
             </div>
             <img
               className={styles.sectionOneImg}
@@ -106,6 +110,23 @@ export default function ResultDetail() {
               <span className={styles.sectionFourDesc}>
                 <p>{perfumeDetailData.scentRecommend}</p>
               </span>
+              <button
+                onClick={() =>
+                  navigate(`/brandDetail/${perfumeId}`, {
+                    state: {
+                      id: perfumeId,
+                      brandName: perfumeDetailData.perfume.brandName,
+                      perfumeName: perfumeDetailData.perfume.perfumeName,
+                      perfumeImageUrl:
+                        perfumeDetailData.perfume.perfumeImageUrl,
+                      perfumeFeature: perfumeDetailData.perfume.perfumeFeature,
+                    },
+                  })
+                }
+                className={styles.SimilarBtn}
+              >
+                유사 향수 만나기
+              </button>
             </div>
             <div className={styles.sectionFourText} id={styles.sectionTwo}>
               <BsCalendarCheck
@@ -122,18 +143,8 @@ export default function ResultDetail() {
                 <p>{perfumeDetailData.seasonRecommend}</p>
               </span>
               <div className={styles.buttonContainer} id={styles.goToRootBtn}>
-                <button
-                  className={styles.returnRootBtn}
-                  onClick={() => window.history.back()}
-                >
-                  이전 페이지로 돌아가기
-                </button>
-                <button
-                  className={styles.returnRootBtn}
-                  onClick={() => navigate("/services")}
-                >
-                  처음으로 돌아가기
-                </button>
+                <RootBtn />
+                <BackBtn />
               </div>
             </div>
             <div className={styles.sectionFourText} id={styles.sectionThree}>
