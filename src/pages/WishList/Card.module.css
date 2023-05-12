@@ -1,8 +1,9 @@
 .card {
   position: relative;
   width: 250px;
-  height: 400px;
+  height: 450px;
   border: 1px solid black;
+  flex-basis: 300px;
 }
 
 .perfumeImg {
@@ -21,9 +22,22 @@
   padding: 8px 12px;
   font-size: 0.8em;
   position: absolute;
-  bottom: 24px;
+  bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
+  background-color: inherit;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: tomato;
+  color: white;
+}
+
+.textBox {
+  padding: 0 8px;
+  font-size: 24px;
 }
 
 .trophy {
@@ -38,4 +52,98 @@
   top: 12px;
   right: 28px;
   color: white;
+}
+
+.rankingCount {
+  position: absolute;
+  bottom: 12px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+@media (max-width: 1460px) {
+  .card {
+    width: 150px;
+    height: 300px;
+    flex-basis: 200px;
+  }
+  #wishCard {
+    width: 250px;
+    height: 350px;
+    flex-basis: 200px;
+  }
+  .perfumeName {
+    font-size: 18px;
+  }
+  .rankingCount {
+    font-size: 16px;
+  }
+  .deleteBtn {
+    font-size: 14px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 930px) {
+  #wishCard {
+    width: 100%;
+    display: flex;
+  }
+  #wishCard .perfumeImg {
+    width: 200px;
+  }
+  #wishCard .textBox {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #wishCard .textBox .deleteBtn {
+    position: static;
+    padding: 6px 8px;
+    font-size: 0.6em;
+    background-color: inherit;
+    cursor: pointer;
+  }
+  #wishCard .textBox .deleteBtn:hover {
+    background-color: tomato;
+  }
+}
+
+@media (max-width: 740px) {
+  #wishCard .textBox {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #wishCard .textBox .deleteBtn {
+    position: absolute;
+  }
+}
+
+@media (max-width: 560px) {
+  #wishCard {
+    flex-basis: 150px;
+  }
+  #wishCard .textBox {
+    height: 100px;
+  }
+  #wishCard .perfumeImg {
+    width: 150px;
+    height: 150px;
+  }
+  #wishCard .textBox .deleteBtn {
+    position: absolute;
+    bottom: -20px;
+  }
+
+  #wishCard .textBox .perfumeInfo .brandName {
+    font-size: 8px;
+  }
+
+  #wishCard .textBox .perfumeInfo .perfumeName {
+    font-size: 14px;
+  }
 }

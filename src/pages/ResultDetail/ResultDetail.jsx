@@ -164,14 +164,12 @@ export default function ResultDetail() {
                   있습니다. 당신에게 어울리는 잔잔한 향수 스토리를 들려드릴게요.
                 </p>
               </span>
-              <div className={styles.buttonContainer}>
-                <button
-                  className={styles.returnRootBtn}
-                  onClick={() => navigate("/story")}
-                >
-                  나만의 향수 스토리 확인하기
-                </button>
-              </div>
+              <button
+                className={styles.returnRootBtn}
+                onClick={() => navigate("/story")}
+              >
+                나만의 향수 스토리 확인하기
+              </button>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function Services() {
   const servicesInfo = [
     {
       title: "맞춤 향수 추천",
-      dec: "여러 질문을 통해 당신이 원하는 향과 그 향에 맞는 향수를 추천해줍니다",
+      dec: "설문을 통해 당신이 원하는 향과 그 향에 맞는 향수를 추천해줍니다",
       bannerBackground: "rgba(177, 176, 130, 0.7)",
       contentBackground: "rgba(230, 229, 212, 0.7)",
       textColor: "#9b7c39",

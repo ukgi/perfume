@@ -28,5 +28,25 @@
       "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/7fa30b20740dca181607d6945d027169.jpg"
     },
     "count": 5
+  },
+  {
+    "perfume": {
+      "id": 36,
+      "perfumeName": "끌로에 로즈",
+      "brandName": "끌로에",
+      "perfumeFeature": "셋째딸 같은 생화장미 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/7fa30b20740dca181607d6945d027169.jpg"
+    },
+    "count": 1
+  },
+  {
+    "perfume": {
+      "id": 36,
+      "perfumeName": "끌로에 로즈",
+      "brandName": "끌로에",
+      "perfumeFeature": "셋째딸 같은 생화장미 향기",
+      "perfumeImageUrl": "//perfumegraphy.com/web/product/medium/202212/7fa30b20740dca181607d6945d027169.jpg"
+    },
+    "count": 1
   }
 ]

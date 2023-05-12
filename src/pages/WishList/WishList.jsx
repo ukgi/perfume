@@ -10,6 +10,7 @@ import {
   DialogContent,
   DialogContentText,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 // 😡 중복코드
 
@@ -23,8 +24,8 @@ export default function WishList() {
 
   const [wishList, setWishList] = useState([]);
   const [wishListRanking, setWishListRanking] = useState([]);
-
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -86,9 +87,23 @@ export default function WishList() {
           <h2>당신이 선호하는 향수를 한 눈에 확인해보세요</h2>
           <h1>Wish List</h1>
         </div>
-        <button className={styles.deleteBtn} onClick={handleClickOpen}>
-          위시리스트 전체 삭제하기
-        </button>
+        <div className={styles.btnBox}>
+          <button className={styles.deleteBtn} onClick={handleClickOpen}>
+            위시리스트 전체 삭제하기
+          </button>
+          <button
+            className={styles.mainBtn}
+            onClick={() => navigate("/recommend")}
+          >
+            마이페이지
+          </button>
+          <button
+            className={styles.mainBtn}
+            onClick={() => navigate("/services")}
+          >
+            메인화면
+          </button>
+        </div>
 
         <Dialog
           open={open}

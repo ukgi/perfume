@@ -45,7 +45,10 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
   };
 
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      id={rankingCard === true ? styles.rankingCard : styles.wishCard}
+    >
       {rankingCard === true ? (
         <div>
           <img
@@ -65,36 +68,36 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
       )}
 
       <div className={styles.textBox}>
-        <h5 className={styles.brandName}>{brandName}</h5>
-        <h3 className={styles.perfumeName}>{perfumeName}</h3>
-      </div>
-      {rankingCard === true ? (
-        <p>{count}명이 추가했습니다</p>
-      ) : (
-        <>
+        <div className={styles.perfumeInfo}>
+          <h5 className={styles.brandName}>{brandName}</h5>
+          <h3 className={styles.perfumeName}>{perfumeName}</h3>
+        </div>
+        {rankingCard === true ? (
+          <p className={styles.rankingCount}>{count}명이 추가했습니다</p>
+        ) : (
           <button onClick={handleClickOpen} className={styles.deleteBtn}>
-            삭제하기
+            삭제
           </button>
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            aria-labelledby='alert-dialog-title'
-            aria-describedby='alert-dialog-description'
-          >
-            <DialogContent>
-              <DialogContentText id='alert-dialog-description'>
-                위시리스트에서 삭제하시겠습니까?
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose}>아니오</Button>
-              <Button onClick={handleDeleteItem} autoFocus>
-                네
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </>
-      )}
+        )}
+      </div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
+      >
+        <DialogContent>
+          <DialogContentText id='alert-dialog-description'>
+            위시리스트에서 삭제하시겠습니까?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>아니오</Button>
+          <Button onClick={handleDeleteItem} autoFocus>
+            네
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

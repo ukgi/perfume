@@ -11,3 +11,9 @@
   color: var(--color-white);
   background: var(--color-main);
 }
+
+@media (max-width: 550px) {
+  .wishBtn {
+    font-size: 12px;
+  }
+}

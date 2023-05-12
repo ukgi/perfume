@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import BackBtn from "../../components/BackBtn/BackBtn";
+import styles from "./AllStory.module.css";
 
 export default function AllStory() {
   const { state } = useLocation();
@@ -10,19 +11,8 @@ export default function AllStory() {
   });
   console.log(allStory);
   return (
-    <div
-      style={{
-        padding: "32px 100px",
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        gap: "32px",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <p style={{ fontSize: "32px", color: "white" }}>{allStory}</p>
+    <div className={styles.body}>
+      <p>{allStory}</p>
       <BackBtn />
     </div>
   );
