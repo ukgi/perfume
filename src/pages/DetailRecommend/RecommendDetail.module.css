@@ -39,7 +39,6 @@
 }
 
 .recommenderItem:hover {
-  transform: scale(1.06);
   background: #9b7c39;
 }
 
