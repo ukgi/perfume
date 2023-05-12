@@ -68,6 +68,7 @@ export default function Story() {
           muted
           typeof='mp4'
         ></video>
+        <audio src='/assets/audio/audio.mp3' autoPlay loop></audio>
       </div>
       <div className={styles.textBox}>
         <TypeAnimation

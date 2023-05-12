@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useUserContext } from "../../context/UserContextApi";
 import styles from "./ShowGiftBox.module.css";
 import GiftBox from "./GiftBox";
@@ -29,12 +29,6 @@ export default function ShowGiftBox() {
       navigate("/error");
     }
   });
-
-  useEffect(() => {
-    const audio = new Audio();
-    audio.src = "/assets/audio/audio.mp3";
-    audio.play();
-  }, []);
 
   return (
     <div className={styles.body}>
