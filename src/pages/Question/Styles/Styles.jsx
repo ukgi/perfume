@@ -31,6 +31,20 @@ export default function Styles() {
           ? "/assets/images/styles/남자포멀.png"
           : "/assets/images/styles/여자포멀.png",
     },
+    {
+      title: "미니멀",
+      img:
+        gender === "남자"
+          ? "/assets/images/styles/남자미니멀.png"
+          : "/assets/images/styles/여자미니멀.png",
+    },
+    {
+      title: "스트릿",
+      img:
+        gender === "남자"
+          ? "/assets/images/styles/남자스트릿.png"
+          : "/assets/images/styles/여자스트릿.png",
+    },
   ];
 
   useEffect(() => {
