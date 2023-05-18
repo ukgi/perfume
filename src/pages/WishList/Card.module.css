@@ -1,9 +1,10 @@
 .card {
   position: relative;
   width: 250px;
-  height: 450px;
+  height: 400px;
   border: 1px solid black;
   flex-basis: 300px;
+  cursor: pointer;
 }
 
 .perfumeImg {
@@ -19,20 +20,11 @@
 }
 
 .deleteBtn {
-  padding: 8px 12px;
   font-size: 0.8em;
   position: absolute;
-  bottom: 8px;
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: inherit;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.deleteBtn:hover {
-  background-color: tomato;
-  color: white;
 }
 
 .textBox {
@@ -55,16 +47,15 @@
 }
 
 .rankingCount {
-  position: absolute;
-  bottom: 12px;
+  margin-top: 8px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 0.6em;
 }
 
 @media (max-width: 1460px) {
   .card {
     width: 150px;
-    height: 300px;
+    height: 325px;
     flex-basis: 200px;
   }
   #wishCard {
@@ -73,7 +64,10 @@
     flex-basis: 200px;
   }
   .perfumeName {
-    font-size: 18px;
+    font-size: 0.7em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .rankingCount {
     font-size: 16px;
@@ -81,6 +75,7 @@
   .deleteBtn {
     font-size: 14px;
     width: 100px;
+    bottom: 0;
   }
 }
 
@@ -106,9 +101,6 @@
     background-color: inherit;
     cursor: pointer;
   }
-  #wishCard .textBox .deleteBtn:hover {
-    background-color: tomato;
-  }
 }
 
 @media (max-width: 740px) {
@@ -124,11 +116,14 @@
 }
 
 @media (max-width: 560px) {
+  .rankingCount {
+    font-size: 0.5em;
+  }
   #wishCard {
     flex-basis: 150px;
   }
   #wishCard .textBox {
-    height: 100px;
+    height: 150px;
   }
   #wishCard .perfumeImg {
     width: 150px;
@@ -136,14 +131,20 @@
   }
   #wishCard .textBox .deleteBtn {
     position: absolute;
-    bottom: -20px;
+    bottom: 10px;
   }
 
   #wishCard .textBox .perfumeInfo .brandName {
     font-size: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   #wishCard .textBox .perfumeInfo .perfumeName {
     font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

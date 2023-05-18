@@ -11,6 +11,7 @@ import {
   DialogContentText,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { KAKAO_AUTH_URL } from "../Login/OAuth";
 
 // 😡 중복코드
 
@@ -73,7 +74,13 @@ export default function WishList() {
         handleClose();
       })
       .catch((err) => {
-        if (err.response && err.response.status === 404) {
+        if (err.response && err.response.status === 401) {
+          if (
+            window.confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")
+          ) {
+            return (window.location.href = KAKAO_AUTH_URL);
+          }
+        } else if (err.response && err.response.status === 404) {
           window.alert("삭제할 위시리스트가 없습니다.");
           handleClose();
         }
@@ -141,12 +148,21 @@ export default function WishList() {
         </div>
       </section>
       <section className={styles.itemList}>
-        {wishList.length === 0 ? (
-          <h3>위시리스트가 비어있습니다</h3>
+        {sessionStorage.getItem("accessToken") ? (
+          wishList.length === 0 ? (
+            <h3>위시리스트가 비어있습니다</h3>
+          ) : (
+            wishList.map((perfume, index) => {
+              return <Card key={index} perfume={perfume.perfume} />;
+            })
+          )
         ) : (
-          wishList.map((perfume, index) => {
-            return <Card key={index} perfume={perfume.perfume} />;
-          })
+          <div className={styles.loginBox}>
+            <p>로그인이 필요한 서비스입니다.</p>
+            <a href={KAKAO_AUTH_URL} className={styles.loginBtn}>
+              로그인
+            </a>
+          </div>
         )}
       </section>
     </div>

@@ -9,12 +9,17 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
+  IconButton,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { useNavigate } from "react-router-dom";
+import WishListBtn from "../../components/WishListBtn/WishListBtn";
 
 export default function Card({ perfume, rankingCard, count, ranking }) {
   const { id, perfumeName, brandName, perfumeImageUrl } = perfume;
   const memberId = sessionStorage.getItem("id");
   const accessToken = sessionStorage.getItem("accessToken");
+  const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
 
@@ -55,6 +60,9 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
             className={styles.perfumeImg}
             src={perfumeImageUrl}
             alt='perfumeImage'
+            onClick={() => {
+              navigate(`/brandDetail/${id}`, { state: perfume });
+            }}
           />
           <BsFillTrophyFill className={styles.trophy} />
           <span className={styles.rankingNumber}>{ranking}</span>
@@ -64,6 +72,9 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
           className={styles.perfumeImg}
           src={perfumeImageUrl}
           alt='perfumeImage'
+          onClick={() => {
+            navigate(`/brandDetail/${id}`, { state: perfume });
+          }}
         />
       )}
 
@@ -73,11 +84,16 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
           <h3 className={styles.perfumeName}>{perfumeName}</h3>
         </div>
         {rankingCard === true ? (
-          <p className={styles.rankingCount}>{count}명이 추가했습니다</p>
+          <div style={{ textAlign: "center" }}>
+            <WishListBtn />
+            <p className={styles.rankingCount}>{count}명이 추가했습니다</p>
+          </div>
         ) : (
-          <button onClick={handleClickOpen} className={styles.deleteBtn}>
-            삭제
-          </button>
+          <div>
+            <IconButton onClick={handleClickOpen} className={styles.deleteBtn}>
+              <DeleteIcon />
+            </IconButton>
+          </div>
         )}
       </div>
       <Dialog

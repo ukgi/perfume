@@ -54,9 +54,12 @@ export default function Header() {
       ) : sessionStorage.getItem("isRecommend") === true ? (
         <></>
       ) : (
-        <a href={KAKAO_AUTH_URL} className={styles.loginBtn}>
-          로그인
-        </a>
+        <div className={styles.loginSection}>
+          <BsBookmarkHeart className={styles.bell} onClick={handleWishPage} />
+          <a href={KAKAO_AUTH_URL} className={styles.loginBtn}>
+            로그인
+          </a>
+        </div>
       )}
     </header>
   );

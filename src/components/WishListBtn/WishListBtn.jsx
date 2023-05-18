@@ -27,6 +27,7 @@ export default function WishListBtn({ perfumeId, option }) {
     const config = {
       headers: { Authorization: `${accessToken}` },
     };
+
     axios
       .post(
         `${server.api}/member/wish/select-wish-perfume`,
@@ -36,7 +37,10 @@ export default function WishListBtn({ perfumeId, option }) {
         },
         config
       )
-      .then((res) => console.log(res))
+      .then(() => {
+        window.alert("위시리스트에 추가되었습니다.");
+        handleClose();
+      })
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           if (
