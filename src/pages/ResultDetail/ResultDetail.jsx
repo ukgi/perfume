@@ -26,6 +26,7 @@ export default function ResultDetail() {
         const data = await axios.get(
           `${server.api}/perfume/show-perfume/${perfumeId}`
         );
+        console.log(data.data);
         return data.data;
       } catch (error) {
         console.error(error);

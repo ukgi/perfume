@@ -94,5 +94,5 @@ export const handleLogout = async () => {
   sessionStorage.removeItem("recommenders");
   sessionStorage.removeItem("thumbnailImage");
 
-  window.location.href = "https://inhyang.netlify.app";
+  window.location.href = "https://inhyang.netlify.app/services";
 };
