@@ -22,11 +22,9 @@ export default function Story() {
           ...user,
           name: userName,
         });
-        console.log(data.data.choices[0].text);
         const splitData = data.data.choices[0].text.split(".");
         splitData.pop();
         splitData.shift();
-        console.log(splitData);
         return splitData;
       } catch (error) {
         console.error(error);

@@ -11,6 +11,8 @@ import { BsBook } from "react-icons/bs";
 import WishListBtn from "../../components/WishListBtn/WishListBtn";
 import BackBtn from "../../components/BackBtn/BackBtn";
 import RootBtn from "../../components/RootBtn/RootBtn";
+import { GiDelicatePerfume } from "react-icons/gi";
+
 export default function ResultDetail() {
   const { perfumeId } = useParams();
   const navigate = useNavigate();
@@ -64,6 +66,10 @@ export default function ResultDetail() {
               </h2>
               <p className={styles.perfumeFeature}>
                 {perfumeDetailData.perfume.perfumeFeature}
+              </p>
+              <p className={styles.maintenanceRecommend}>
+                <GiDelicatePerfume style={{ fontSize: "1.8em" }} />
+                {perfumeDetailData.maintenanceRecommend}
               </p>
               <div className={styles.btnBox}>
                 <WishListBtn option={"result"} perfumeId={perfumeId} />

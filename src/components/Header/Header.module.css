@@ -47,6 +47,7 @@
   font-size: 40px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  color: var(--color-main);
 }
 
 .bell:hover {

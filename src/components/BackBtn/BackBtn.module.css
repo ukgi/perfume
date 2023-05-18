@@ -12,7 +12,7 @@
   background: var(--color-main);
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1460px) {
   .backBtn {
     font-size: 0.5em;
   }
