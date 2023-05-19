@@ -73,6 +73,11 @@
   border-radius: 50%;
 }
 
+.cardImgLoading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 20px 40px;
