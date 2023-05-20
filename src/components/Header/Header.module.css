@@ -47,11 +47,11 @@
   font-size: 40px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  color: var(--color-main);
+  color: var(--color-black);
 }
 
 .bell:hover {
-  color: tomato;
+  color: darkgreen;
 }
 
 .recommenders {
