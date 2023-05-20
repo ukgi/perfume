@@ -17,7 +17,7 @@
   background-color: inherit;
 }
 
-.rootBtnBrandName,
+.rootBtnBrandName:hover,
 .rootBtn:hover {
   color: var(--color-white);
   background: var(--color-main);
