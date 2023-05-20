@@ -18,12 +18,11 @@ export default function DataRecommender() {
         <h2 className={styles.title}>{recommender}님이 추천하는 향수입니다</h2>
         <p>이미지를 클릭하여 자세한 향수 정보를 알아보세요</p>
       </div>
-      <div className={styles.perfumeList}>
+      <div className={styles.perfumeList} onClick={handlePerfumeDetail}>
         <img
           className={styles.logo}
           src='/assets/images/Logo/Logo.png'
           alt=''
-          onClick={handlePerfumeDetail}
         />
         <img
           className={styles.perfumeImage}
@@ -37,7 +36,9 @@ export default function DataRecommender() {
             If I could put memories in a bottle like scent
           </p>
         </div>
-        <WishListBtn perfumeId={perfume.id} option='recommender' />
+        <div style={{ position: "absolute", bottom: "24px" }}>
+          <WishListBtn perfumeId={perfume.id} option='recommender' />
+        </div>
       </div>
       <div className={styles.commentBox}>
         <div className={styles.balloon}>{comment}</div>
