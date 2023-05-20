@@ -131,7 +131,7 @@ export default function BrandName() {
           </DropDownBox>
         )}
       </form>
-      <RootBtn />
+      <RootBtn option='brandName' />
     </WholeBox>
   );
 }
