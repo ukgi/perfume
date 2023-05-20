@@ -7,6 +7,7 @@ import { useKakaoLoginUserContext } from "../../context/KakaoLoginUserContextApi
 import Recommenders from "../Recommenders/Recommenders";
 import { KAKAO_AUTH_URL } from "../../pages/Login/OAuth";
 import { handleLogout } from "../../pages/Login/OAuth2RedirectHandeler";
+import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -27,11 +28,17 @@ export default function Header() {
         <span></span>
       ) : (
         <a href='/'>
-          <img
-            className={styles.logo}
-            src='/assets/images/Logo/Logo2.png'
-            alt=''
-          />
+          <ProgressiveImage src={"/assets/images/Logo/Logo2.png"}>
+            {(src, loading) => {
+              return (
+                <img
+                  className={loading ? styles.cardImgLoading : styles.logo}
+                  src={src}
+                  alt='style'
+                />
+              );
+            }}
+          </ProgressiveImage>
         </a>
       )}
       {sessionStorage.getItem("kakaoNickname") ? (
