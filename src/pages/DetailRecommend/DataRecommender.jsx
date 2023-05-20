@@ -36,12 +36,12 @@ export default function DataRecommender() {
             If I could put memories in a bottle like scent
           </p>
         </div>
+        <WishListBtn perfumeId={perfume.id} option='recommender' />
       </div>
       <div className={styles.commentBox}>
         <div className={styles.balloon}>{comment}</div>
       </div>
       <div className={styles.btnBox}>
-        <WishListBtn perfumeId={perfume.id} option='recommender' />
         <button
           className={styles.backBtn}
           onClick={() => window.history.back()}
