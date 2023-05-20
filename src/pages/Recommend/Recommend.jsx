@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import BestRecommend from "../../components/BestRecommend/BestRecommend";
 import styles from "./Recommend.module.css";
 import { config as server } from "../../config";
+import { KAKAO_AUTH_URL } from "../Login/OAuth";
 
 export default function Recommend() {
   const id = sessionStorage.getItem("id");
