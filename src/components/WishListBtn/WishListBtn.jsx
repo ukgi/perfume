@@ -66,7 +66,9 @@ export default function WishListBtn({ perfumeId, option }) {
             ? { position: "relative", bottom: "0" }
             : {}
         }
-        className={option === "wishList" ? styles.wishBtn : styles.wishBtn}
+        className={
+          option === "wishList" ? styles.wishBtnWishList : styles.wishBtn
+        }
         onClick={handleClickOpen}
       >
         위시리스트에 추가하기
