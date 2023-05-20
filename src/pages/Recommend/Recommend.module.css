@@ -105,6 +105,22 @@
   color: var(--color-white);
 }
 
+.loginBtn {
+  text-align: center;
+  border: none;
+  background-color: gray;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease-in;
+}
+
+.loginBtn:hover {
+  color: var(--color-white);
+  background-color: darkgreen;
+}
 @media (max-width: 850px) {
   .container {
     padding: 0 24px 30px;

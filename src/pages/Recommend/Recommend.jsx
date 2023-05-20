@@ -94,7 +94,20 @@ export default function Recommend() {
           </button>
         </div>
       ) : (
-        <div>해당 사이트에 접속하실 수 없습니다❌</div>
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <p>로그인이 필요한 서비스입니다.</p>
+          <a href={KAKAO_AUTH_URL} className={styles.loginBtn}>
+            로그인
+          </a>
+        </div>
       )}
     </>
   );
