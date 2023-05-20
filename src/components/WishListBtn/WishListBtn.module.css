@@ -8,7 +8,19 @@
   z-index: 1000;
 }
 
-.wishBtn:hover {
+.wishBtnWishList {
+  margin-top: 12px;
+  font-size: 0.8em;
+  padding: 12px 24px;
+  border: 1px solid #434343;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+  z-index: 1000;
+  background-color: inherit;
+}
+
+.wishBtn:hover,
+.wishBtnWishList:hover {
   color: var(--color-white);
   background: var(--color-main);
 }
