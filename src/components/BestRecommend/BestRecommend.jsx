@@ -89,7 +89,7 @@ export default function BestRecommend() {
           <h3 className={styles.testTakersDesc}>
             {Object.keys(bestRecommend)[1]
               ? Object.keys(bestRecommend)[1]
-              : "추천된 향수가 없습니다"}
+              : "추천 데이터가 없습니다"}
           </h3>
           {Object.keys(bestRecommend)[1] ? (
             <img
