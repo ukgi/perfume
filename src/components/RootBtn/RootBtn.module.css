@@ -7,12 +7,24 @@
   transition: all 0.2s ease-in;
 }
 
+.rootBtnBrandName {
+  margin-top: 12px;
+  font-size: 0.8em;
+  padding: 12px 24px;
+  border: 1px solid #434343;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+  background-color: inherit;
+}
+
+.rootBtnBrandName,
 .rootBtn:hover {
   color: var(--color-white);
   background: var(--color-main);
 }
 
 @media (max-width: 1460px) {
+  .rootBtnBrandName,
   .rootBtn {
     font-size: 0.5em;
   }
