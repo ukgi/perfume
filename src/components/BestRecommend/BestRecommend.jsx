@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { config as server } from "../../config";
 
-import styles from "./BestRecommend.module.css";
+// import styles from "./BestRecommend.module.css";
 
 export default function BestRecommend() {
   const id = sessionStorage.getItem("id");
