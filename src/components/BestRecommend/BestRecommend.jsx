@@ -10,8 +10,8 @@ import { config as server } from "../../config";
 export default function BestRecommend() {
   const id = sessionStorage.getItem("id");
   const [bestRecommend, setBestRecommend] = useState({});
-  const [bestPerfume, setBestPerfume] = useState();
-  const navigate = useNavigate();
+  // const [bestPerfume, setBestPerfume] = useState();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const accessToken = sessionStorage.getItem("accessToken");
@@ -25,6 +25,7 @@ export default function BestRecommend() {
           config
         );
         console.log(data.data);
+        console.log(bestRecommend);
         setBestRecommend(data.data);
         const bestPerfumeImage = await axios({
           method: "get",
@@ -46,8 +47,8 @@ export default function BestRecommend() {
     handleBestRecommend();
   }, [id]);
 
-  const handleDetailPerfume = () =>
-    navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
+  // const handleDetailPerfume = () =>
+  //   navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
 
   return (
     <>
