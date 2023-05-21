@@ -8,16 +8,16 @@ import styles from "./BestRecommend.module.css";
 
 export default function BestRecommend() {
   const navigate = useNavigate();
+  const accessToken = sessionStorage.getItem("accessToken");
+  const id = sessionStorage.getItem("id");
 
   const handleDetailPerfume = () =>
     navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
 
   const { data: bestRecommend } = useQuery(
-    ["bestRecommend"],
+    ["bestRecommend", id],
     async () => {
       try {
-        const id = sessionStorage.getItem("id");
-        const accessToken = sessionStorage.getItem("accessToken");
         const config = {
           headers: { Authorization: `${accessToken}` },
         };
@@ -39,10 +39,9 @@ export default function BestRecommend() {
   );
 
   const { data: bestPerfume } = useQuery(
-    ["bestPerfume"],
+    ["bestPerfume", accessToken],
     async () => {
       try {
-        const accessToken = sessionStorage.getItem("accessToken");
         const bestPerfumeImage = await axios({
           method: "get",
           url: `${server.api}/perfume/perfume-image`,
