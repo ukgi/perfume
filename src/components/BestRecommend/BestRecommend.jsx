@@ -7,7 +7,6 @@ import { config as server } from "../../config";
 import styles from "./BestRecommend.module.css";
 
 export default function BestRecommend() {
-  const id = sessionStorage.getItem("id");
   const navigate = useNavigate();
 
   const handleDetailPerfume = () =>
@@ -15,6 +14,7 @@ export default function BestRecommend() {
 
   const { data: bestRecommend } = useQuery(["bestRecommend"], async () => {
     try {
+      const id = sessionStorage.getItem("id");
       const accessToken = sessionStorage.getItem("accessToken");
       const config = {
         headers: { Authorization: `${accessToken}` },
