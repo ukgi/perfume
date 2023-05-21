@@ -12,43 +12,54 @@ export default function BestRecommend() {
   const handleDetailPerfume = () =>
     navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
 
-  const { data: bestRecommend } = useQuery(["bestRecommend"], async () => {
-    try {
-      const id = sessionStorage.getItem("id");
-      const accessToken = sessionStorage.getItem("accessToken");
-      const config = {
-        headers: { Authorization: `${accessToken}` },
-      };
-      const data = await axios.get(
-        `${server.api}/show-analyzed-data/${id}`,
-        config
-      );
-
-      return data.data;
-    } catch (err) {
-      console.log(err);
-      if (err.response.status === 404) {
-        console.log("추천 목록이 없습니다 ❌");
+  const { data: bestRecommend } = useQuery(
+    ["bestRecommend"],
+    async () => {
+      try {
+        const id = sessionStorage.getItem("id");
+        const accessToken = sessionStorage.getItem("accessToken");
+        const config = {
+          headers: { Authorization: `${accessToken}` },
+        };
+        const data = await axios.get(
+          `${server.api}/show-analyzed-data/${id}`,
+          config
+        );
+        return data.data;
+      } catch (err) {
+        console.log(err);
+        if (err.response.status === 404) {
+          console.log("추천 목록이 없습니다 ❌");
+        }
       }
+    },
+    {
+      staleTime: 10000 * 60 * 1,
     }
-  });
+  );
 
-  const { data: bestPerfume } = useQuery(["bestPerfume"], async () => {
-    try {
-      const accessToken = sessionStorage.getItem("accessToken");
-      const bestPerfumeImage = await axios({
-        method: "get",
-        url: `${server.api}/perfume/perfume-image`,
-        headers: { Authorization: `${accessToken}` },
-        params: {
-          perfumeName: `${bestRecommend.perfumeAnalyzeObject.perfumeName}`,
-        },
-      });
-      return bestPerfumeImage;
-    } catch (err) {
-      console.error(err);
+  const { data: bestPerfume } = useQuery(
+    ["bestPerfume"],
+    async () => {
+      try {
+        const accessToken = sessionStorage.getItem("accessToken");
+        const bestPerfumeImage = await axios({
+          method: "get",
+          url: `${server.api}/perfume/perfume-image`,
+          headers: { Authorization: `${accessToken}` },
+          params: {
+            perfumeName: `${bestRecommend.perfumeAnalyzeObject.perfumeName}`,
+          },
+        });
+        return bestPerfumeImage;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    {
+      staleTime: 10000 * 60 * 1,
     }
-  });
+  );
 
   return (
     <>
