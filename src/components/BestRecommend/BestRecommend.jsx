@@ -47,7 +47,9 @@ export default function BestRecommend() {
           url: `${server.api}/perfume/perfume-image`,
           headers: { Authorization: `${accessToken}` },
           params: {
-            perfumeName: `${bestRecommend.perfumeAnalyzeObject.perfumeName}`,
+            perfumeName:
+              bestRecommend &&
+              `${bestRecommend.perfumeAnalyzeObject.perfumeName}`,
           },
         });
         return bestPerfumeImage;
