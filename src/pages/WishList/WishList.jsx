@@ -96,7 +96,7 @@ export default function WishList() {
         </div>
         <div className={styles.btnBox}>
           <button className={styles.deleteBtn} onClick={handleClickOpen}>
-            위시리스트 전체 삭제하기
+            전체 삭제하기
           </button>
           <button
             className={styles.mainBtn}
