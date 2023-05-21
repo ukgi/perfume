@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { config as server } from "../../config";
 
@@ -11,7 +10,6 @@ export default function BestRecommend() {
   const navigate = useNavigate();
   const accessToken = sessionStorage.getItem("accessToken");
   const id = sessionStorage.getItem("id");
-  const [bestPerfumeImg, setBestPerfumeImg] = useState();
 
   const handleDetailPerfume = () =>
     navigate(`/brandDetail/${bestPerfume.id}`, { state: bestPerfume });
@@ -40,24 +38,31 @@ export default function BestRecommend() {
     }
   );
 
-  useEffect(async () => {
-    try {
-      const bestPerfumeImage = await axios({
-        method: "get",
-        url: `${server.api}/perfume/perfume-image`,
-        headers: { Authorization: `${accessToken}` },
-        params: {
-          perfumeName:
-            bestRecommend && bestRecommend.perfumeAnalyzeObject
-              ? bestRecommend.perfumeAnalyzeObject.perfumeName
-              : "",
-        },
-      });
-      setBestPerfumeImg(bestPerfumeImage.data.perfumeImageUrl);
-    } catch (err) {
-      console.error(err);
+  const { data: bestPerfume } = useQuery(
+    ["bestPerfume", accessToken],
+    async () => {
+      try {
+        const bestPerfumeImage = await axios({
+          method: "get",
+          url: `${server.api}/perfume/perfume-image`,
+          headers: { Authorization: `${accessToken}` },
+          params: {
+            perfumeName:
+              bestRecommend && bestRecommend.perfumeAnalyzeObject
+                ? bestRecommend.perfumeAnalyzeObject.perfumeName
+                : "",
+          },
+        });
+        return bestPerfumeImage.data;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    {
+      staleTime: 10000 * 60 * 1,
+      enabled: !!bestRecommend && !!bestRecommend.perfumeAnalyzeObject,
     }
-  }, [accessToken]);
+  );
 
   return (
     <>
@@ -74,12 +79,12 @@ export default function BestRecommend() {
               <p>추천 향수가 없습니다</p>
             )}
           </h3>
-          {bestPerfumeImg && (
+          {bestPerfume && (
             <div>
               <img
                 className={styles.bestPerfume}
-                src={bestPerfumeImg}
-                alt=''
+                src={bestPerfume.perfumeImageUrl}
+                alt='bestPerfume'
                 onClick={handleDetailPerfume}
               />
               <p className={styles.bestPerfumeSubDesc}>
