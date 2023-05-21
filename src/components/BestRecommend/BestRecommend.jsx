@@ -24,6 +24,7 @@ export default function BestRecommend() {
           `${server.api}/show-analyzed-data/${id}`,
           config
         );
+        console.log(data.data);
 
         setBestRecommend(data.data);
         const bestPerfumeImage = await axios({
@@ -55,7 +56,7 @@ export default function BestRecommend() {
         <h2 className={styles.testContainerTitle}>Best 향수 추천</h2>
         <div className={styles.testResultBox}>
           <h3 className={styles.testTakers}>
-            {bestRecommend ? bestRecommend.perfumeAnalyzeObject.count : 0}
+            {/* {bestRecommend ? bestRecommend.perfumeAnalyzeObject.count : 0} */}
           </h3>
           <h3 className={styles.testTakersDesc}>
             {bestRecommend.perfumeAnalyzeObject.perfumeName ? (
@@ -83,7 +84,7 @@ export default function BestRecommend() {
         <h2 className={styles.testContainerTitle}>Best 향기 추천</h2>
         <div className={styles.testResultBox}>
           <h3 className={styles.testTakers}>
-            {bestRecommend ? bestRecommend.scentAnalyzeObject.count : 0}
+            {/* {bestRecommend ? bestRecommend.scentAnalyzeObject.count : 0} */}
           </h3>
           <h3 className={styles.testTakersDesc}>
             {bestRecommend.scentAnalyzeObject.scent
