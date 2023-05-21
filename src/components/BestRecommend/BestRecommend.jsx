@@ -53,7 +53,7 @@ export default function BestRecommend() {
                 : "",
           },
         });
-        return bestPerfumeImage.data.perfumeImageUrl;
+        return bestPerfumeImage.data;
       } catch (err) {
         console.error(err);
       }
