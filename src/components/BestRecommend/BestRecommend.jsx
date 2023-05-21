@@ -28,7 +28,7 @@ export default function BestRecommend() {
         return data.data;
       } catch (err) {
         console.log(err);
-        if (err.response.status === 404) {
+        if (err.response && err.response.status === 404) {
           console.log("추천 목록이 없습니다 ❌");
         }
       }
@@ -48,11 +48,12 @@ export default function BestRecommend() {
           headers: { Authorization: `${accessToken}` },
           params: {
             perfumeName:
-              bestRecommend &&
-              `${bestRecommend.perfumeAnalyzeObject.perfumeName}`,
+              bestRecommend && bestRecommend.perfumeAnalyzeObject
+                ? bestRecommend.perfumeAnalyzeObject.perfumeName
+                : "",
           },
         });
-        return bestPerfumeImage;
+        return bestPerfumeImage.data.perfumeImageUrl;
       } catch (err) {
         console.error(err);
       }
@@ -81,7 +82,7 @@ export default function BestRecommend() {
             <div>
               <img
                 className={styles.bestPerfume}
-                src={bestPerfume.perfumeImageUrl}
+                src={bestPerfume}
                 alt=''
                 onClick={handleDetailPerfume}
               />
