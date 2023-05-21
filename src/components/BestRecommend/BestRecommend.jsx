@@ -24,6 +24,7 @@ export default function BestRecommend() {
           `${server.api}/member/show-result/${id}`,
           config
         );
+        console.log(data);
         setBestRecommend(data.data);
 
         const bestPerfumeImage = await axios({
