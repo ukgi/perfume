@@ -1,4 +1,10 @@
 {
-  "우디": 10,
-  "데렉램 레인데이": 3
+  "perfumeAnalyzeObject": {
+    "count": 1,
+    "perfumeName": "사랑해요 베스팅데이"
+  },
+  "scentAnalyzeObject": {
+    "scent": "시트러스",
+    "count": 1
+  }
 }

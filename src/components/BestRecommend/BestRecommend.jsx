@@ -21,12 +21,10 @@ export default function BestRecommend() {
     const handleBestRecommend = async () => {
       try {
         const data = await axios.get(
-          `${server.api}/member/show-result/${id}`,
+          `${server.api}/show-analyzed-data/${id}`,
           config
         );
-        console.log(data);
         setBestRecommend(data.data);
-
         const bestPerfumeImage = await axios({
           method: "get",
           url: `${server.api}/perfume/perfume-image`,
@@ -44,7 +42,6 @@ export default function BestRecommend() {
         }
       }
     };
-
     handleBestRecommend();
   }, [id]);
 
@@ -57,13 +54,13 @@ export default function BestRecommend() {
         <h2 className={styles.testContainerTitle}>Best 향수 추천</h2>
         <div className={styles.testResultBox}>
           <h3 className={styles.testTakers}>
-            {bestRecommend ? Object.values(bestRecommend)[0] : 0}
+            {bestRecommend ? bestRecommend.perfumeAnalyzeObject.count : 0}
           </h3>
           <h3 className={styles.testTakersDesc}>
-            {Object.keys(bestRecommend)[0] ? (
-              Object.keys(bestRecommend)[0]
+            {bestRecommend.perfumeAnalyzeObject.perfumeName ? (
+              bestRecommend.perfumeAnalyzeObject.perfumeName
             ) : (
-              <p>추천 데이터가 없습니다</p>
+              <p>추천 향수가 없습니다</p>
             )}
           </h3>
           {bestPerfume && (
@@ -85,20 +82,18 @@ export default function BestRecommend() {
         <h2 className={styles.testContainerTitle}>Best 향기 추천</h2>
         <div className={styles.testResultBox}>
           <h3 className={styles.testTakers}>
-            {bestRecommend ? Object.values(bestRecommend)[1] : 0}
+            {bestRecommend ? bestRecommend.scentAnalyzeObject.count : 0}
           </h3>
           <h3 className={styles.testTakersDesc}>
-            {Object.keys(bestRecommend)[1]
-              ? Object.keys(bestRecommend)[1]
-              : "추천 데이터가 없습니다"}
+            {bestRecommend.scentAnalyzeObject.scent
+              ? bestRecommend.scentAnalyzeObject.scent
+              : "추천 향기가 없습니다"}
           </h3>
-          {Object.keys(bestRecommend)[1] ? (
+          {bestRecommend.scentAnalyzeObject.scent ? (
             <img
               className={styles.bestPerfume}
-              src={`/assets/images/perfumeImg/${
-                Object.keys(bestRecommend)[1]
-              }.webp`}
-              alt=''
+              src={`/assets/images/perfumeImg/${bestRecommend.scentAnalyzeObject.scent}.webp`}
+              alt='scentImg'
             />
           ) : (
             <></>
