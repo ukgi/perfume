@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { config as server } from "../../config";
 
 // import styles from "./BestRecommend.module.css";
@@ -10,7 +10,7 @@ import { config as server } from "../../config";
 export default function BestRecommend() {
   const id = sessionStorage.getItem("id");
   const [bestRecommend, setBestRecommend] = useState({});
-  // const [bestPerfume, setBestPerfume] = useState();
+  const [bestPerfume, setBestPerfume] = useState();
   // const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export default function BestRecommend() {
             perfumeName: `${Object.keys(data.data)[0]}`,
           },
         });
+        console.log(bestPerfume);
         setBestPerfume(bestPerfumeImage.data);
         return data.data;
       } catch (err) {
