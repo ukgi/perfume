@@ -22,7 +22,7 @@ export default function BestRecommend() {
           headers: { Authorization: `${accessToken}` },
         };
         const data = await axios.get(
-          `${server.api}/show-analyzed-data/${id}`,
+          `${server.api}/member/show-analyzed-data/${id}`,
           config
         );
         return data.data;
