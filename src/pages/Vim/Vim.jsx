@@ -54,7 +54,6 @@ export default function Vim() {
     return (
       <div className={styles.storyBody}>
         <video
-          key={index}
           src={"/assets/videos/storyVideo3.mp4"}
           autoPlay
           loop
