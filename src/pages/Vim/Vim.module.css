@@ -1,9 +1,25 @@
 .loadingBody {
+  position: relative;
+  width: 100%;
   height: 100vh;
-  background-image: url(../../../public/assets/images/vim.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.loadingBody video,
+.storyBody video {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.loadingBody video.active,
+.storyBody video.active {
+  opacity: 1;
 }
 
 .storyBody {

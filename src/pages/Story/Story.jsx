@@ -158,6 +158,14 @@ export default function Story() {
               cursor={false}
               repeat={0}
             />
+            <TypeAnimation
+              sequence={[22000, `${data[4]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
           </>
         )}
       </div>
