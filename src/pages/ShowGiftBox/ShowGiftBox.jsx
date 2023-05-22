@@ -23,7 +23,7 @@ export default function ShowGiftBox() {
         `${config.api}/survey/show-perfume-by-survey`,
         user
       );
-      return data.data.slice(0, 10);
+      return data.data.slice(0, 10).sort();
     } catch (error) {
       console.error(error);
       navigate("/error");

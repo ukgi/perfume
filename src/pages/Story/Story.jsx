@@ -21,9 +21,9 @@ export default function Story() {
           name: userName,
         });
         console.log("스토리 데이터", data);
-        const splitData = data.data.choices[0].message.content.split(".");
-        splitData.pop();
-        splitData.shift();
+        const splitData = data.data.choices[0].message.content.split(
+          "." || "\n"
+        );
         console.log(splitData);
         const splitDataLocalStorage = JSON.stringify(splitData);
         localStorage.setItem("storyArray", splitDataLocalStorage);
@@ -81,7 +81,7 @@ export default function Story() {
         <audio src='/assets/audio/audio.mp3' autoPlay loop></audio>
       </div>
       <div className={styles.textBox}>
-        {data[3] === undefined || null ? (
+        {data[4] === undefined || null ? (
           <>
             <TypeAnimation
               sequence={[`${data[0]}.`]}
@@ -108,7 +108,15 @@ export default function Story() {
               repeat={0}
             />
             <TypeAnimation
-              sequence={[16000, `아름다운 하루가 시작될 거 같다.`]}
+              sequence={[16000, `${data[3]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[22000, `아름다운 하루가 시작될 거 같다.`]}
               speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
               omitDeletionAnimation={true}
               wrapper='p'
@@ -136,6 +144,14 @@ export default function Story() {
             />
             <TypeAnimation
               sequence={[10000, `${data[2]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[16000, `${data[3]}.`]}
               speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
               omitDeletionAnimation={true}
               wrapper='p'
