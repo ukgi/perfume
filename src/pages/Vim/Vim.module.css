@@ -1,0 +1,28 @@
+.loadingBody {
+  height: 100vh;
+  background-image: url(../../../public/assets/images/vim.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storyBody {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textBox {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 3;
+  text-align: center;
+}

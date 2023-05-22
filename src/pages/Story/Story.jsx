@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Story.module.css";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -20,9 +20,12 @@ export default function Story() {
           ...user,
           name: userName,
         });
-        const splitData = data.data.choices[0].text.split(".");
+        const splitData = data.data.choices[0].message.content.split(".");
         splitData.pop();
         splitData.shift();
+        console.log(splitData);
+        const splitDataLocalStorage = JSON.stringify(splitData);
+        localStorage.setItem("storyArray", splitDataLocalStorage);
         return splitData;
       } catch (error) {
         console.error(error);
@@ -32,6 +35,16 @@ export default function Story() {
       staleTime: 10000 * 60 * 1,
     }
   );
+
+  useEffect(() => {
+    if (data) {
+      const splitDataLocalStorage = JSON.stringify(data);
+      localStorage.setItem("storyArray", splitDataLocalStorage);
+    }
+    return () => {
+      localStorage.removeItem("storyArray");
+    };
+  }, [data]);
 
   if (isLoading)
     return (

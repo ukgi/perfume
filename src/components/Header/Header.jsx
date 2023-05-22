@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsFillBellFill } from "react-icons/bs";
 import { BsBookmarkHeart } from "react-icons/bs";
@@ -11,6 +11,7 @@ import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation().pathname;
 
   const { isRecommend } = useKakaoLoginUserContext();
 
@@ -23,7 +24,10 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      style={location === "/vimMain" ? { display: "none" } : {}}
+    >
       {isRecommend ? (
         <span></span>
       ) : (
