@@ -53,17 +53,15 @@ export default function Vim() {
   } else {
     return (
       <div className={styles.storyBody}>
-        {videos.map((video, index) => (
-          <video
-            key={index}
-            src={video}
-            className={currentVideo === index ? styles.active : ""}
-            autoPlay
-            loop
-            muted
-            typeof='mp4'
-          />
-        ))}
+        <video
+          key={index}
+          src={"/assets/videos/storyVideo3.mp4"}
+          autoPlay
+          loop
+          muted
+          typeof='mp4'
+        />
+
         <div className={styles.textBox}>
           {storedValue[4] === undefined || null ? (
             <>

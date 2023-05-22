@@ -17,8 +17,7 @@
   object-fit: cover;
 }
 
-.loadingBody video.active,
-.storyBody video.active {
+.loadingBody video.active {
   opacity: 1;
 }
 
