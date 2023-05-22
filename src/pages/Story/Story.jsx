@@ -20,6 +20,7 @@ export default function Story() {
           ...user,
           name: userName,
         });
+        console.log("스토리 데이터", data);
         const splitData = data.data.choices[0].message.content.split(".");
         splitData.pop();
         splitData.shift();
