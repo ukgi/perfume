@@ -9,10 +9,8 @@ import { brandPerfume } from "../../Animation/Variants";
 import { TypeAnimation } from "react-type-animation";
 import BackBtn from "../../components/BackBtn/BackBtn";
 import RootBtn from "../../components/RootBtn/RootBtn";
-import { useNavigate } from "react-router-dom";
 
 export default function Story() {
-  const navigate = useNavigate();
   const { user, userName } = useUserContext();
   const { isLoading, isError, data } = useQuery(
     ["story", user],
@@ -134,16 +132,6 @@ export default function Story() {
         )}
       </div>
       <div className={styles.btnBox}>
-        <button
-          className={styles.allStoryBtn}
-          onClick={() =>
-            navigate("/allStory", {
-              state: data,
-            })
-          }
-        >
-          전체 이야기 확인
-        </button>
         <RootBtn />
         <BackBtn />
       </div>
