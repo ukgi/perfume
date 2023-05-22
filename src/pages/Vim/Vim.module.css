@@ -8,11 +8,15 @@
   background-color: black;
 }
 
-.loadingBody video,
-.storyBody video {
+.loadingBody video {
   position: absolute;
   opacity: 0;
   transition: opacity 0.5s;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.storyBody video {
   height: 100vh;
   object-fit: cover;
 }
