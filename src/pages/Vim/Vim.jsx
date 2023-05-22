@@ -54,7 +54,7 @@ export default function Vim() {
     return (
       <div className={styles.storyBody}>
         <video
-          src={"/assets/videos/storyVideo3.mp4"}
+          src='/assets/videos/storyVideo3.mp4'
           autoPlay
           loop
           muted
