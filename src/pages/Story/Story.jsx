@@ -69,45 +69,69 @@ export default function Story() {
         <audio src='/assets/audio/audio.mp3' autoPlay loop></audio>
       </div>
       <div className={styles.textBox}>
-        <TypeAnimation
-          sequence={
-            data[3] === undefined || null
-              ? [
-                  `${data[0]}`,
-                  3000,
-                  `${data[1]}`,
-                  3000,
-                  `${data[2]}`,
-                  3000,
-                  `아름다운 하루가 시작될 거 같다`,
-                  3000,
-                ]
-              : [
-                  `${data[0]}`,
-                  3000,
-                  `${data[1]}`,
-                  3000,
-                  `${data[2]}`,
-                  3000,
-                  `${data[3]}`,
-                  3000,
-                ]
-          }
-          deletionSpeed={{ type: "keyStrokeDelayInMs", value: 50 }}
-          omitDeletionAnimation={true}
-          wrapper='p'
-          cursor={false}
-          repeat={0}
-          style={{
-            width: "800px",
-            paddingTop: "300px",
-            fontSize: "2em",
-            display: "inline-block",
-            color: "black",
-            textAlign: "center",
-            fontFamily: "GangwonEdu_OTFBoldA",
-          }}
-        />
+        {data[3] === undefined || null ? (
+          <>
+            <TypeAnimation
+              sequence={[`${data[0]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[6000, `${data[1]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[10000, `${data[2]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[16000, `아름다운 하루가 시작될 거 같다.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+          </>
+        ) : (
+          <>
+            <TypeAnimation
+              sequence={[1000, `${data[0]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[6000, `${data[1]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+            <TypeAnimation
+              sequence={[10000, `${data[2]}.`]}
+              speed={(45, { type: "keyStrokeDelayInMs", value: 100 })}
+              omitDeletionAnimation={true}
+              wrapper='p'
+              cursor={false}
+              repeat={0}
+            />
+          </>
+        )}
       </div>
       <div className={styles.btnBox}>
         <button

@@ -19,6 +19,12 @@
 
 .textBox {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 3;
+  text-align: center;
 }
 
 video {
@@ -106,8 +112,8 @@ video {
 
   .textBox {
     position: absolute;
+    top: 50%;
     font-size: 6px;
-    top: 18px;
   }
 
   video {
