@@ -42,8 +42,7 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
         headers: { Authorization: `${accessToken}` },
         withCredentials: true,
       })
-      .then((res) => {
-        console.log(res);
+      .then(() => {
         window.location.reload();
         handleClose();
       })

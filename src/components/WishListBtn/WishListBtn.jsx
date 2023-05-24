@@ -39,6 +39,7 @@ export default function WishListBtn({ perfumeId, option }) {
       )
       .then(() => {
         window.alert("위시리스트에 추가되었습니다.");
+        location.reload();
         handleClose();
       })
       .catch((err) => {
