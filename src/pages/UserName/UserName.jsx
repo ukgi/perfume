@@ -76,6 +76,15 @@ export default function UserName() {
               type='text'
               value={userName}
               onChange={handleUserName}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  isRecommend
+                    ? handleRecommend()
+                    : userName
+                    ? navigate(`/gender`, { state: userName })
+                    : alert("이름을 입력해주세요!");
+                }
+              }}
               required={true}
               style={{ color: "white" }}
               onFocus={handleInputFocus}
