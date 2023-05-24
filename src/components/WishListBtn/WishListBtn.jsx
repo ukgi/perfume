@@ -10,9 +10,11 @@ import {
 import styles from "./WishListBtn.module.css";
 import { config as server } from "../../config";
 import { KAKAO_AUTH_URL } from "../../pages/Login/OAuth";
+import { useLocation } from "react-router-dom";
 
 export default function WishListBtn({ perfumeId, option }) {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,9 +40,14 @@ export default function WishListBtn({ perfumeId, option }) {
         config
       )
       .then(() => {
-        window.location.reload();
-        window.alert("위시리스트에 추가되었습니다.");
-        handleClose();
+        if (location.path === "/wishList") {
+          window.location.reload();
+          window.alert("위시리스트에 추가되었습니다.");
+          handleClose();
+        } else {
+          window.alert("위시리스트에 추가되었습니다.");
+          handleClose();
+        }
       })
       .catch((err) => {
         if (err.response && err.response.status === 401) {
