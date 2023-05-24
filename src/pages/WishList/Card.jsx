@@ -85,7 +85,7 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
         </div>
         {rankingCard === true ? (
           <div style={{ textAlign: "center" }}>
-            <WishListBtn option='wishList' />
+            <WishListBtn perfumeId={id} option='wishList' />
             <p className={styles.rankingCount}>{count}명이 추가했습니다</p>
           </div>
         ) : (
