@@ -9,6 +9,7 @@ import { brandPerfume } from "../../Animation/Variants";
 import { TypeAnimation } from "react-type-animation";
 import BackBtn from "../../components/BackBtn/BackBtn";
 import RootBtn from "../../components/RootBtn/RootBtn";
+import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function Story() {
   const { user, userName } = useUserContext();
@@ -50,14 +51,21 @@ export default function Story() {
   if (isLoading)
     return (
       <div className={styles.subBody}>
-        <motion.img
-          initial='hidden'
-          animate='visible'
-          variants={brandPerfume}
-          src='/assets/images/향수병6.png'
-          alt=''
-          id={styles.perfumeBottle}
-        />
+        <ProgressiveImage src={"/assets/images/향수병6.png"}>
+          {(src, loading) => {
+            return (
+              <motion.img
+                initial='hidden'
+                animate='visible'
+                variants={brandPerfume}
+                src={src}
+                alt=''
+                id={loading ? styles.cardImgLoading : styles.perfumeBottle}
+              />
+            );
+          }}
+        </ProgressiveImage>
+
         <h3>이야기를 만드는 중입니다. 잠시만 기다려주세요.</h3>
       </div>
     );

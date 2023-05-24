@@ -74,6 +74,11 @@ video {
   height: 650px;
 }
 
+#cardImgLoading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
 @media (max-width: 550px) {
   .subBody {
     padding: 0 8px;
