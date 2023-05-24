@@ -40,7 +40,7 @@ export default function WishListBtn({ perfumeId, option }) {
         config
       )
       .then(() => {
-        if (location.path === "/wishList") {
+        if (location.pathname === "/wishList") {
           window.location.reload();
           window.alert("위시리스트에 추가되었습니다.");
           handleClose();
