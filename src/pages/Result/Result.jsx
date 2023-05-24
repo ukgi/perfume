@@ -25,10 +25,7 @@ export default function Result() {
                 src={data.perfumeImageUrl}
                 alt='perfumeImage'
                 draggable={false}
-                onClick={() => {
-                  console.log("data.id", data.id);
-                  navigate(`/result/${data.id}`);
-                }}
+                onClick={() => navigate(`/result/${data.id}`)}
               />
               <h3 className={styles.perfumeName}>{data.perfumeName}</h3>
             </div>

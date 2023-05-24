@@ -21,11 +21,11 @@ export default function Story() {
           ...user,
           name: userName,
         });
-        console.log("스토리 데이터", data);
+
         const splitData = data.data.choices[0].message.content.split(
           "." || "\n"
         );
-        console.log(splitData);
+
         const splitDataLocalStorage = JSON.stringify(splitData);
         localStorage.setItem("storyArray", splitDataLocalStorage);
         return splitData;
