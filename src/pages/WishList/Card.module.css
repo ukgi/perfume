@@ -11,6 +11,11 @@
   width: 100%;
 }
 
+.cardImgLoading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
 .brandName {
   font-size: 0.6em;
 }

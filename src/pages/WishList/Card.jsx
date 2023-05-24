@@ -14,6 +14,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import WishListBtn from "../../components/WishListBtn/WishListBtn";
+import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function Card({ perfume, rankingCard, count, ranking }) {
   const { id, perfumeName, brandName, perfumeImageUrl } = perfume;
@@ -56,14 +57,22 @@ export default function Card({ perfume, rankingCard, count, ranking }) {
     >
       {rankingCard === true ? (
         <div>
-          <img
-            className={styles.perfumeImg}
-            src={perfumeImageUrl}
-            alt='perfumeImage'
-            onClick={() => {
-              navigate(`/brandDetail/${id}`, { state: perfume });
+          <ProgressiveImage src={perfumeImageUrl}>
+            {(src, loading) => {
+              return (
+                <img
+                  className={
+                    loading ? styles.cardImgLoading : styles.perfumeImg
+                  }
+                  src={src}
+                  alt='perfumeImage'
+                  onClick={() => {
+                    navigate(`/brandDetail/${id}`, { state: perfume });
+                  }}
+                />
+              );
             }}
-          />
+          </ProgressiveImage>
           <BsFillTrophyFill className={styles.trophy} />
           <span className={styles.rankingNumber}>{ranking}</span>
         </div>
