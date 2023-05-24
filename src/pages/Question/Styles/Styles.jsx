@@ -21,29 +21,29 @@ export default function Styles() {
       title: "캐쥬얼",
       img:
         gender === "남자"
-          ? "/assets/images/styles/남자캐쥬얼.png"
-          : "/assets/images/styles/여자캐쥬얼.png",
+          ? "/assets/images/styles/남자캐쥬얼.webp"
+          : "/assets/images/styles/여자캐쥬얼.webp",
     },
     {
       title: "포멀",
       img:
         gender === "남자"
-          ? "/assets/images/styles/남자포멀.png"
-          : "/assets/images/styles/여자포멀.png",
+          ? "/assets/images/styles/남자포멀.webp"
+          : "/assets/images/styles/여자포멀.webp",
     },
     {
       title: "미니멀",
       img:
         gender === "남자"
-          ? "/assets/images/styles/남자미니멀.png"
-          : "/assets/images/styles/여자미니멀.png",
+          ? "/assets/images/styles/남자미니멀.webp"
+          : "/assets/images/styles/여자미니멀.webp",
     },
     {
       title: "스트릿",
       img:
         gender === "남자"
-          ? "/assets/images/styles/남자스트릿.png"
-          : "/assets/images/styles/여자스트릿.png",
+          ? "/assets/images/styles/남자스트릿.webp"
+          : "/assets/images/styles/여자스트릿.webp",
     },
   ];
 

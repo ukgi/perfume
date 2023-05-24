@@ -81,7 +81,7 @@ export default function Story() {
         <audio src='/assets/audio/audio.mp3' autoPlay loop></audio>
       </div>
       <div className={styles.textBox}>
-        {data[4] === undefined || null ? (
+        {data[4] === undefined || null || "" ? (
           <>
             <TypeAnimation
               sequence={[`${data[0]}.`]}

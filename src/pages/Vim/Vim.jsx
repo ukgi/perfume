@@ -62,7 +62,7 @@ export default function Vim() {
         />
 
         <div className={styles.textBox}>
-          {storedValue[4] === undefined || null ? (
+          {storedValue[4] === undefined || null || "" ? (
             <>
               <TypeAnimation
                 sequence={[`${storedValue[0]}.`]}
